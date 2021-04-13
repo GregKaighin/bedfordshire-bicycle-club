@@ -15,13 +15,19 @@
 
     <div class="jumbotron">
         <div class="container-fluid">
-            <h1>Plan a Cycling Route.</h1>
-            <p>This App Will Help You Calculate Your Travelling Distances.</p>
+            <h1>Bicycle Route Plotter</h1>
+            <ul>
+                <li>Enter a starting place and destination in the boxes then click on the "Plot Route <i
+                        class='fas fa-map-signs'></i>" button to
+                    generate a route.</li>
+                <li>Routes shown will be suitable for bicycling, making use of cycle paths where possible.</li>
+                <li>Always use common sense and good judgement when cycling on public roads.</li>
+            </ul>
             <form class="form-horizontal">
                 <div class="form-group">
                     <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
                     <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Origin" class="form-control">
+                        <input type="text" id="from" placeholder="Starting place" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -36,7 +42,8 @@
             </form>
 
             <div class="col-xs-offset-2 col-xs-10">
-                <button class="btn btn-info btn-lg " onclick="calcRoute();"><i class="fas fa-map-signs"></i></button>
+                <button class="btn btn-info btn-lg " onclick="calcRoute();">Plot Route <i
+                        class="fas fa-map-signs"></i></button>
             </div>
         </div>
         <div class="container-fluid">

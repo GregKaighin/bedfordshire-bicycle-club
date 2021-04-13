@@ -8,10 +8,11 @@ var mapOtions = {
     center: bedfordshire,
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-}
+};
 
 //Create the map with options set
 var map = new google.maps.Map(document.getElementById("googleMap"), mapOtions)
+
 
 //Create a DirectionsService object to use the route method and get a result for our request
 var directionsService = new google.maps.DirectionsService();
@@ -38,7 +39,7 @@ function calcRoute() {
 
             // Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Cycling distance <i class='fas fa-biking'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-stopwatch'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
 
             // Display the route
             directionsDisplay.setDirections(result);
