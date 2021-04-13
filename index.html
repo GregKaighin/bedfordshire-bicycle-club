@@ -17,11 +17,11 @@
         <div class="container-fluid">
             <h1>Bicycle Route Plotter</h1>
             <ul>
-                <li>Enter a starting place and destination in the boxes then click on the "Plot Route <i
-                        class='fas fa-map-signs'></i>" button to
-                    generate a route.</li>
-                <li>Routes shown will be suitable for bicycling, making use of cycle paths where possible.</li>
-                <li>Always use common sense and good judgement when cycling on public roads.</li>
+                <li>Enter a starting place and a destination in the boxes below then press the "Plot Route <i
+                        class='fas fa-map-signs'></i>" button to generate a route.</li>
+                <li>Routes shown will be suitable for bicycling, making use of cycle paths (shown with green lines)
+                    where possible.</li>
+                <li>Always use common sense when cycling on public roads.</li>
             </ul>
             <form class="form-horizontal">
                 <div class="form-group">
@@ -60,7 +60,9 @@
     <!-- Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places">
     </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Enables rendering of the bicycle layer -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
@@ -73,6 +75,7 @@
     <script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
     <!-- JavaScript -->
     <script src="assets/js/maps.js"></script>
+
 </body>
 
 </html>

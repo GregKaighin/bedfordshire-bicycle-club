@@ -11,7 +11,10 @@ var mapOtions = {
 };
 
 //Create the map with options set
-var map = new google.maps.Map(document.getElementById("googleMap"), mapOtions)
+var map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
+
+const bikeLayer = new google.maps.BicyclingLayer();
+bikeLayer.setMap(map);
 
 
 //Create a DirectionsService object to use the route method and get a result for our request
