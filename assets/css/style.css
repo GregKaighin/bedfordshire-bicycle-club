@@ -12,21 +12,26 @@ body {
 }
 
 .jumbotron h1 {
-    font-size: 2em;
+    text-align: center;
+    font-size: 200%;
     font-weight: bold;
 }
 
-.jumbotron h1,
-.jumbotron p {
-    text-align: center;
+.jumbotron ul {
+    text-align: left;
+    font-size: 120%;
 }
 
-.jumbotron p {
-    font-size: 1em;
+#from {
+    font-size: 120%;
+}
+
+#to {
+    font-size: 120%;
 }
 
 #googleMap {
-    width: 80%;
-    height: 400px;
-    margin: 20px auto;
+    width: 95%;
+    height: 50vh;
+    margin: 12px auto;
 }
