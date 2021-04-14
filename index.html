@@ -7,19 +7,19 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-
 
     <div class="jumbotron">
         <div class="container-fluid">
             <h1>Bicycle Route Plotter</h1>
             <ul>
                 <li>Enter a starting place and a destination in the boxes below then press the "Plot Route <i
-                        class='fas fa-map-signs'></i>" button to generate a route.</li>
-                <li>Routes shown will be suitable for bicycling, making use of cycle paths (shown with green lines)
+                        class='fas fa-map-signs'></i>" button.</li>
+                <li>Routes shown will be suitable for bicycling, making use of dedicated bike land and cycle paths
+                    (shown with green lines)
                     where possible.</li>
                 <li>Always use common sense when cycling on public roads.</li>
             </ul>
@@ -36,11 +36,8 @@
                     <div class="col-xs-4">
                         <input type="text" id="to" placeholder="Destination" class="form-control">
                     </div>
-
                 </div>
-
             </form>
-
             <div class="col-xs-offset-2 col-xs-10">
                 <button class="btn btn-info btn-lg " onclick="calcRoute();">Plot Route <i
                         class="fas fa-map-signs"></i></button>
@@ -48,31 +45,26 @@
         </div>
         <div class="container-fluid">
             <div id="googleMap">
-
             </div>
             <div id="output">
-
             </div>
         </div>
-
     </div>
 
     <!-- Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places">
     </script>
-    <!-- Enables rendering of the bicycle layer -->
+    <!-- Enables drawing of the bicycle layer on the map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
     </script>
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
     <!-- JavaScript -->
     <script src="assets/js/maps.js"></script>
 

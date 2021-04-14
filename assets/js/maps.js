@@ -1,6 +1,6 @@
 // Set map options
 
-var bedfordshire = {
+const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
 };
