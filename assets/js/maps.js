@@ -1,8 +1,10 @@
-// Set the map options
+// Create Bedforshire variable
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
 };
+
+// Set the map options
 const mapOtions = {
     center: bedfordshire,
     zoom: 10,
@@ -10,11 +12,28 @@ const mapOtions = {
 };
 
 // Create the map
-const map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
+var map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
 
-// Add the BicyclingLayer to the map
-const bikeLayer = new google.maps.BicyclingLayer();
-bikeLayer.setMap(map);
+// Add the Bicycle Layer
+var bicycleLayer;
+
+// Define a function to enable disable the bicycle layer
+function toggleBicycleLayer() {
+    if (bicycleLayer.getMap() == null) {
+        //traffic layer is disabled.. enable it
+        bicycleLayer.setMap(map);
+    } else {
+        //traffic layer is enabled.. disable it
+        bicycleLayer.setMap(null);
+    }
+}
+
+function init() {
+    bicycleLayer = new google.maps.BicyclingLayer();
+    google.maps.event.addDomListener(document.getElementById('bicycleLayerToggle'), 'click', toggleBicycleLayer);
+}
+
+google.maps.event.addDomListener(window, 'load', init);
 
 //Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();
@@ -45,11 +64,11 @@ function calcRoute() {
             // Display the route
             directionsDisplay.setDirections(result);
         } else {
-            // Delete the route from the map
+            // Delete the route
             directionsDisplay.setDirections({
                 routes: []
             });
-            // Recenter map on Bedfordshire
+            // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
 
             // Show an error message if the route is not possible
@@ -61,6 +80,7 @@ function calcRoute() {
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById("from");
 var searchBox1 = new google.maps.places.SearchBox(input1);
+
 // Bias the SearchBox1 results towards current map's viewport
 map.addListener("bounds_changed", () => {
     searchBox1.setBounds(map.getBounds());
@@ -69,6 +89,7 @@ map.addListener("bounds_changed", () => {
 // Create searchBox2 object for the destination
 var input2 = document.getElementById("to");
 var searchBox2 = new google.maps.places.SearchBox(input2);
+
 // Bias the SearchBox2 results towards current map's viewport
 map.addListener("bounds_changed", () => {
     searchBox2.setBounds(map.getBounds());
@@ -81,7 +102,7 @@ function toggleBikeShops() {
     });
 }
 
-// Define the bikeshop icon and put it on the map
+// Define the bikeshop icon and put on the map at correct size
 map.data.setStyle((feature) => {
     return {
         icon: {
