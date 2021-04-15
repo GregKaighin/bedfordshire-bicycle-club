@@ -12,7 +12,7 @@ const mapOtions = {
 // Create the map
 const map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
 
-// Create the bicycling layer
+// Add the BicyclingLayer to the map
 const bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
@@ -61,7 +61,6 @@ function calcRoute() {
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById("from");
 var searchBox1 = new google.maps.places.SearchBox(input1);
-
 // Bias the SearchBox1 results towards current map's viewport
 map.addListener("bounds_changed", () => {
     searchBox1.setBounds(map.getBounds());
@@ -70,20 +69,19 @@ map.addListener("bounds_changed", () => {
 // Create searchBox2 object for the destination
 var input2 = document.getElementById("to");
 var searchBox2 = new google.maps.places.SearchBox(input2);
-
 // Bias the SearchBox2 results towards current map's viewport
 map.addListener("bounds_changed", () => {
     searchBox2.setBounds(map.getBounds());
 });
 
-// Load the bikeshops GeoJSON onto the map.
+// Load the bikeshops GeoJSON onto the map
 function toggleBikeShops() {
     map.data.loadGeoJson('assets/js/bikeshops.json', {
         idPropertyName: 'storeid'
     });
 }
 
-// Define the custom marker icons, using the store's "category".
+// Define the bikeshop icon and put it on the map
 map.data.setStyle((feature) => {
     return {
         icon: {
@@ -93,9 +91,8 @@ map.data.setStyle((feature) => {
     };
 });
 
+// Show the information for a bikeshop when its icon is clicked
 const infoWindow = new google.maps.InfoWindow();
-
-// Show the information for a store when its marker is clicked.
 map.data.addListener('click', (event) => {
     const name = event.feature.getProperty('name');
     const description = event.feature.getProperty('description');
