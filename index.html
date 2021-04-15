@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Bedfordshire Cycling Route Planner</title>
+    <title>Bedfordshire Biking</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <!-- CSS -->
@@ -32,8 +32,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-
-
                     <label for="to" class="col-xs-2 control-label direction-input"><i
                             class="fas fa-map-marker-alt"></i></label>
                     <div class="col-xs-4">
@@ -41,15 +39,12 @@
                     </div>
                 </div>
             </form>
-
             <div class="col-xs-offset-2 col-xs-10 text-center">
-                <button class="btn btn-info btn-md" onclick="calcRoute();">Plot Route <i
-                        class="fas fa-map-signs"></i></button>
-                <button class="btn btn-info btn-md" onclick="toggleBikeShops();">Show Bike Shops <i
+                <button class="btn btn-info" onclick="calcRoute();">Plot Route <i class="fas fa-map-signs"></i></button>
+                <button class="btn btn-info" onclick="toggleBikeShops();">Show Bike Shops <i
                         class="fas fa-bicycle"></i></button>
             </div>
         </div>
-
         <div class="container-fluid">
             <div id="googleMap">
             </div>
@@ -58,7 +53,6 @@
             </div>
         </div>
     </div>
-
     <!-- Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places">
     </script>

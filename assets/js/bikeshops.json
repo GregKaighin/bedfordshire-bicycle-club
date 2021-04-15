@@ -67,7 +67,25 @@
                 "phone": "01525 721599",
                 "storeid": "04"
             }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.4617,
+                    52.1304
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "category": "bikeshop",
+                "hours": "Mon: 8am–8pm; Tues 8am–8pm; Wed: 8am–6pm; Thu: 8am–8pm; Fri: 8am–8pm; Sat: 8am–6pm; Sun: 10am–5pm",
+                "description": "Being the UK's leading bike retailer allows us to stock an outstanding range of men's, women's and kids bikes in the latest designs...",
+                "name": "Halfords - Bedford",
+                "phone": "01234 262212",
+                "storeid": "04"
+            }
         }
+
 
 
     ]

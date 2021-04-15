@@ -76,7 +76,7 @@ map.addListener("bounds_changed", () => {
     searchBox2.setBounds(map.getBounds());
 });
 
-// Load the stores GeoJSON onto the map.
+// Load the bikeshops GeoJSON onto the map.
 function toggleBikeShops() {
     map.data.loadGeoJson('assets/js/bikeshops.json', {
         idPropertyName: 'storeid'
@@ -88,7 +88,7 @@ map.data.setStyle((feature) => {
     return {
         icon: {
             url: `assets/img/icons/icon_${feature.getProperty('category')}.png`,
-            scaledSize: new google.maps.Size(48, 48),
+            scaledSize: new google.maps.Size(36, 36),
         },
     };
 });
