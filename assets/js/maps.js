@@ -77,9 +77,11 @@ map.addListener("bounds_changed", () => {
 });
 
 // Load the stores GeoJSON onto the map.
-map.data.loadGeoJson('assets/js/bikeshops.json', {
-    idPropertyName: 'storeid'
-});
+function toggleBikeShops() {
+    map.data.loadGeoJson('assets/js/bikeshops.json', {
+        idPropertyName: 'storeid'
+    });
+}
 
 // Define the custom marker icons, using the store's "category".
 map.data.setStyle((feature) => {

@@ -13,21 +13,21 @@ body {
 
 .jumbotron h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .jumbotron ul {
     text-align: left;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #from {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #to {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #googleMap {
@@ -38,4 +38,5 @@ body {
 
 .alert-info {
     text-align: center;
+    font-size: 0.8em;
 }
