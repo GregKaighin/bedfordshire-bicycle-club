@@ -86,19 +86,15 @@ map.data.setStyle((feature) => {
     return {
         icon: {
             url: `assets/img/icons/icon_${feature.getProperty('category')}.png`,
-            scaledSize: new google.maps.Size(64, 64),
+            scaledSize: new google.maps.Size(48, 48),
         },
     };
 });
 
-
-
-const apiKey = 'AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U';
 const infoWindow = new google.maps.InfoWindow();
 
 // Show the information for a store when its marker is clicked.
 map.data.addListener('click', (event) => {
-    const category = event.feature.getProperty('category');
     const name = event.feature.getProperty('name');
     const description = event.feature.getProperty('description');
     const hours = event.feature.getProperty('hours');
