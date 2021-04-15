@@ -75,3 +75,44 @@ var searchBox2 = new google.maps.places.SearchBox(input2);
 map.addListener("bounds_changed", () => {
     searchBox2.setBounds(map.getBounds());
 });
+
+// Load the stores GeoJSON onto the map.
+map.data.loadGeoJson('assets/js/bikeshops.json', {
+    idPropertyName: 'storeid'
+});
+
+// Define the custom marker icons, using the store's "category".
+map.data.setStyle((feature) => {
+    return {
+        icon: {
+            url: `assets/img/icons/icon_${feature.getProperty('category')}.png`,
+            scaledSize: new google.maps.Size(64, 64),
+        },
+    };
+});
+
+
+
+const apiKey = 'AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U';
+const infoWindow = new google.maps.InfoWindow();
+
+// Show the information for a store when its marker is clicked.
+map.data.addListener('click', (event) => {
+    const category = event.feature.getProperty('category');
+    const name = event.feature.getProperty('name');
+    const description = event.feature.getProperty('description');
+    const hours = event.feature.getProperty('hours');
+    const phone = event.feature.getProperty('phone');
+    const position = event.feature.getGeometry().get();
+    const content = `
+      <h2>${name}</h2><p>${description}</p>
+      <p><b>Open:</b> ${hours}<br/><b>Phone:</b> ${phone}</p>
+    `;
+
+    infoWindow.setContent(content);
+    infoWindow.setPosition(position);
+    infoWindow.setOptions({
+        pixelOffset: new google.maps.Size(0, -30)
+    });
+    infoWindow.open(map);
+});

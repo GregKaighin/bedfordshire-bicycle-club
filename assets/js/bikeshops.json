@@ -1,0 +1,74 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.4743,
+                    52.1378
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "category": "biksehop",
+                "hours": "9am - 6pm",
+                "description": "The UK's largest family owned cycle retailer. Browse our range of men's, women's & children's bikes and a fantastic range of cycling accessories. 23 stores ...",
+                "name": "Cycle King Bedford",
+                "phone": "01234 351525",
+                "storeid": "01"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.4744,
+                    52.1393
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "category": "bikeshop",
+                "hours": "9am - 5pm",
+                "description": "A hub for cyclists of all abilities in and around Bedford. Bike Shop, Repair Workshop, Cafe and Performance Centre...",
+                "name": "Flamme Rouge Cycles",
+                "phone": "01234 266204",
+                "storeid": "02"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.4603,
+                    52.1370
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "category": "bikeshop",
+                "hours": "9am - 6pm",
+                "description": "We aim to be a one-stop shop for all your cycling needs. All styles of Giant, Specialized, Cube and Brompton stocked, everything from kids ...",
+                "name": "Transition Cycles",
+                "phone": "01234 351154",
+                "storeid": "03"
+            }
+        },
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.4922,
+                    52.0063
+                ]
+            },
+            "type": "Feature",
+            "properties": {
+                "category": "bikeshop",
+                "hours": "9.30am - 4.30pm",
+                "description": "The mission of Cycleworx is to bring good quality and affordable bikes to the local community, for all ages and uses. Whether you're serious about Mountain ...",
+                "name": "Cycleworx Flitwick",
+                "phone": "01525 721599",
+                "storeid": "04"
+            }
+        }
+
+
+    ]
+}
