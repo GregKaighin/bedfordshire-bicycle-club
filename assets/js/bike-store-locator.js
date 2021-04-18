@@ -60,8 +60,8 @@
          google.maps.event.addListener(marker, 'click', () => {
              let request = {
                  placeId: place.place_id,
-                 fields: ['name', 'formatted_address', 'geometry', 'rating',
-                     'website', 'photos'
+                 fields: ['name', 'formatted_address', 'formatted_phone_number', 'geometry', 'rating',
+                     'website'
                  ]
              };
 
@@ -87,14 +87,16 @@
          if (placeResult.rating) rating = placeResult.rating;
          let formatted_address = "Not available";
          if (placeResult.formatted_address) formatted_address = placeResult.formatted_address;
+         let formatted_phone_number = "Not available";
+         if (placeResult.formatted_phone_number) formatted_phone_number = placeResult.formatted_phone_number;
          let website = "Not available";
          if (placeResult.website) website = placeResult.website;
-         placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}</strong><br>Address: ${formatted_address} '<div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;">'+
+
+         placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}<br>Address: ${formatted_address}<br>Phone: ${formatted_phone_number}'<div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;">'
       '<a href="'+place.url+'" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;"> ${website} </a></div>'</div>`);
          placeInfowindow.open(marker.map, marker);
          currentInfoWindow.close();
          currentInfoWindow = placeInfowindow;
-         showPanel(placeResult);
      } else {
          console.log('showDetails failed: ' + status);
      }
