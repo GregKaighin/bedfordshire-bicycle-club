@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Bedfordshire Biking</title>
+    <title>Bedfordshire Biking | Bike Store Locator</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <!-- CSS -->
@@ -39,46 +39,14 @@
 
 <body>
 
-    <div class="jumbotron">
-        <div class="container-fluid">
-            <h1>Route Planner</h1>
-            <ul>
-                <li>Enter a starting place and a destination below then press the "Plot Route <i
-                        class='fas fa-map-signs'></i>" button.</li>
-                <li>Routes shown will be suitable for bicycling, making use of dedicated bike lanes and cycle paths
-                    (indicated with green lines on the map) where possible.</li>
-                <li>Always use common sense when cycling on public roads.</li>
-            </ul>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="from" class="col-xs-2 control-label direction-input"><i
-                            class="far fa-dot-circle"></i></label>
-                    <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Starting place" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="to" class="col-xs-2 control-label direction-input"><i
-                            class="fas fa-map-marker-alt"></i></label>
-                    <div class="col-xs-4">
-                        <input type="text" id="to" placeholder="Destination" class="form-control">
-                    </div>
-                </div>
-            </form>
-            <div class="col-xs-offset-2 col-xs-10 text-center">
-                <button class="btn btn-info" onclick="calcRoute();">Get Route <i class="fas fa-map-signs"></i></button>
-                <button class="btn btn-info" id="bicycleLayerToggle">Toggle Bicycle Layer</button>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div id="googleMap">
-            </div>
-            <div id="output">
-            </div>
-        </div>
+    <div id="map">
     </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/bike-store-locator.js"></script>
     <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places">
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places&callback=initMap">
     </script>
     <!-- Enables drawing of the bicycle layer on the map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -91,8 +59,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
     </script>
-    <!-- JavaScript -->
-    <script src="assets/js/maps.js"></script>
+
 
 </body>
 
