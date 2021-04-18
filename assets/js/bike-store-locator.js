@@ -34,7 +34,6 @@ function getNearbyPlaces(position) {
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, nearbyCallback);
 }
-
 // Handle the results of the Nearby Search
 function nearbyCallback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -50,7 +49,6 @@ function createMarkers(places) {
             map: map,
             title: place.name
         });
-
         // Add click listener to each marker
         google.maps.event.addListener(marker, 'click', () => {
             let request = {
@@ -65,11 +63,9 @@ function createMarkers(places) {
                 showDetails(placeResult, marker, status)
             });
         });
-
         // Adjust the map bounds to include the location of this marker
         bounds.extend(place.geometry.location);
     });
-
     /* When all the markers have been placed, adjust the bounds of the map to
      * show all the markers within the visible area. */
     map.fitBounds(bounds);
@@ -87,8 +83,7 @@ function showDetails(placeResult, marker, status) {
         if (placeResult.formatted_phone_number) formatted_phone_number = placeResult.formatted_phone_number;
         let website = "Not available";
         if (placeResult.website) website = placeResult.website;
-        placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}<br>Address: ${formatted_address}<br>Phone: ${formatted_phone_number}'<div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;">'
-      '<a href="'+place.url+'" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;"> ${website} </a></div>'</div>`);
+        placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}<br>Address: ${formatted_address}<br>Phone: ${formatted_phone_number} <div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;"><a href="${website}" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;"> ${website} </a></div>'</div>`);
         placeInfowindow.open(marker.map, marker);
         currentInfoWindow.close();
         currentInfoWindow = placeInfowindow;
