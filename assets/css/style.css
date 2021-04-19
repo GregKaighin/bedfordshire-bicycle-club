@@ -3,6 +3,7 @@
 body {
     color: #5bc0de;
     font-family: "Poppins", sans-serif;
+    padding-top: 128px;
 }
 
 .jumbotron {
@@ -93,4 +94,12 @@ p {
 a {
     text-decoration: none;
     color: cadetblue;
+}
+
+#legend {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid #000;
 }

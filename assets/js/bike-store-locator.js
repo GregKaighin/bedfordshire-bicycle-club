@@ -14,7 +14,7 @@ function initMap() {
         lat: 52.02973,
         lng: -0.45303
     };
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('googleMap'), {
         center: pos,
         zoom: 10
     });
@@ -57,6 +57,7 @@ function createMarkers(places) {
                     'name', 'formatted_address', 'formatted_phone_number', 'geometry', 'rating',
                     'website'
                 ]
+
             };
             // Fetch the details of a place when the user clicks on a marker.
             service.getDetails(request, (placeResult, status) => {

@@ -26,14 +26,22 @@ function toggleBicycleLayer() {
         //traffic layer is enabled.. disable it
         bicycleLayer.setMap(null);
     }
+
 }
 
 // Create a function to enable toggling of the bicycle layer by clicking a button
 function init() {
     bicycleLayer = new google.maps.BicyclingLayer();
     google.maps.event.addDomListener(document.getElementById('bicycleLayerToggle'), 'click', toggleBicycleLayer);
+
+    function bicycleLayerToggle(legend) {
+        var legend = document.getElementById(legend);
+        if (legend.style.display == 'block') legend.style.display = 'none';
+        else legend.style.display = 'block';
+    }
 }
 google.maps.event.addDomListener(window, 'load', init);
+
 
 //Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();
@@ -94,73 +102,3 @@ var searchBox2 = new google.maps.places.SearchBox(input2);
 map.addListener("bounds_changed", () => {
     searchBox2.setBounds(map.getBounds());
 });
-/*
-// Load the bikeshops GeoJSON onto the map
-function toggleBikeShops(toggle) {
-    map.data.loadGeoJson('assets/js/bikeshops.json', {
-        idPropertyName: 'storeid'
-    });
-}
-
-// Define the bikeshop icon and put on the map at correct size
-map.data.setStyle((feature) => {
-    return {
-        icon: {
-            url: `assets/img/icons/icon_${feature.getProperty('category')}.png`,
-            scaledSize: new google.maps.Size(36, 36),
-        },
-    };
-});
-
-// Show the bikeshop info when its icon is clicked
-const infoWindow = new google.maps.InfoWindow();
-map.data.addListener('click', (event) => {
-    const name = event.feature.getProperty('name');
-    const description = event.feature.getProperty('description');
-    const hours = event.feature.getProperty('hours');
-    const phone = event.feature.getProperty('phone');
-    const position = event.feature.getGeometry().get();
-    const content = `
-      <h2>${name}</h2><p>${description}</p>
-      <p><b>Open:</b> ${hours}<br/><b>Phone:</b> ${phone}</p>
-    `;
-
-    infoWindow.setContent(content);
-    infoWindow.setPosition(position);
-    infoWindow.setOptions({
-        pixelOffset: new google.maps.Size(0, -30)
-    });
-    infoWindow.open(map);
-});
-*/
-
-
-
-
-
-/* let service;
-let infowindow;
-const apiRequest = {
-    query: "Bicycle Store",
-    fields: ["name", "geometry"],
-};
-service = new google.maps.places.PlacesService(map);
-service.findPlaceFromQuery(apiRequest, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-        for (let i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-        };
-    }
-});
-
-function createMarker(place) {
-    if (!place.geometry || !place.geometry.location) return;
-    marker = new google.maps.Marker({
-        map,
-        position: place.geometry.location,
-    });
-    google.maps.event.addListener(marker, "click", () => {
-        infowindow.setContent(place.name || "");
-        infowindow.open(map);
-    });
-} */
