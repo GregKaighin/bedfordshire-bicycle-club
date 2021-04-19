@@ -26,7 +26,6 @@ function toggleBicycleLayer() {
         //traffic layer is enabled.. disable it
         bicycleLayer.setMap(null);
     }
-
 }
 
 // Create a function to enable toggling of the bicycle layer by clicking a button
