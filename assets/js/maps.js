@@ -12,7 +12,7 @@ const mapOtions = {
 };
 
 // Create the map
-var map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
+var map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
 
 // Add the Bicycle Layer
 var bicycleLayer;
@@ -35,7 +35,7 @@ function init() {
 }
 google.maps.event.addDomListener(window, 'load', init);
 
-//Create a DirectionsService object to use the route method and get a result for the request
+// Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
@@ -48,8 +48,8 @@ directionsDisplay.setMap(map);
 function calcRoute() {
     // Create a route request
     var request = {
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
+        origin: document.getElementById('from').value,
+        destination: document.getElementById('to').value,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
@@ -59,7 +59,7 @@ function calcRoute() {
 
             // Get the route distance and time and pass to the #output div
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Cycling distance <i class='fas fa-biking'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-stopwatch'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
 
             // Display the route
             directionsDisplay.setDirections(result);
@@ -72,25 +72,25 @@ function calcRoute() {
             map.setCenter(bedfordshire);
 
             // Show an error message if the route is not possible
-            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> This route is not possible on a bicycle!</div>";
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
         }
     });
 }
 
 // Create searchBox1 object for the starting place
-var input1 = document.getElementById("from");
+var input1 = document.getElementById('from');
 var searchBox1 = new google.maps.places.SearchBox(input1);
 
 // Bias the SearchBox1 results towards current map's viewport
-map.addListener("bounds_changed", () => {
+map.addListener('bounds_changed', () => {
     searchBox1.setBounds(map.getBounds());
 });
 
 // Create searchBox2 object for the destination
-var input2 = document.getElementById("to");
+var input2 = document.getElementById('to');
 var searchBox2 = new google.maps.places.SearchBox(input2);
 
 // Bias the SearchBox2 results towards current map's viewport
-map.addListener("bounds_changed", () => {
+map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });

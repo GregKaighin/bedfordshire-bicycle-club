@@ -1,9 +1,9 @@
 function sendMail(contactForm) {
-    emailjs.send("default_service", "bedsbikeclub", {
-            "from_name": contactForm.name.value,
-            "from_email": contactForm.email.value,
-            "phone": contactForm.phone.value,
-            "message": contactForm.message.value
+    emailjs.send('default_service', 'bedsbikeclub', {
+            'from_name': contactForm.name.value,
+            'from_email': contactForm.email.value,
+            'phone': contactForm.phone.value,
+            'message': contactForm.message.value
         })
         .then(
             function (response) {

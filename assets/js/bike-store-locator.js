@@ -76,16 +76,16 @@ function createMarkers(places) {
 function showDetails(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         let placeInfowindow = new google.maps.InfoWindow();
-        let rating = "None";
+        let rating = 'None';
         if (placeResult.rating) rating = placeResult.rating;
-        let formatted_address = "Not available";
+        let formatted_address = 'Not available';
         if (placeResult.formatted_address) formatted_address = placeResult.formatted_address;
-        let formatted_phone_number = "Not available";
+        let formatted_phone_number = 'Not available';
         if (placeResult.formatted_phone_number) formatted_phone_number = placeResult.formatted_phone_number;
-        let website = "Not available";
+        let website = 'Not available';
         if (placeResult.website) website = placeResult.website;
-        placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}<br>Address: ${formatted_address}<br>Phone: ${formatted_phone_number} <div style="border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;">
-<a href="${website}" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;"> ${website} </a></div>'</div>`);
+        placeInfowindow.setContent(`<div><strong>${placeResult.name}</strong><br>Rating: ${rating}<br>Address: ${formatted_address}<br>Phone: ${formatted_phone_number} <div style='border-top: 1px solid rgb(204, 204, 204); margin-top: 9px; padding: 6px; font-size: 13px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-family: Roboto, Arial;'>
+<a href='${website}' target='_blank' rel='noopener' style='cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;'> ${website} </a></div></div>`);
         placeInfowindow.open(marker.map, marker);
         currentInfoWindow.close();
         currentInfoWindow = placeInfowindow;
