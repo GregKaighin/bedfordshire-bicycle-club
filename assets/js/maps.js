@@ -32,15 +32,8 @@ function toggleBicycleLayer() {
 function init() {
     bicycleLayer = new google.maps.BicyclingLayer();
     google.maps.event.addDomListener(document.getElementById('bicycleLayerToggle'), 'click', toggleBicycleLayer);
-
-    function bicycleLayerToggle(legend) {
-        var legend = document.getElementById(legend);
-        if (legend.style.display == 'block') legend.style.display = 'none';
-        else legend.style.display = 'block';
-    }
 }
 google.maps.event.addDomListener(window, 'load', init);
-
 
 //Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();

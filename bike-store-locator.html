@@ -25,16 +25,15 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html"><i class="fas fa-biking"></i> Plan a
-                            Ride</a>
+                        <a class="nav-link js-scroll-trigger" href="index.html"><i class="fas fa-biking"></i> Routes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="bike-store-locator.html"><i
-                                class="fas fa-store-alt"></i> Bedfordshire Bike Shops</a>
+                                class="fas fa-store-alt"></i> Shops</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="contact.html"><i class="far fa-comment"></i>
-                            Get in Touch</a>
+                            Contact</a>
                     </li>
                 </ul>
             </div>
@@ -43,10 +42,27 @@
 </header>
 
 <body>
-
-    <div id="googleMap">
+    <div class="container-fluid">
+        <h1 id="page-heading">Bike Shops in Bedfordshire</h1>
     </div>
+    <div class="container-fluid">
+        <div id="map-container">
+            <div id="googleMap">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!-- Social-links -->
+        <div class="social-links">
+            <a class="button btn-xxl" href="https://www.linkedin.com/in/gregorykaighin/" target="_blank" rel="noopener"
+                aria-label="LinkedIn link">
+                <i class="linked-in-icon fab fa-linkedin"></i></a>
+            <a class="button btn-xxl" href="https://www.youtube.com" target="_blank" rel="noopener"
+                aria-label="YouTube link">
+                <i class="youtube-icon fab fa-youtube"></i></a>
+        </div>
 
+    </footer>
     <!-- JavaScript -->
     <script src="assets/js/bike-store-locator.js"></script>
     <!-- Google Maps API -->
