@@ -1,4 +1,4 @@
-let pos;
+let bedfordshire;
 let map;
 let bounds;
 let infoWindow;
@@ -10,18 +10,22 @@ function initMap() {
     bounds = new google.maps.LatLngBounds();
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
-    let pos = {
+    let bedfordshire = {
         lat: 52.02973,
         lng: -0.45303
     };
+    // Create the map, centered on Bedfordshire
     map = new google.maps.Map(document.getElementById('googleMap'), {
-        center: pos,
-        zoom: 10
+        center: bedfordshire,
+        zoom: 10,
+        // Disable default UI, add the zoom control
+        disableDefaultUI: true,
+        zoomControl: true
     });
-    bounds.extend(pos);
-    map.setCenter(pos);
+    bounds.extend(bedfordshire);
+    map.setCenter(bedfordshire);
     // Call Places Nearby Search on user's location
-    getNearbyPlaces(pos);
+    getNearbyPlaces(bedfordshire);
 }
 
 // Perform a Places Nearby Search Request

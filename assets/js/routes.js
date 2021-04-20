@@ -8,7 +8,9 @@ const bedfordshire = {
 const mapOtions = {
     center: bedfordshire,
     zoom: 10,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    zoomControl: true
 };
 
 // Create the map
@@ -20,10 +22,10 @@ var bicycleLayer;
 // Enable/disable the bicycle layer
 function toggleBicycleLayer() {
     if (bicycleLayer.getMap() == null) {
-        //traffic layer is disabled.. enable it
+        // Bicycle layer is disabled.. enable it
         bicycleLayer.setMap(map);
     } else {
-        //traffic layer is enabled.. disable it
+        // Bicycle layer is enabled.. disable it
         bicycleLayer.setMap(null);
     }
 }
