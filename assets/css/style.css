@@ -164,6 +164,9 @@ a {
     border-color: #000;
     background-color: #daedf3;
     letter-spacing: 1px;
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+    transition: all .4s ease;
 }
 
 .contact-heading {
