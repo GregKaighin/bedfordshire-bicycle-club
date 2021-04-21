@@ -9,44 +9,6 @@ body {
     padding: 0;
 }
 
-.bg-light {
-    background-color: #fff;
-    background: linear-gradient(to bottom right, #fff, #fff);
-    opacity: 1;
-}
-
-#navbar-primary.navbar-default {
-    background: transparent;
-    border: none;
-}
-
-#navbar-primary.navbar-default .navbar-nav {
-    width: 100%;
-    text-align: center;
-}
-
-#navbar-primary.navbar-default .navbar-nav>li {
-    display: inline-block;
-    float: none;
-}
-
-#navbar-primary.navbar-default .navbar-nav>li>a {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-/*------------------------------------Navbar Colours*/
-.navbar-light {
-    color: #5bc0de;
-    background-color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.bg-light {
-    background-color: #fff;
-}
-
 #page-heading {
     text-align: center;
     text-transform: uppercase;
@@ -67,13 +29,13 @@ body {
     font-size: 0.8em;
 }
 
+/* Style the map */
 #googleMap {
     width: 85vw;
     height: 50vh;
     margin: 12px auto;
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
     box-shadow: 10px 10px rgba(0, 0, 0, .15);
-    transition: all .4s ease;
 }
 
 .gmnoprint a,
@@ -81,20 +43,7 @@ body {
     color: gray;
 }
 
-.gmnoprint div {
-    color: gray !important;
-}
-
-#GMapsID div div a div img {
-    color: gray;
-}
-
-#tv:hover {
-    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
-    box-shadow: 5px 5px rgba(0, 0, 0, .25);
-}
-
-
+/* Reduce the map width on larger screens */
 @media screen and (min-width: 630px) {
     #googleMap {
         max-width: 600px;
@@ -130,7 +79,7 @@ a {
     color: cadetblue;
 }
 
-/*------------------------------------Footer Social Links*/
+/* Footer Social Links*/
 
 .social-links {
     margin-top: 24px;
@@ -148,7 +97,7 @@ a {
     color: #ff0000;
 }
 
-/*---------------------------------Enquiries Form*/
+/* Forms */
 .enquiries-heading {
     font-size: 150%;
     font-weight: 300;
@@ -165,8 +114,21 @@ a {
     background-color: #daedf3;
     letter-spacing: 1px;
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    box-shadow: 10px 10px rgba(0, 0, 0, .15);
-    transition: all .4s ease;
+    box-shadow: 5px 5px rgba(0, 0, 0, .15);
+}
+
+/* Form Modal*/
+.modal-content {
+    background-color: #daedf3;
+    border: solid 1px #000;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-footer {
+    border: none;
 }
 
 .contact-heading {
@@ -180,18 +142,4 @@ a {
     padding-top: 10px;
     margin: 0 auto;
     max-width: 67%;
-}
-
-/*------------------------------------Enquiries Form Modal*/
-.modal-content {
-    background-color: #daedf3;
-    border: solid 1px black;
-}
-
-.modal-header {
-    border: none;
-}
-
-.modal-footer {
-    border: none;
 }
