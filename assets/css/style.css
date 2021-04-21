@@ -18,10 +18,10 @@ body {
 .bg-light {
     background-color: #fff;
     background: linear-gradient(to bottom right, #fff, #fff);
-    opacity: 0.98;
+    opacity: 1;
 }
 
-/*------------------------------------Navbar Brand and Link Colours*/
+/* Navbar Brand and Link Colours */
 .logo {
     font-size: 140%;
 }
@@ -31,39 +31,23 @@ body {
 }
 
 .navbar-light .navbar-brand {
-    color: #000;
+    color: #5bc0de;
 }
 
 .navbar-light .navbar-brand:hover {
-    color: #000;
+    color: #5bc0de;
+    ;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #000;
+    color: #5bc0de;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #000;
+    color: #5bc0de;
 }
 
-/*------------------------------------Font Awesome Icon Colours
-.container .fa-home {
-    color: #8b0000
-}
-
-.container .fa-headphones-alt {
-    color: #006400;
-}
-
-.container .fa-book-open {
-    color: #000080;
-}
-
-.container .fa-comment {
-    color: #ffa500;
-}
-
-/*------------------------------------Navbar Toggler Colours and Hover Underscore*/
+/* Navbar Toggler Colours and Hover Underscore*/
 .navbar-light .navbar-toggler {
     border-color: #000;
     background: linear-gradient(to bottom right, rgba(255, 255, 250, 0.25), rgb(209, 209, 209));
@@ -78,20 +62,50 @@ body {
     background: #dda5a1;
 }
 
+
+/* Push the content below the navbar */
 #content {
     margin-top: 140px;
+}
+
+.jumbo-hero {
+    background-color: #fffff0;
+    background: url("../img/photos/bike-hero.png");
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 180px;
 }
 
 #page-heading {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5em;
-    font-weight: bold;
 }
 
 #page-heading ul {
     text-align: left;
     font-size: 0.8em;
+}
+
+.about-us {
+    text-align: center;
+}
+
+.about-us .about-us-heading {
+    margin-top: 36px;
+    font-size: 150%;
+    font-weight: 300;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-us p {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 #from {
@@ -107,13 +121,9 @@ body {
     width: 85vw;
     height: 50vh;
     margin: 12px auto;
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    border: 1px solid black;
+    border-radius: 2% 2% 2% 2%;
     box-shadow: 10px 10px rgba(0, 0, 0, .15);
-}
-
-.gmnoprint a,
-.gmnoprint span {
-    color: gray;
 }
 
 /* Reduce the map width on larger screens */
@@ -152,8 +162,7 @@ a {
     color: cadetblue;
 }
 
-/* Footer Social Links*/
-
+/* Footer Social Links */
 .social-links {
     margin-top: 24px;
     font-size: 240%;
@@ -186,11 +195,11 @@ a {
     border-color: #000;
     background-color: #daedf3;
     letter-spacing: 1px;
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    border-radius: 2% 2% 2% 2%;
     box-shadow: 5px 5px rgba(0, 0, 0, .15);
 }
 
-/* Form Modal*/
+/* Form Modal */
 .modal-content {
     background-color: #daedf3;
     border: solid 1px #000;
