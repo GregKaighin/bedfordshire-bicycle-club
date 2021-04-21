@@ -69,10 +69,10 @@ body {
 }
 
 .jumbo-hero {
-    background-color: #fffff0;
-    background: url("../img/photos/bike-hero.png");
-    background-repeat: repeat-x;
+    background-color: #fff;
+    background: url("../img/photos/hero-bikes.png");
     background-position: center;
+    background-repeat: repeat-x;
     height: 180px;
 }
 
