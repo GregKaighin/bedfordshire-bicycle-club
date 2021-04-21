@@ -9,9 +9,10 @@ body {
     padding: 0;
 }
 
-header[role="banner"] #logo-main {
-    display: block;
-    margin: 20px auto;
+.bg-light {
+    background-color: #fff;
+    background: linear-gradient(to bottom right, #fff, #fff);
+    opacity: 1;
 }
 
 #navbar-primary.navbar-default {
@@ -70,6 +71,34 @@ header[role="banner"] #logo-main {
     width: 85vw;
     height: 50vh;
     margin: 12px auto;
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+    transition: all .4s ease;
+}
+
+.gmnoprint a,
+.gmnoprint span {
+    color: gray;
+}
+
+.gmnoprint div {
+    color: gray !important;
+}
+
+#GMapsID div div a div img {
+    color: gray;
+}
+
+#tv:hover {
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+    box-shadow: 5px 5px rgba(0, 0, 0, .25);
+}
+
+
+@media screen and (min-width: 630px) {
+    #googleMap {
+        max-width: 600px;
+    }
 }
 
 .alert-info {
@@ -101,14 +130,6 @@ a {
     color: cadetblue;
 }
 
-#legend {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    padding: 10px;
-    margin: 10px;
-    border: 3px solid #000;
-}
-
 /*------------------------------------Footer Social Links*/
 
 .social-links {
@@ -132,7 +153,7 @@ a {
     font-size: 150%;
     font-weight: 300;
     margin-top: 24px;
-    color: #221d17;
+    color: #000;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -140,15 +161,15 @@ a {
 
 .form-control {
     margin-bottom: 2px;
-    border-color: #221d17;
-    background-color: lightyellow;
+    border-color: #000;
+    background-color: #daedf3;
     letter-spacing: 1px;
 }
 
 .contact-heading {
     margin-top: 25px;
     margin-bottom: 20px;
-    color: #221d17;
+    color: #000;
     letter-spacing: 2px;
 }
 
@@ -160,8 +181,8 @@ a {
 
 /*------------------------------------Enquiries Form Modal*/
 .modal-content {
-    background-color: #fffff0;
-    border: solid 1px #221d17;
+    background-color: #daedf3;
+    border: solid 1px black;
 }
 
 .modal-header {
