@@ -9,6 +9,79 @@ body {
     padding: 0;
 }
 
+.navbar-light {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.bg-light {
+    background-color: #fff;
+    background: linear-gradient(to bottom right, #fff, #fff);
+    opacity: 0.98;
+}
+
+/*------------------------------------Navbar Brand and Link Colours*/
+.logo {
+    font-size: 140%;
+}
+
+.logo-name {
+    font-size: 100%;
+}
+
+.navbar-light .navbar-brand {
+    color: #000;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #000;
+}
+
+/*------------------------------------Font Awesome Icon Colours
+.container .fa-home {
+    color: #8b0000
+}
+
+.container .fa-headphones-alt {
+    color: #006400;
+}
+
+.container .fa-book-open {
+    color: #000080;
+}
+
+.container .fa-comment {
+    color: #ffa500;
+}
+
+/*------------------------------------Navbar Toggler Colours and Hover Underscore*/
+.navbar-light .navbar-toggler {
+    border-color: #000;
+    background: linear-gradient(to bottom right, rgba(255, 255, 250, 0.25), rgb(209, 209, 209));
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.navbar-light .navbar-toggler:active {
+    background: #dda5a1;
+}
+
+#content {
+    margin-top: 140px;
+}
+
 #page-heading {
     text-align: center;
     text-transform: uppercase;
