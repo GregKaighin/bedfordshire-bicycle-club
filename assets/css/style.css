@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 body {
-    color: #5bc0de;
+    color: darkslategrey;
     background-color: palegoldenrod;
     font-family: "Poppins", sans-serif;
     padding-top: 128px;
@@ -11,44 +11,42 @@ body {
     padding: 0;
 }
 
-.navbar-light {
+.navbar {
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.bg-light {
-    background-color: #fff;
-    background: linear-gradient(to bottom right, #fff, #fff);
-    opacity: 1;
+.navbar-custom {
+    background-color: #2f4f4f;
 }
 
 /* Navbar Brand and Link Colours */
 .logo {
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Mali', cursive;
     font-size: 110%;
 }
 
 .logo-name {
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Mali', cursive;
     font-size: 100%;
 }
 
 .navbar-light .navbar-brand {
-    color: #5bc0de;
+    color: #eee8aa;
 }
 
 .navbar-light .navbar-brand:hover {
-    color: #5bc0de;
+    color: #eee8aa;
     ;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #5bc0de;
+    color: #eee8aa;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #5bc0de;
+    color: #eee8aa;
 }
 
 /* Navbar Toggler Colours and Hover Underscore*/
@@ -82,6 +80,7 @@ body {
 }
 
 .heading {
+    font-family: 'Mali', cursive;
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5em;
@@ -100,17 +99,25 @@ body {
 }
 
 .card {
-    /* Credit: The below box-shadow was taken from: https://getcssscan.com/css-box-shadow-examples */
+    background-color: palegoldenrod;
     -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     margin-bottom: 20px;
 }
 
-/* font-size of each card paragraph */
-.card-text {
-    font-size: 20px;
+.card-title {
+    font-family: 'Mali', cursive;
+    text-transform: uppercase;
 }
 
+/* font-size of each card paragraph */
+.card-text {
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: #2f4f4f;
+}
+
+/* Form placeholder text */
 #from {
     font-size: 0.8em;
 }
@@ -126,7 +133,8 @@ body {
     margin: 12px auto;
     border: 1px solid black;
     border-radius: 2% 2% 2% 2%;
-    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .alert-info {
@@ -147,16 +155,16 @@ p {
     font-family: 'open sans', arial, sans-serif;
     padding-left: 18px;
     padding-right: 18px;
-    color: darkred;
+    text-transform: inherit;
 }
 
 .details {
-    color: darkslategrey;
+    color: #2f4f4f;
 }
 
 a {
     text-decoration: none;
-    color: cadetblue;
+    color: #5f9ea0;
 }
 
 /* Footer Social Links */
@@ -179,7 +187,6 @@ a {
 /* Forms */
 .enquiries-heading {
     font-size: 150%;
-    font-weight: 300;
     margin-top: 24px;
     color: #000;
     text-align: center;
@@ -190,10 +197,11 @@ a {
 .form-control {
     margin-bottom: 2px;
     border-color: #000;
-    background-color: #daedf3;
+    background-color: #efefef;
     letter-spacing: 1px;
     border-radius: 2% 2% 2% 2%;
-    box-shadow: 5px 5px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.48) 0px 2px 16px 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.48) 0px 2px 16px 0px;
 }
 
 /* Form Modal */
