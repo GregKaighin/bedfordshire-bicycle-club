@@ -3,6 +3,7 @@
 
 body {
     color: #5bc0de;
+    background-color: palegoldenrod;
     font-family: "Poppins", sans-serif;
     padding-top: 128px;
     height: 100%;
@@ -71,6 +72,7 @@ body {
     margin-top: 140px;
 }
 
+/* Position and size the hero image */
 .jumbo-hero {
     background-color: #fff;
     background: url("../img/photos/hero-bikes.png");
@@ -79,13 +81,13 @@ body {
     height: 180px;
 }
 
-#page-heading {
+.heading {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5em;
 }
 
-#page-heading ul {
+.heading ul {
     text-align: left;
     font-size: 0.8em;
 }
@@ -95,6 +97,18 @@ body {
     font-weight: 300;
     color: darkslategrey;
     letter-spacing: 1px;
+}
+
+.card {
+    /* Credit: The below box-shadow was taken from: https://getcssscan.com/css-box-shadow-examples */
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 20px;
+}
+
+/* font-size of each card paragraph */
+.card-text {
+    font-size: 20px;
 }
 
 #from {
@@ -115,13 +129,6 @@ body {
     box-shadow: 10px 10px rgba(0, 0, 0, .15);
 }
 
-/* Reduce the map width on larger screens */
-@media screen and (min-width: 630px) {
-    #googleMap {
-        max-width: 600px;
-    }
-}
-
 .alert-info {
     text-align: center;
     font-size: 0.8em;
@@ -140,6 +147,7 @@ p {
     font-family: 'open sans', arial, sans-serif;
     padding-left: 18px;
     padding-right: 18px;
+    color: darkred;
 }
 
 .details {
@@ -213,4 +221,11 @@ a {
     padding-top: 10px;
     margin: 0 auto;
     max-width: 67%;
+}
+
+/* Reduce the map width on larger screens */
+@media screen and (min-width: 630px) {
+    #googleMap {
+        max-width: 600px;
+    }
 }
