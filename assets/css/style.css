@@ -178,14 +178,24 @@ a {
     text-align: center;
 }
 
-.linkedin-icon {
-    margin-right: 72px;
-    color: #0e76a8;
+.whatsapp-icon {
+    color: #25D366;
+}
+
+.facebook-icon {
+    color: #4267B2;
 }
 
 .youtube-icon {
-    margin-left: 72px;
     color: #ff0000;
+}
+
+.instagram-icon {
+    color: #8a3ab9;
+}
+
+.pinterest-icon {
+    color: #E60023;
 }
 
 /* Forms */
