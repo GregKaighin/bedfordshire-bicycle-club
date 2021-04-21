@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -32,20 +32,18 @@ body {
     font-size: 100%;
 }
 
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: cadetblue;
+}
+
 .navbar-light .navbar-brand {
     color: #eee8aa;
 }
 
-.navbar-light .navbar-brand:hover {
-    color: #eee8aa;
-    ;
-}
-
 .navbar-light .navbar-nav .nav-link {
-    color: #eee8aa;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
     color: #eee8aa;
 }
 
@@ -108,11 +106,12 @@ body {
 .card-title {
     font-family: 'Mali', cursive;
     text-transform: uppercase;
+    font-size: 1.2em;
 }
 
 /* font-size of each card paragraph */
 .card-text {
-    font-size: 1.5em;
+    font-size: 1em;
     text-transform: capitalize;
     color: #2f4f4f;
 }
@@ -138,8 +137,13 @@ body {
 }
 
 .alert-info {
+    margin: auto;
+    max-width: fit-content;
     text-align: center;
     font-size: 0.8em;
+    background-color: #efefef;
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 /* Styling for place details */
