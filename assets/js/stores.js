@@ -1,3 +1,4 @@
+// Create initial variables
 let bedfordshire;
 let map;
 let bounds;
@@ -5,6 +6,7 @@ let infoWindow;
 let currentInfoWindow;
 let service;
 
+// Custom map styling
 var stylesArray = [{
         "featureType": "water",
         "stylers": [{

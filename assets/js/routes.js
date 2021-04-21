@@ -4,6 +4,7 @@ const bedfordshire = {
     lng: -0.45303
 };
 
+// Custom map styling
 var stylesArray = [{
         "featureType": "water",
         "stylers": [{
