@@ -11,17 +11,19 @@ body {
     padding: 0;
 }
 
+/* Style the navbar */
 .navbar {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+/* Navbar custom background colour */
 .navbar-custom {
     background-color: #2f4f4f;
 }
 
-/* Navbar Brand and Link Colours */
+/* Navbar logo font */
 .logo {
     font-family: 'Mali', cursive;
     font-size: 110%;
@@ -32,6 +34,7 @@ body {
     font-size: 100%;
 }
 
+/* Override Bootstrap navbar-light default colours for the nav-links */
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
@@ -40,6 +43,10 @@ body {
 }
 
 .navbar-light .navbar-brand {
+    color: #eee8aa;
+}
+
+.navbar-light .navbar-brand:hover {
     color: #eee8aa;
 }
 
@@ -52,7 +59,7 @@ body {
     border-bottom: 1px solid #5f9ea0;
 }
 
-/* Navbar Toggler Colours and Hover Underscore*/
+/* Override Bootsrap navbar-light navbar-toggler default colours and hover underscore*/
 .navbar-light .navbar-toggler {
     border-color: #000;
     background: linear-gradient(to bottom right, rgba(255, 255, 250, 0.25), rgb(209, 209, 209));
@@ -62,12 +69,7 @@ body {
     background: #dda5a1;
 }
 
-
-
-
-
-
-/* Push the content below the navbar */
+/* Push the main page content below the navbar */
 #content {
     margin-top: 140px;
 }
@@ -81,6 +83,7 @@ body {
     height: 180px;
 }
 
+/* Style the headings */
 .heading {
     font-family: 'Mali', cursive;
     text-align: center;
@@ -88,11 +91,7 @@ body {
     font-size: 1.5em;
 }
 
-.heading ul {
-    text-align: left;
-    font-size: 0.8em;
-}
-
+/* Style the 'about-us' Text */
 #about-us-text {
     margin-top: 36px;
     font-weight: 300;
@@ -100,6 +99,7 @@ body {
     letter-spacing: 1px;
 }
 
+/* Colour the page-links in the about us text to stand out */
 .page-links {
     text-decoration: none;
     color: #5f9ea0;
@@ -110,6 +110,7 @@ a:hover {
     color: #5f9ea0;
 }
 
+/* Style the Bootstrap cards */
 .card {
     background-color: #eee8aa;
     -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -123,7 +124,6 @@ a:hover {
     font-size: 1.2em;
 }
 
-/* font-size of each card paragraph */
 .card-text {
     font-size: 1em;
     text-transform: capitalize;
@@ -139,7 +139,7 @@ a:hover {
     font-size: 0.8em;
 }
 
-/* Style the map */
+/* Size the map and apply box-shadow*/
 #googleMap {
     width: 85vw;
     height: 50vh;
@@ -150,6 +150,7 @@ a:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
+/* Style the alert box containing the route details */
 .alert-info {
     margin: auto;
     max-width: fit-content;
@@ -186,11 +187,6 @@ a {
 }
 
 /* Footer Social Links */
-.social-links {
-    margin-top: 24px;
-    font-size: 240%;
-    text-align: center;
-}
 
 .whatsapp-icon {
     color: #25D366;
@@ -212,6 +208,7 @@ a {
     color: #E60023;
 }
 
+/* Footer text */
 h6.footer-heading {
     font-family: 'Mali', cursive;
     text-align: center;
@@ -273,7 +270,7 @@ p.footer-text {
     max-width: 67%;
 }
 
-/* Reduce the map width on larger screens */
+/* Media Query - Reduce the map width on larger screens */
 @media screen and (min-width: 630px) {
     #googleMap {
         max-width: 600px;
