@@ -47,12 +47,11 @@
 </header>
 
 <body>
-
     <div class="container-fluid" id="content">
         <h1 class="heading">Plan a Ride</h1>
         <p id="page-text">Create your own routes with this handy planner. If you come up with a great route, why not
             suggest it to others in our <a href="https://www.whatsapp.com/" class="page-links" target="_blank"
-                rel="noopener">Whatsapp group</a>?</p>
+                rel="noopener">WhatsApp group</a>?</p>
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
             <div class="center-form">
                 <div class="form-group">
@@ -78,6 +77,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container-fluid">
             <div id="map-container">
                 <div id="googleMap">
@@ -85,6 +85,15 @@
             </div>
             <div id="output">
             </div>
+        </div>
+        <p id="page-text">Or try one of these popular routes.</p>
+        <div class="col-xs-offset-2 col-xs-10 text-center">
+            <button class="btn btn-info btn-sm" onclick="prioryMarinaSandy();">Priory Marina to Sandy <i
+                    class="fas fa-map-signs"></i></button>
+            <button class="btn btn-info btn-sm" onclick="prioryMarinaSandy();">Priory Marina to Sandy <i
+                    class="fas fa-map-signs"></i></button>
+            <button class="btn btn-info btn-sm" onclick="prioryMarinaSandy();">Priory Marina to Sandy <i
+                    class="fas fa-map-signs"></i></button>
         </div>
     </div>
     <footer>
@@ -118,7 +127,8 @@
         </div>
     </footer>
     <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&libraries=places">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&callback&libraries=places">
     </script>
     <!-- Enables drawing of the bicycle layer on the map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>

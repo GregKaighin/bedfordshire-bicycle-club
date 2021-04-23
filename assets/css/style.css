@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 body {
-    color: darkslategrey;
-    background-color: palegoldenrod;
+    color: #2f4f4f;
+    background-color: #eee8aa;
     font-family: "Poppins", sans-serif;
     padding-top: 128px;
     height: 100%;
@@ -199,16 +199,12 @@ a {
     color: #4267B2;
 }
 
-.youtube-icon {
-    color: #ff0000;
+.pinterest-icon {
+    color: #E60023;
 }
 
 .instagram-icon {
     color: #8a3ab9;
-}
-
-.pinterest-icon {
-    color: #E60023;
 }
 
 /* Footer text */
