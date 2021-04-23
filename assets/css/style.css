@@ -93,6 +93,9 @@ body {
 
 /* Style the 'about-us' Text */
 #page-text {
+    text-align: center;
+    margin: auto;
+    max-width: 820px;
     margin-top: 36px;
     font-weight: 300;
     color: #2f4f4f;
@@ -126,7 +129,7 @@ a:hover {
 
 .card-text {
     font-size: 1em;
-    text-transform: capitalize;
+    text-transform: none;
     color: #2f4f4f;
 }
 
