@@ -57,7 +57,7 @@ var stylesArray = [{
                 "visibility": "on"
             },
             {
-                "lightness": 33
+                "lightness": 10
             }
         ]
     },
