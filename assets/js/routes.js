@@ -127,7 +127,9 @@ map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 var directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
-var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsDisplay = new google.maps.DirectionsRenderer({
+    suppressBicyclingLayer: true
+});
 
 // Display the directions on the map
 directionsDisplay.setMap(map);
