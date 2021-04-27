@@ -87,27 +87,24 @@ const mapOtions = {
     center: bedfordshire,
     zoom: 10,
     styles: stylesArray,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
     // Disable the default map UI, enable the zoom control
     disableDefaultUI: true,
     zoomControl: true
 };
 
 // Create the map with the bicycle layer enabled
-var map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
-const bikeLayer = new google.maps.BicyclingLayer();
+const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
+var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 // Create variables for custom legend icons 
 const icons = {
     bikeTrails: {
         name: "Bike trails & lanes",
-        scaledSize: new google.maps.Size(50, 50),
         icon: "assets/img/icons/bike trail.png",
     },
     bikeFriendlyRoads: {
         name: "Bike friendly roads",
-        scaledSize: new google.maps.Size(50, 50),
         icon: "assets/img/icons/bike friendly road.png",
     },
 };
@@ -126,7 +123,6 @@ for (const key in icons) {
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
 
-
 // Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();
 
@@ -135,6 +131,7 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 
 // Display the directions on the map
 directionsDisplay.setMap(map);
+
 
 // Define the calcRoute function
 function calcRoute() {
@@ -145,6 +142,7 @@ function calcRoute() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
+
     // Pass the request to the .route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -159,6 +157,7 @@ function calcRoute() {
             // Delete the route
             directionsDisplay.setDirections({
                 routes: []
+
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
@@ -169,46 +168,6 @@ function calcRoute() {
     });
 
 }
-
-function prioryMarinaSandy() {
-    // Create a route request
-    var request = {
-        origin: {
-            lat: 52.131972,
-            lng: -0.434981
-        },
-        destination: {
-            lat: 52.1281,
-            lng: -0.2868
-        },
-        travelMode: google.maps.TravelMode.BICYCLING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
-    // Pass the request to the route method
-    directionsService.route(request, function (result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-
-            // Get the route distance and time and pass to the #output div
-            const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: Priory Marina.<br />To: Sandy.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
-
-            // Display the route
-            directionsDisplay.setDirections(result);
-        } else {
-            // Delete the route
-            directionsDisplay.setDirections({
-                routes: []
-            });
-            // Recenter the map on Bedfordshire
-            map.setCenter(bedfordshire);
-
-            // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
-        }
-    });
-
-}
-
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById('from');
 var searchBox1 = new google.maps.places.SearchBox(input1);
