@@ -99,13 +99,19 @@ bikeLayer.setMap(map);
 
 // Create variables for custom legend icons 
 const icons = {
-    bikeTrails: {
-        name: "Bike trails & lanes",
-        icon: "assets/img/icons/bike trail.png",
+    bikeTrail: {
+        name: "Bike trail",
+        icon: "assets/img/icons/bike-trail.png",
+
     },
-    bikeFriendlyRoads: {
-        name: "Bike friendly roads",
-        icon: "assets/img/icons/bike friendly road.png",
+    bikeLane: {
+        name: "Bike lane",
+        icon: "assets/img/icons/bike-lane.png",
+
+    },
+    bikeFriendlyRoad: {
+        name: "Bike-friendly road",
+        icon: "assets/img/icons/bike-friendly-road.png",
     },
 };
 // Create the legend and place the icons
