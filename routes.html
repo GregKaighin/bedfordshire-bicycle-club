@@ -48,39 +48,37 @@
     <div class="container-fluid" id="content">
         <hr class="page-break">
         <h1 class="heading">Plan a Ride</h1>
-        <p id="page-text">Create your own routes with this handy planner, or try the popular routes below.</p>
+        <p id="page-text">Create your own routes with this handy planner, or try our recommended routes.</p>
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
             <div class="center-form">
-                <div class="form-group">
-                    <label for="from" class="col-xs-2 control-label direction-input"><i
-                            class="far fa-dot-circle"></i></label>
+                <div>
+                    <label for="from" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
                         <input type="text" id="from" placeholder="Starting place" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
+                <div>
                     <label for="waypoint1" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
                         <input type=" text" id="waypoint1" placeholder="Waypoint 1 (optional)" class="form-control"
                             name="waypoints[]">
                     </div>
                 </div>
-                <div class="form-group">
+                <div>
                     <label for="waypoint2" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
                         <input type=" text" id="waypoint2" placeholder="Waypoint 2 (optional)" class="form-control"
                             name="waypoints[]">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="to" class="col-xs-2 control-label direction-input"><i
-                            class="fas fa-map-marker-alt"></i></label>
+                <div>
+                    <label for="to" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
                         <input type="text" id="to" placeholder="Destination" class="form-control">
                     </div>
                 </div>
                 </form>
-                <div class="col-xs-offset-2 col-xs-10 text-center">
+                <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
                     <button class="btn btn-info btn-sm" onclick="calcRoute();">Show Route <i
                             class="fas fa-map-signs"></i></button>
                 </div>

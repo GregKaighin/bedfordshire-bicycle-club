@@ -168,6 +168,10 @@ a:hover {
 }
 
 /* Form placeholder text */
+
+.form-group {
+    margin-bottom: 0;
+}
 #from {
     font-size: 0.8em;
 }
