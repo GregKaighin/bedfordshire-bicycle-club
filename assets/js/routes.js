@@ -4,82 +4,83 @@ const bedfordshire = {
     lng: -0.45303
 };
 
+
 // Custom map styling
 var stylesArray = [{
-        "featureType": "water",
-        "stylers": [{
-                "visibility": "on"
-            },
-            {
-                "color": "#b5cbe4"
-            }
-        ]
+    "featureType": "water",
+    "stylers": [{
+        "visibility": "on"
     },
     {
-        "featureType": "landscape",
-        "stylers": [{
-            "color": "#efefef"
-        }]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#83a5b0"
-        }]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#bdcdd3"
-        }]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "lightgreen"
-        }]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#e3eed3"
-        }]
-    },
-    {
-        "featureType": "administrative",
-        "stylers": [{
-                "visibility": "on"
-            },
-            {
-                "lightness": 10
-            }
-        ]
-    },
-    {
-        "featureType": "road"
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "labels",
-        "stylers": [{
-                "visibility": "on"
-            },
-            {
-                "lightness": 20
-            }
-        ]
-    },
-    {},
-    {
-        "featureType": "road",
-        "stylers": [{
-            "lightness": 20
-        }]
+        "color": "#b5cbe4"
     }
+    ]
+},
+{
+    "featureType": "landscape",
+    "stylers": [{
+        "color": "#efefef"
+    }]
+},
+{
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#83a5b0"
+    }]
+},
+{
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#bdcdd3"
+    }]
+},
+{
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "lightgreen"
+    }]
+},
+{
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#e3eed3"
+    }]
+},
+{
+    "featureType": "administrative",
+    "stylers": [{
+        "visibility": "on"
+    },
+    {
+        "lightness": 10
+    }
+    ]
+},
+{
+    "featureType": "road"
+},
+{
+    "featureType": "poi.park",
+    "elementType": "labels",
+    "stylers": [{
+        "visibility": "on"
+    },
+    {
+        "lightness": 20
+    }
+    ]
+},
+{},
+{
+    "featureType": "road",
+    "stylers": [{
+        "lightness": 20
+    }]
+}
 ]
 
 // Set the map options
@@ -128,36 +129,54 @@ for (const key in icons) {
 // Push the legend to the map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-
 // Create a DirectionsService object to use the route method and get a result for the request
 var directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
 var directionsDisplay = new google.maps.DirectionsRenderer({
+    // Ensures the Bicycling Layer is not removed on subsequent route requests (possible race condition)
     suppressBicyclingLayer: true
 });
+// Create a variable for the waypoints
+var waypoints = document.getElementsByName("waypoints[]");
+for (var i = 0; i < waypoints.length; i++) {
+    var inputw = waypoints[i];
+}
 
 // Display the directions on the map
 directionsDisplay.setMap(map);
 
-
 // Define the calcRoute function
 function calcRoute() {
+    var waypts = [];
+    var waypointElmts = document.getElementsByName('waypoints[]');
+    for (var i = 0; i < waypointElmts.length; i++) {
+        if (waypointElmts[i].value.length > 0) {
+            waypts.push({
+                location: waypointElmts[i].value,
+                stopover: true
+            });
+        }
+    }
     // Create a route request
     var request = {
         origin: document.getElementById('from').value,
         destination: document.getElementById('to').value,
         travelMode: google.maps.TravelMode.BICYCLING,
-        unitSystem: google.maps.UnitSystem.IMPERIAL
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        waypoints: waypts,
+        // Ensure the route is calculated in the order specified
+        optimizeWaypoints: false,
     }
 
-    // Pass the request to the .route method
+    // Pass the request to the route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
             // Get the route distance and time and pass to the #output div
             const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypt1: ' + document.getElementById('waypoint1').value + '.<br />Waypt2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text +
+                '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
 
             // Display the route
             directionsDisplay.setDirections(result);
@@ -186,13 +205,34 @@ map.addListener('bounds_changed', () => {
 });
 
 // Create searchBox2 object for the destination
-var input2 = document.getElementById('to');
+var input2 = document.getElementById('waypoint1');
 var searchBox2 = new google.maps.places.SearchBox(input2);
 
 // Bias the SearchBox2 results towards current map's viewport
 map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });
+
+// Create searchBox3 object for the destination
+var input3 = document.getElementById('waypoint2');
+var searchBox3 = new google.maps.places.SearchBox(input3);
+
+// Bias the SearchBox3 results towards current map's viewport
+map.addListener('bounds_changed', () => {
+    searchBox3.setBounds(map.getBounds());
+});
+
+// Create searchBox4 object for the destination
+var input4 = document.getElementById('to');
+var searchBox4 = new google.maps.places.SearchBox(input4);
+
+// Bias the SearchBox4 results towards current map's viewport
+map.addListener('bounds_changed', () => {
+    searchBox4.setBounds(map.getBounds());
+});
+
+
+
 
 function prioryMarinaSandy() {
     // Create a route request

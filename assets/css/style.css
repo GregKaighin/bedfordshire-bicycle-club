@@ -76,11 +76,6 @@ body {
     background: darkgreen;
 }
 
-/* Push the main page content below the navbar */
-/*#content {
-    margin-top: 140px;
-}*/
-
 /* Position and size the hero image */
 .jumbo-hero {
     background-color: #fff;
@@ -180,7 +175,12 @@ a:hover {
     font-size: 0.8em;
 }
 
-#waypoint {
+#waypoint1 {
+    font-size: 0.8em;
+    ;
+}
+
+#waypoint2 {
     font-size: 0.8em;
     ;
 }

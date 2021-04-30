@@ -59,6 +59,20 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="waypoint1" class="col-xs-2 control-label direction-input"></label>
+                    <div class="col-xs-4">
+                        <input type=" text" id="waypoint1" placeholder="Waypoint 1(optional)" class="form-control"
+                            name="waypoints[]">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="waypoint2" class="col-xs-2 control-label direction-input"></label>
+                    <div class="col-xs-4">
+                        <input type=" text" id="waypoint2" placeholder="Waypoint 2(optional)" class="form-control"
+                            name="waypoints[]">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="to" class="col-xs-2 control-label direction-input"><i
                             class="fas fa-map-marker-alt"></i></label>
                     <div class="col-xs-4">
@@ -85,11 +99,13 @@
     <hr class="page-break">
     <h1 class="heading">Popular Routes</h1>
     <div class="col-xs-offset-2 col-xs-10 text-center">
-        <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory Marina to Sandy <i
-                class="fas fa-map-signs"></i></button>
-        <button class="btn btn-info btn-sm preset-route-button" onclick="blueLagoonFlitwick();">Blue Lagoon to Flitwick
+        <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory Marina to
+            Sandy <i class="fas fa-map-signs"></i></button>
+        <button class="btn btn-info btn-sm preset-route-button" onclick="blueLagoonFlitwick();">Blue Lagoon to
+            Flitwick
             <i class="fas fa-map-signs"></i></button>
-        <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to Renhold
+        <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to
+            Renhold
             <i class="fas fa-map-signs"></i></button>
     </div>
     <div class="container-fluid">
@@ -134,7 +150,7 @@
     <!-- Google maps API -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&callback&libraries=places">
-    </script>
+        </script>
     <!-- Enables drawing of the bicycle layer on the map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- Font Awesome -->
