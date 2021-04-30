@@ -48,6 +48,7 @@ body {
 .navbar-light .navbar-nav .show>.nav-link {
     color: lightyellow;
     border-bottom: 1px solid lightyellow;
+    width: fit-content;
 }
 
 .navbar-light .navbar-brand {

@@ -4,7 +4,6 @@ const bedfordshire = {
     lng: -0.45303
 };
 
-
 // Custom map styling
 var stylesArray = [{
     "featureType": "water",
@@ -115,7 +114,7 @@ const icons = {
         icon: "assets/img/icons/bike-friendly-road.png",
     },
 };
-// Create the legend and place the icons
+// Create the legend and the icons
 const legend = document.getElementById("legend");
 
 for (const key in icons) {
@@ -134,7 +133,7 @@ var directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
 var directionsDisplay = new google.maps.DirectionsRenderer({
-    // Ensures the Bicycling Layer is not removed on subsequent route requests (possible race condition)
+    // Ensures the Bicycling Layer is not removed on subsequent route requests
     suppressBicyclingLayer: true
 });
 // Create a variable for the waypoints
@@ -158,6 +157,7 @@ function calcRoute() {
             });
         }
     }
+
     // Create a route request
     var request = {
         origin: document.getElementById('from').value,
@@ -204,7 +204,7 @@ map.addListener('bounds_changed', () => {
     searchBox1.setBounds(map.getBounds());
 });
 
-// Create searchBox2 object for the destination
+// Create searchBox2 object for the waypoint 1
 var input2 = document.getElementById('waypoint1');
 var searchBox2 = new google.maps.places.SearchBox(input2);
 
@@ -213,7 +213,7 @@ map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });
 
-// Create searchBox3 object for the destination
+// Create searchBox3 object for waypoint 2
 var input3 = document.getElementById('waypoint2');
 var searchBox3 = new google.maps.places.SearchBox(input3);
 
@@ -230,9 +230,6 @@ var searchBox4 = new google.maps.places.SearchBox(input4);
 map.addListener('bounds_changed', () => {
     searchBox4.setBounds(map.getBounds());
 });
-
-
-
 
 function prioryMarinaSandy() {
     // Create a route request
