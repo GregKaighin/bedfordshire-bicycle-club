@@ -7,4 +7,7 @@ https://developers.google.com/maps/documentation/javascript/examples/layer-bicyc
 
 https://snazzymaps.com/style/60/blue-gray
 
-images - pixabay
+images - pixabay, wiki commons
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
+

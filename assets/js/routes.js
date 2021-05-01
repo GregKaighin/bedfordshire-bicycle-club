@@ -173,10 +173,11 @@ function calcRoute() {
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get the route distance and time and pass to the #output div
+            // Get the route distance and duration and pass to the #output div
             const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypt1: ' + document.getElementById('waypoint1').value + '.<br />Waypt2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text +
-                '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+            const route = response.routes[0];
+            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypt1: ' + document.getElementById('waypoint1').value + '.<br />Waypt2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[i].distance.text +
+                '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[i].duration.text + '.</div>';
 
             // Display the route
             directionsDisplay.setDirections(result);

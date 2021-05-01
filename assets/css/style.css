@@ -14,7 +14,6 @@ body {
 /* Smooth scrolling for back to top button */
 html,
 body {
-    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -64,7 +63,7 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: lightyellow;
+    color: #ffffe0;
 }
 
 /* Override Bootsrap navbar-light navbar-toggler default colours and hover underscore*/
@@ -74,7 +73,7 @@ body {
 }
 
 .navbar-light .navbar-toggler:active {
-    background: darkgreen;
+    background: #ffffe0;
 }
 
 /* Position and size the hero image */
@@ -156,7 +155,7 @@ a:hover {
 }
 
 #back-top-btn:hover {
-    color: darkgreen;
+    color: #000;
 }
 
 /* back to top paragraph */
@@ -360,4 +359,57 @@ p.footer-text {
     #googleMap {
         max-width: 744px;
     }
+}
+
+
+
+
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
 }

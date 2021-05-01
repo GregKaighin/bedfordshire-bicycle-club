@@ -48,13 +48,14 @@
     <div class="container-fluid" id="content">
         <hr class="page-break">
         <h1 class="heading">Plan a Ride</h1>
-        <p id="page-text">Create your own routes with this handy planner, or try our recommended routes.</p>
+        <p id="page-text">Create your own routes with this handy cycle route planner, or try our <a href="#googleMap"
+                class="page-links">recommended routes</a>.</p>
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
             <div class="center-form">
                 <div>
                     <label for="from" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Starting place" class="form-control">
+                        <input type="text" id="from" placeholder="Start (Required)" class="form-control">
                     </div>
                 </div>
                 <div>
@@ -74,7 +75,7 @@
                 <div>
                     <label for="to" class="col-xs-2 control-label direction-input"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="to" placeholder="Destination" class="form-control">
+                        <input type="text" id="to" placeholder="End (Required)" class="form-control">
                     </div>
                 </div>
                 </form>
@@ -105,6 +106,38 @@
         <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to
             Renhold
             <i class="fas fa-map-signs"></i></button>
+    </div>
+    <hr class="page-break">
+    <div style="text-align:center">
+        <h2 class="heading">Gallery</h2>
+        <p>Click on the images below:</p>
+    </div>
+
+    <!-- The four columns -->
+    <div class="row">
+        <div class="column">
+            <img src="assets/img/carousel/great-barford-bridge.jpg" alt="Great Barford bridge" style="width:100%"
+                onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="assets/img/carousel/cycle-route-51.jpg"
+                alt="Between Priory Marina and Sandy, part of national cycle route 51" style="width:100%"
+                onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="assets/img/carousel/priory-marina.jpg" alt="Priory Marina Country Park" style="width:100%"
+                onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="assets/img/carousel/cardington-hangars.jpg" alt="Cardington Airsip Hangars" style="width:100%"
+                onclick="myFunction(this);">
+        </div>
+    </div>
+
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
     </div>
     <div class="container-fluid">
         <div class="row text-center">
@@ -162,6 +195,8 @@
     </script>
     <!-- Routes -->
     <script src="assets/js/routes.js"></script>
+    <!-- Carousel -->
+    <script src="assets/js/carousel.js"></script>
     <!-- Back-to-top-button -->
     <script src="assets/js/back-to-top-button.js"></script>
 
