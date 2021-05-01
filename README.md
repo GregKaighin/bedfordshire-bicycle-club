@@ -11,3 +11,5 @@ images - pixabay, wiki commons
 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
 
+https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
+

@@ -192,7 +192,7 @@ a:hover {
 /* Size the map and apply box-shadow */
 #googleMap {
     width: 85vw;
-    height: 62vh;
+    height: 50vh;
     margin: 12px auto;
     border: 1px solid black;
     border-radius: 2% 2% 2% 2%;

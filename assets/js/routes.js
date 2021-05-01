@@ -170,31 +170,37 @@ function calcRoute() {
     }
 
     // Pass the request to the route method
-    directionsService.route(request, function (result, status) {
+    directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            computeTotalDistance(response);
 
-            // Get the route distance and duration and pass to the #output div
-            const output = document.querySelector('#output');
-            const route = response.routes[0];
-            output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypt1: ' + document.getElementById('waypoint1').value + '.<br />Waypt2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[i].distance.text +
-                '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[i].duration.text + '.</div>';
-
-            // Display the route
-            directionsDisplay.setDirections(result);
+            // Get the route distance and duration and pass to the output div
+            function computeTotalDistance(result) {
+                var totalDist = 0;
+                var totalTime = 0;
+                var myroute = result.routes[0];
+                for (i = 0; i < myroute.legs.length; i++) {
+                    totalDist += myroute.legs[i].distance.value;
+                    totalTime += myroute.legs[i].duration.value;
+                }
+                // Convert the distance from meters to miles
+                totalDist = totalDist / (1000 / 0.62137);
+                const output = document.querySelector('#output');
+                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypoint 1: ' + document.getElementById('waypoint1').value + '.<br />Waypoint 2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(2) + ' miles' +
+                    '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + (totalTime / 60).toFixed(0) + ' minutes' + '.</div>';
+            }
         } else {
             // Delete the route
             directionsDisplay.setDirections({
                 routes: []
-
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
-
             // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
         }
     });
-
 }
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById('from');
@@ -307,7 +313,6 @@ function blueLagoonFlitwick() {
             output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
         }
     });
-
 }
 
 function bedfordParkRenhold() {
