@@ -1,10 +1,10 @@
-// Create Bedforshire variable
+// Create Bedfordshire variable
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
 };
 
-// Custom map styling
+// Custom styling for the map
 var stylesArray = [{
     "featureType": "water",
     "stylers": [{
@@ -114,7 +114,7 @@ const icons = {
         icon: "assets/img/icons/bike-friendly-road.png",
     },
 };
-// Create the legend and the icons
+// Create the map legend and the icons
 const legend = document.getElementById("legend");
 
 for (const key in icons) {
@@ -128,7 +128,7 @@ for (const key in icons) {
 // Push the legend to the map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-// Create a DirectionsService object to use the route method and get a result for the request
+// Create a DirectionsService object to use the route method
 var directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
@@ -175,7 +175,7 @@ function calcRoute() {
             directionsDisplay.setDirections(response);
             computeTotalDistance(response);
 
-            // Get the route distance and duration and pass to the output div
+            // Get the total route distance and duration
             function computeTotalDistance(result) {
                 var totalDist = 0;
                 var totalTime = 0;
@@ -184,10 +184,10 @@ function calcRoute() {
                     totalDist += myroute.legs[i].distance.value;
                     totalTime += myroute.legs[i].duration.value;
                 }
-                // Convert the distance from meters to miles
+                // Convert the total distance from meters to miles and pass to the output div
                 totalDist = totalDist / (1000 / 0.62137);
                 const output = document.querySelector('#output');
-                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />Waypoint 1: ' + document.getElementById('waypoint1').value + '.<br />Waypoint 2: ' + document.getElementById('waypoint2').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(2) + ' miles' +
+                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(2) + ' miles' +
                     '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + (totalTime / 60).toFixed(0) + ' minutes' + '.</div>';
             }
         } else {
@@ -229,8 +229,8 @@ map.addListener('bounds_changed', () => {
     searchBox3.setBounds(map.getBounds());
 });
 
-// Create searchBox4 object for the destination
-var input4 = document.getElementById('to');
+// Create searchBox4 object for waypoint 3
+var input4 = document.getElementById('waypoint3');
 var searchBox4 = new google.maps.places.SearchBox(input4);
 
 // Bias the SearchBox4 results towards current map's viewport
@@ -238,6 +238,16 @@ map.addListener('bounds_changed', () => {
     searchBox4.setBounds(map.getBounds());
 });
 
+// Create searchBox5 object for the destination
+var input5 = document.getElementById('to');
+var searchBox5 = new google.maps.places.SearchBox(input5);
+
+// Bias the SearchBox5 results towards current map's viewport
+map.addListener('bounds_changed', () => {
+    searchBox5.setBounds(map.getBounds());
+});
+
+//Functions for recommended routes
 function prioryMarinaSandy() {
     // Create a route request
     var request = {

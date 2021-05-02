@@ -48,34 +48,38 @@
     <div class="container-fluid" id="content">
         <hr class="page-break">
         <h1 class="heading">Plan a Ride</h1>
-        <p id="page-text">Create your own routes with this handy cycle route planner, or try our <a href="#googleMap"
-                class="page-links">recommended routes</a>.</p>
+        <p id="page-text">Create routes with this handy planner, or try our <a href="#googleMap"
+                class="page-links">recommended routes</a> below.</p>
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
             <div class="center-form">
                 <div>
-                    <label for="from" class="col-xs-2 control-label direction-input"></label>
+                    <label for="from" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Start (Required)" class="form-control">
+                        <input type="text" id="from" placeholder="Start (required)" class="form-control">
                     </div>
                 </div>
                 <div>
-                    <label for="waypoint1" class="col-xs-2 control-label direction-input"></label>
+                    <label for="waypoint1" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type=" text" id="waypoint1" placeholder="Waypoint 1 (optional)" class="form-control"
-                            name="waypoints[]">
+                        <input type=" text" id="waypoint1" placeholder="Waypoint 1 (optional)" name="waypoints[]">
                     </div>
                 </div>
                 <div>
-                    <label for="waypoint2" class="col-xs-2 control-label direction-input"></label>
+                    <label for="waypoint2" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type=" text" id="waypoint2" placeholder="Waypoint 2 (optional)" class="form-control"
-                            name="waypoints[]">
+                        <input type=" text" id="waypoint2" placeholder="Waypoint 2 (optional)" name="waypoints[]">
                     </div>
                 </div>
                 <div>
-                    <label for="to" class="col-xs-2 control-label direction-input"></label>
+                    <label for="waypoint3" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="to" placeholder="End (Required)" class="form-control">
+                        <input type=" text" id="waypoint3" placeholder="Waypoint 3 (optional)" name="waypoints[]">
+                    </div>
+                </div>
+                <div>
+                    <label for="to" class="col-xs-2 control-label direction-input form-inline"></label>
+                    <div class="col-xs-4">
+                        <input type="text" id="to" placeholder="End (required)" class="form-control">
                     </div>
                 </div>
                 </form>

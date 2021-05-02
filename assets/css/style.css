@@ -189,10 +189,15 @@ a:hover {
     ;
 }
 
+#waypoint3 {
+    font-size: 0.8em;
+    ;
+}
+
 /* Size the map and apply box-shadow */
 #googleMap {
     width: 85vw;
-    height: 50vh;
+    height: 48vh;
     margin: 12px auto;
     border: 1px solid black;
     border-radius: 2% 2% 2% 2%;
@@ -221,12 +226,16 @@ a:hover {
 .alert-info {
     margin: auto;
     max-width: fit-content;
-    text-align: center;
+    text-align: left;
     font-size: 0.8em;
     color: black;
     background-color: #efefef;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 .alert-danger {
@@ -234,8 +243,12 @@ a:hover {
     max-width: fit-content;
     text-align: center;
     font-size: 0.8em;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 button.btn.btn-info.btn-sm {
@@ -323,8 +336,12 @@ p.footer-text {
     background-color: #efefef;
     letter-spacing: 1px;
     border-radius: 2% 2% 2% 2%;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.48) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.48) 0px 2px 16px 0px;
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 /* Form Modal */
@@ -354,22 +371,12 @@ p.footer-text {
     max-width: 67%;
 }
 
-/* Media Query - Reduce the map width on larger screens */
-@media screen and (min-width: 768px) {
-    #googleMap {
-        max-width: 744px;
-    }
-}
-
-
-
-
-
+/* Gallery
 /* The grid: Four equal columns that floats next to each other */
 .column {
   float: left;
   width: 25%;
-  padding: 10px;
+  padding: 4px;
 }
 
 /* Style the images inside the grid */
@@ -412,4 +419,11 @@ p.footer-text {
   color: white;
   font-size: 35px;
   cursor: pointer;
+}
+
+/* Media Query - Reduce the map width on larger screens */
+@media screen and (min-width: 768px) {
+    #googleMap {
+        max-width: 744px;
+    }
 }
