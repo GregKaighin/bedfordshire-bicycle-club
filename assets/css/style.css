@@ -291,18 +291,22 @@ a {
 
 .whatsapp-icon {
     color: #25D366;
+    font-size: 1.2em;
 }
 
 .facebook-icon {
     color: #4267B2;
+    font-size: 1.2em;
 }
 
 .pinterest-icon {
     color: #E60023;
+    font-size: 1.2em;
 }
 
 .instagram-icon {
     color: #8a3ab9;
+    font-size: 1.2em;
 }
 
 /* Footer text */
@@ -379,7 +383,7 @@ p.footer-text {
   padding: 4px;
 }
 
-#gallery-row {
+.gallery-row {
     margin: auto;
     width: 88%
 }
@@ -388,6 +392,7 @@ p.footer-text {
 .column img {
   opacity: 0.8; 
   cursor: pointer; 
+  border-radius: 2% 2% 2% 2%;
    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
@@ -421,8 +426,9 @@ p.footer-text {
   left: 15px;
   color: #eee8aa;
   border: 1px solid black;
-  border-radius: 2%;
+  border-radius: 2% 2% 2% 2%;
   font-size: 20px;
+  padding: 0 4px 0 4px;
 }
 
 /* Closable button inside the expanded image */
