@@ -416,9 +416,12 @@ p.footer-text {
 /* Expanding image text */
 #imgtext {
   position: absolute;
+  background-color: #2f4f4f;
   bottom: 15px;
   left: 15px;
-  color: white;
+  color: #eee8aa;
+  border: 1px solid black;
+  border-radius: 2%;
   font-size: 20px;
 }
 
