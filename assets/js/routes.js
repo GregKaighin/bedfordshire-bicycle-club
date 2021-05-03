@@ -176,10 +176,10 @@ function calcRoute() {
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
-            computeTotalDistance(response);
+            computeTotalDistAndTime(response);
 
             // Get the total route distance and duration
-            function computeTotalDistance(result) {
+            function computeTotalDistAndTime(result) {
                 var totalDist = 0;
                 var totalTime = 0;
                 var myroute = result.routes[0];
@@ -193,9 +193,20 @@ function calcRoute() {
                 var hours = Math.floor((totalTime / 60) / 60);
                 var minutes = (totalTime / 60) % 60;
                 // Pass the converted total time and distance to the output div
-                const output = document.querySelector('#output');
-                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
-                    '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' minutes' + '.</div>';
+                if (hours === 0) {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                } else if (hours === 1) {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                }
+                else {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                }
             }
         } else {
             // Delete the route
