@@ -4,6 +4,24 @@ const bedfordshire = {
     lng: -0.45303
 };
 
+// Create variables for custom legend icons 
+const icons = {
+    bikeTrail: {
+        name: "Bike trail",
+        icon: "assets/img/icons/bike-trail.png",
+
+    },
+    bikeLane: {
+        name: "Bike lane",
+        icon: "assets/img/icons/bike-lane.png",
+
+    },
+    bikeFriendlyRoad: {
+        name: "Bike-friendly road",
+        icon: "assets/img/icons/bike-friendly-road.png",
+    },
+};
+
 // Custom styling for the map
 var stylesArray = [{
     "featureType": "water",
@@ -97,23 +115,6 @@ const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions)
 var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
-// Create variables for custom legend icons 
-const icons = {
-    bikeTrail: {
-        name: "Bike trail",
-        icon: "assets/img/icons/bike-trail.png",
-
-    },
-    bikeLane: {
-        name: "Bike lane",
-        icon: "assets/img/icons/bike-lane.png",
-
-    },
-    bikeFriendlyRoad: {
-        name: "Bike-friendly road",
-        icon: "assets/img/icons/bike-friendly-road.png",
-    },
-};
 // Create the map legend and the icons
 const legend = document.getElementById("legend");
 
@@ -147,10 +148,12 @@ directionsDisplay.setMap(map);
 
 // Define the calcRoute function
 function calcRoute() {
+    // Create waypoints variable and loop 
     var waypts = [];
     var waypointElmts = document.getElementsByName('waypoints[]');
     for (var i = 0; i < waypointElmts.length; i++) {
         if (waypointElmts[i].value.length > 0) {
+            // Push the waypoints to the route request
             waypts.push({
                 location: waypointElmts[i].value,
                 stopover: true
@@ -184,11 +187,15 @@ function calcRoute() {
                     totalDist += myroute.legs[i].distance.value;
                     totalTime += myroute.legs[i].duration.value;
                 }
-                // Convert the total distance from meters to miles and pass to the output div
+                // Convert the total distance from meters to miles
                 totalDist = totalDist / (1000 / 0.62137);
+                // Convert the total time from minute to hours and minutes
+                var hours = Math.floor((totalTime / 60) / 60);
+                var minutes = (totalTime / 60) % 60;
+                // Pass the converted total time and distance to the output div
                 const output = document.querySelector('#output');
-                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(2) + ' miles' +
-                    '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + (totalTime / 60).toFixed(0) + ' minutes' + '.</div>';
+                output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                    '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' minutes' + '.</div>';
             }
         } else {
             // Delete the route
@@ -262,7 +269,7 @@ function prioryMarinaSandy() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
-    // Pass the request to the .route method
+    // Pass the request to the route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
