@@ -4,6 +4,7 @@ const bedfordshire = {
     lng: -0.45303
 };
 
+
 // Create variables for custom legend icons 
 const icons = {
     bikeTrail: {
@@ -21,6 +22,7 @@ const icons = {
         icon: "assets/img/icons/bike-friendly-road.png",
     },
 };
+
 
 // Custom styling for the map
 var stylesArray = [{
@@ -100,6 +102,7 @@ var stylesArray = [{
 }
 ]
 
+
 // Set the map options
 const mapOtions = {
     center: bedfordshire,
@@ -110,10 +113,12 @@ const mapOtions = {
     zoomControl: true
 };
 
+
 // Create the map with the bicycle layer enabled
 const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
 var bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
+
 
 // Create the map legend and the icons
 const legend = document.getElementById("legend");
@@ -129,22 +134,27 @@ for (const key in icons) {
 // Push the legend to the map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
+
 // Create a DirectionsService object to use the route method
 var directionsService = new google.maps.DirectionsService();
+
 
 // Create a DirectionsRenderer object to create the route
 var directionsDisplay = new google.maps.DirectionsRenderer({
     // Ensures the Bicycling Layer is not removed on subsequent route requests
     suppressBicyclingLayer: true
 });
+
 // Create a variable for the waypoints
 var waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++) {
     var inputw = waypoints[i];
 }
 
+
 // Display the directions on the map
 directionsDisplay.setMap(map);
+
 
 // Define the calcRoute function
 function calcRoute() {
@@ -161,6 +171,7 @@ function calcRoute() {
         }
     }
 
+
     // Create a route request
     var request = {
         origin: document.getElementById('from').value,
@@ -172,12 +183,12 @@ function calcRoute() {
         optimizeWaypoints: false,
     }
 
+
     // Pass the request to the route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
-
             // Get the total route distance and duration
             function computeTotalDistAndTime(result) {
                 var totalDist = 0;
@@ -220,6 +231,8 @@ function calcRoute() {
         }
     });
 }
+
+
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById('from');
 var searchBox1 = new google.maps.places.SearchBox(input1);
@@ -228,6 +241,7 @@ var searchBox1 = new google.maps.places.SearchBox(input1);
 map.addListener('bounds_changed', () => {
     searchBox1.setBounds(map.getBounds());
 });
+
 
 // Create searchBox2 object for the waypoint 1
 var input2 = document.getElementById('waypoint1');
@@ -238,6 +252,7 @@ map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });
 
+
 // Create searchBox3 object for waypoint 2
 var input3 = document.getElementById('waypoint2');
 var searchBox3 = new google.maps.places.SearchBox(input3);
@@ -246,6 +261,7 @@ var searchBox3 = new google.maps.places.SearchBox(input3);
 map.addListener('bounds_changed', () => {
     searchBox3.setBounds(map.getBounds());
 });
+
 
 // Create searchBox4 object for waypoint 3
 var input4 = document.getElementById('waypoint3');
@@ -256,6 +272,7 @@ map.addListener('bounds_changed', () => {
     searchBox4.setBounds(map.getBounds());
 });
 
+
 // Create searchBox5 object for the destination
 var input5 = document.getElementById('to');
 var searchBox5 = new google.maps.places.SearchBox(input5);
@@ -265,7 +282,9 @@ map.addListener('bounds_changed', () => {
     searchBox5.setBounds(map.getBounds());
 });
 
+
 //Functions for recommended routes
+
 function prioryMarinaSandy() {
     // Create a route request
     var request = {
@@ -305,6 +324,7 @@ function prioryMarinaSandy() {
 
 }
 
+
 function blueLagoonFlitwick() {
     // Create a route request
     var request = {
@@ -342,6 +362,7 @@ function blueLagoonFlitwick() {
         }
     });
 }
+
 
 function bedfordParkRenhold() {
     // Create a route request
@@ -381,3 +402,4 @@ function bedfordParkRenhold() {
     });
 
 }
+
