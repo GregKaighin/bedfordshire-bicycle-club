@@ -113,6 +113,37 @@
         </div>
     </div>
 </section>
+<div style="text-align:center">
+    <h2 class="heading">Gallery</h2>
+    <p>See our cyclists in action.<br>Click on the images below:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row" id="gallery-row">
+    <div class="column">
+        <img src="assets/img/gallery/park-life.jpg" alt="Great Barford bridge" style="width:100%"
+            onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bikes-open-path.jpg"
+            alt="Between Priory Marina and Sandy, part of national cycle route 51" style="width:100%"
+            onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bikes-sunny-path.jpg" alt="Priory Marina Country Park" style="width:100%"
+            onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bike-woods.jpg" alt="Cardington Airsip Hangars" style="width:100%"
+            onclick="myFunction(this);">
+    </div>
+</div>
+
+<div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+</div>
 <div class="container-fluid">
     <div class="row text-center">
         <div class="col-md-12">
@@ -154,10 +185,10 @@
     </div>
 
 </footer>
-<!-- Back to top button -->
-<script src="assets/js/back-to-top-button.js"></script>
 <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
+</script>
+<script src="https://kit.fontawesome.com/bd2b28ab92.js">
+</script>
 <!-- Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
 </script>
@@ -165,6 +196,14 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
 </script>
+<!-- Back to top button -->
+<script src="assets/js/back-to-top-button.js">
+</script>
+<!-- Gallery -->
+<script src="assets/js/gallery.js">
+</script>
+
+
 
 </body>
 

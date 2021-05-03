@@ -379,10 +379,21 @@ p.footer-text {
   padding: 4px;
 }
 
+#gallery-row {
+    margin: auto;
+    width: 88%
+}
+
 /* Style the images inside the grid */
 .column img {
   opacity: 0.8; 
   cursor: pointer; 
+   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 .column img:hover {
