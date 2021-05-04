@@ -207,6 +207,16 @@ a:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
+#output {
+  margin: auto;
+  width: 75%;
+  max-height: 33vh;
+  overflow: auto;
+}
+#output:empty {
+    display: none;
+}
+
 /* Style the map lagend */
 #legend {
     font-family: Arial, sans-serif;

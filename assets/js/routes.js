@@ -89,7 +89,7 @@ var stylesArray = [{
         "visibility": "on"
     },
     {
-        "lightness": 20
+        "lightness": 60
     }
     ]
 },
@@ -134,15 +134,16 @@ for (const key in icons) {
 // Push the legend to the map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-
 // Create a DirectionsService object to use the route method
 var directionsService = new google.maps.DirectionsService();
 
-
 // Create a DirectionsRenderer object to create the route
-var directionsDisplay = new google.maps.DirectionsRenderer({
+var directionsRenderer = new google.maps.DirectionsRenderer({
     // Ensures the Bicycling Layer is not removed on subsequent route requests
-    suppressBicyclingLayer: true
+    suppressBicyclingLayer: true,
+    draggable: true,
+    map,
+    panel: document.getElementById("output")
 });
 
 // Create a variable for the waypoints
@@ -153,7 +154,7 @@ for (var i = 0; i < waypoints.length; i++) {
 
 
 // Display the directions on the map
-directionsDisplay.setMap(map);
+directionsRenderer.setMap(map);
 
 
 // Define the calcRoute function
@@ -187,47 +188,15 @@ function calcRoute() {
     // Pass the request to the route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-            computeTotalDistAndTime(response);
-            // Get the total route distance and duration
-            function computeTotalDistAndTime(result) {
-                var totalDist = 0;
-                var totalTime = 0;
-                var myroute = result.routes[0];
-                for (i = 0; i < myroute.legs.length; i++) {
-                    totalDist += myroute.legs[i].distance.value;
-                    totalTime += myroute.legs[i].duration.value;
-                }
-                // Convert the total distance from meters to miles
-                totalDist = totalDist / (1000 / 0.62137);
-                // Convert the total time from minute to hours and minutes
-                var hours = Math.floor((totalTime / 60) / 60);
-                var minutes = (totalTime / 60) % 60;
-                // Pass the converted total time and distance to the output div
-                if (hours === 0) {
-                    const output = document.querySelector('#output');
-                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
-                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + minutes.toFixed(0) + ' mins' + '.</div>';
-                } else if (hours === 1) {
-                    const output = document.querySelector('#output');
-                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
-                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' mins' + '.</div>';
-                }
-                else {
-                    const output = document.querySelector('#output');
-                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
-                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
-                }
-            }
+            directionsRenderer.setDirections(response);
+
         } else {
             // Delete the route
-            directionsDisplay.setDirections({
+            directionsRenderer.setDirections({
                 routes: []
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
-            // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
         }
     });
 }
@@ -303,22 +272,15 @@ function prioryMarinaSandy() {
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get the route distance and time and pass to the #output div
-            const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: Priory Marina.<br/>To: Sandy.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br/>Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
-
             // Display the route
-            directionsDisplay.setDirections(result);
+            directionsRenderer.setDirections(result);
         } else {
             // Delete the route
-            directionsDisplay.setDirections({
+            directionsRenderer.setDirections({
                 routes: []
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
-
-            // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
         }
     });
 
@@ -343,22 +305,17 @@ function blueLagoonFlitwick() {
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get the route distance and time and pass to the #output div
-            const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: Blue Lagoon.<br/>To: Flitwick.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+
 
             // Display the route
-            directionsDisplay.setDirections(result);
+            directionsRenderer.setDirections(result);
         } else {
             // Delete the route
-            directionsDisplay.setDirections({
+            directionsRenderer.setDirections({
                 routes: []
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
-
-            // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
         }
     });
 }
@@ -382,24 +339,16 @@ function bedfordParkRenhold() {
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get the route distance and time and pass to the #output div
-            const output = document.querySelector('#output');
-            output.innerHTML = '<div class="alert-info">From: Bedford Park.<br />To: Renhold.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
-
             // Display the route
-            directionsDisplay.setDirections(result);
+            directionsRenderer.setDirections(result);
         } else {
             // Delete the route
-            directionsDisplay.setDirections({
+            directionsRenderer.setDirections({
                 routes: []
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
-
-            // Show an error message if the route is not possible
-            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> This route is not possible on a bicycle!</div>';
         }
     });
-
 }
 
