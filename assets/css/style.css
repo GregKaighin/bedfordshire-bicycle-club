@@ -208,12 +208,20 @@ a:hover {
 }
 
 #output {
+    background-color: lightgrey;
   margin: auto;
-  width: 75%;
+  width: 80%;
   max-height: 33vh;
   overflow: auto;
 }
-#output:empty {
+div.warnbox-content {
+    display:none;
+}
+.warnbox-c1 {
+    display:none;
+}
+
+.warnbox-c2 {
     display: none;
 }
 
@@ -233,7 +241,11 @@ a:hover {
 #legend img {
     vertical-align: middle;
 }
-
+#route-summary {
+    margin: auto;
+    width:66vw;
+    height: fit-content;
+}
 /* Style the alert box containing the route details */
 .alert-info {
     margin: auto;
