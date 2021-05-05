@@ -139,10 +139,10 @@ var directionsDisplay = new google.maps.DirectionsRenderer({
     // Makes the route markers draggable
     draggable: true
 });
-
 // Create a variable for the waypoints
 var waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++) {
+    var inputw = waypoints[i];
 }
 
 // Display the directions on the map
@@ -178,11 +178,42 @@ function calcRoute() {
         optimizeWaypoints: false,
     }
 
-
     // Pass the request to the route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
+            computeTotalDistAndTime(response);
+
+            // Get the total route distance and duration
+            function computeTotalDistAndTime(result) {
+                var totalDist = 0;
+                var totalTime = 0;
+                var myroute = result.routes[0];
+                for (i = 0; i < myroute.legs.length; i++) {
+                    totalDist += myroute.legs[i].distance.value;
+                    totalTime += myroute.legs[i].duration.value;
+                }
+                // Convert the total distance from meters to miles
+                totalDist = totalDist / (1000 / 0.62137);
+                // Convert the total time from minute to hours and minutes
+                var hours = Math.floor((totalTime / 60) / 60);
+                var minutes = (totalTime / 60) % 60;
+                // Pass the converted total time and distance to the output div
+                if (hours === 0) {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                } else if (hours === 1) {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                }
+                else {
+                    const output = document.querySelector('#output');
+                    output.innerHTML = '<div class="alert-info">From: ' + document.getElementById('from').value + '.<br />To: ' + document.getElementById('to').value + '.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + (totalDist).toFixed(1) + ' miles' +
+                        '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
+                }
+            }
         } else {
             // Delete the route
             directionsDisplay.setDirections({
@@ -190,6 +221,8 @@ function calcRoute() {
             });
             // Recenter the map on Bedfordshire
             map.setCenter(bedfordshire);
+            // Show an error message if the route is not possible
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
         }
     });
 }
