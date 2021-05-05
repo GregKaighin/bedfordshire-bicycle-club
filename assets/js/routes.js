@@ -23,7 +23,7 @@ const icons = {
 };
 
 // Custom styling for the map
-var stylesArray = [{
+const stylesArray = [{
     "featureType": "water",
     "stylers": [{
         "visibility": "on"
@@ -91,7 +91,6 @@ var stylesArray = [{
     }
     ]
 },
-{},
 {
     "featureType": "road",
     "stylers": [{
@@ -112,7 +111,7 @@ const mapOtions = {
 
 // Create the map with the bicycle layer enabled
 const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
-var bikeLayer = new google.maps.BicyclingLayer();
+const bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
 // Create the map legend and the icons
@@ -130,27 +129,23 @@ for (const key in icons) {
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
 // Create a DirectionsService object to use the route method
-var directionsService = new google.maps.DirectionsService();
+const directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
-var directionsDisplay = new google.maps.DirectionsRenderer({
+const directionsDisplay = new google.maps.DirectionsRenderer({
     // Ensures the Bicycling Layer is not removed on subsequent route requests
     suppressBicyclingLayer: true,
     // Makes the route markers draggable
     draggable: true
 });
 // Create a variable for the waypoints
-var waypoints = document.getElementsByName("waypoints[]");
-for (var i = 0; i < waypoints.length; i++) {
-    var inputw = waypoints[i];
-}
+const waypoints = document.getElementsByName("waypoints[]");
+for (var i = 0; i < waypoints.length; i++);
 
 // Display the directions on the map
 directionsDisplay.setMap(map);
 // Display the directions panel
 directionsDisplay.setPanel(document.getElementById("directions-panel"));
-
-
 
 // Define the calcRoute function
 function calcRoute() {
@@ -198,24 +193,24 @@ function calcRoute() {
                 // Convert the total time from minute to hours and minutes
                 var hours = Math.floor((totalTime / 60) / 60);
                 var minutes = (totalTime / 60) % 60;
+                var routeSummary = document.querySelector('#route-summary');
                 // Pass the converted total time and distance to the output div
                 if (hours === 0) {
-                    const routeSummary = document.querySelector('#route-summary');
                     routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '.<br />Total time: ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 } else if (hours === 1) {
-                    const routeSummary = document.querySelector('#route-summary');
                     routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' +
                         '.<br />Total time: ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 }
                 else {
-                    const routeSummary = document.querySelector('#route-summary');
                     routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' +
                         '.<br />Total time: ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 }
             }
         } else {
-            const routeSummary = document.querySelector('#route-summary');
+            var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
+            // Clear the directions panel 
+            directionsDisplay.setPanel(null);
         }
     });
 }

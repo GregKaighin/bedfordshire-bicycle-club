@@ -1,4 +1,3 @@
-// Create initial variables
 let bedfordshire;
 let map;
 let bounds;
