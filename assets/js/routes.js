@@ -30,8 +30,7 @@ const stylesArray = [{
     },
     {
         "color": "#b5cbe4"
-    }
-    ]
+    }]
 },
 {
     "featureType": "landscape",
@@ -74,8 +73,7 @@ const stylesArray = [{
     },
     {
         "lightness": 10
-    }
-    ]
+    }]
 },
 {
     "featureType": "road"
@@ -88,8 +86,7 @@ const stylesArray = [{
     },
     {
         "lightness": 20
-    }
-    ]
+    }]
 },
 {
     "featureType": "road",
@@ -147,6 +144,7 @@ directionsDisplay.setMap(map);
 // Display the directions panel
 directionsDisplay.setPanel(document.getElementById("directions-panel"));
 
+
 // Define the calcRoute function
 function calcRoute() {
     // Create waypoints variable and loop 
@@ -178,6 +176,11 @@ function calcRoute() {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
+            directionsDisplay.setPanel(document.getElementById("directions-panel"));
+            // Updates the route summary panel when the directions change
+            directionsDisplay.addListener("directions_changed", () => {
+                computeTotalDistAndTime(directionsDisplay.getDirections());
+            });
 
             // Get the total route distance and duration
             function computeTotalDistAndTime(result) {
@@ -210,7 +213,7 @@ function calcRoute() {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
             // Clear the directions panel 
-            directionsDisplay.setPanel(null);
+            directionsDisplay.setPanel();
         }
     });
 }
@@ -259,6 +262,8 @@ var searchBox5 = new google.maps.places.SearchBox(input5);
 map.addListener('bounds_changed', () => {
     searchBox5.setBounds(map.getBounds());
 });
+
+/*
 
 //Functions for recommended routes
 function prioryMarinaSandy() {
@@ -344,3 +349,5 @@ function bedfordParkRenhold() {
         }
     });
 }
+
+*/
