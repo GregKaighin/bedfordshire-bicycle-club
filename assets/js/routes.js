@@ -206,7 +206,7 @@ function calcRoute() {
                         '.<br />Total time: ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 }
             }
-            // Dispaly an error message for invalid routes
+            // Show an error message for invalid routes
         } else {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
@@ -225,11 +225,17 @@ function clearRoute() {
     directionsDisplay.setPanel();
     var routeSummary = document.querySelector('#route-summary');
     routeSummary.innerHTML = null;
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
+    input4.value = "";
+    input5.value = "";
 }
 
 // Create searchBox1 object for the starting place
 var input1 = document.getElementById('from');
 var searchBox1 = new google.maps.places.SearchBox(input1);
+
 
 // Bias the SearchBox1 results towards current map's viewport
 map.addListener('bounds_changed', () => {
