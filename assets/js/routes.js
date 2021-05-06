@@ -130,29 +130,22 @@ const directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create the route
 const directionsDisplay = new google.maps.DirectionsRenderer({
-    // Ensures the Bicycling Layer is not removed on subsequent route requests
+    // Ensure the Bicycling Layer is not removed on subsequent route requests
     suppressBicyclingLayer: true,
-    // Makes the route markers draggable
+    // Make the route markers draggable
     draggable: true
 });
 // Create a variable for the waypoints
 const waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++);
 
-// Display the directions on the map
-directionsDisplay.setMap(map);
-// Display the directions panel
-directionsDisplay.setPanel(document.getElementById("directions-panel"));
-
-
 // Define the calcRoute function
 function calcRoute() {
-    // Create waypoints variable and loop 
+    // Create waypoints variable array and loop and push to the route request
     var waypts = [];
     var waypointElmts = document.getElementsByName('waypoints[]');
     for (var i = 0; i < waypointElmts.length; i++) {
         if (waypointElmts[i].value.length > 0) {
-            // Push the waypoints to the route request
             waypts.push({
                 location: waypointElmts[i].value,
                 stopover: true
@@ -176,6 +169,9 @@ function calcRoute() {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
+            // Display the directions on the map
+            directionsDisplay.setMap(map);
+            //Display the directions panel
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
             // Updates the route summary panel when the directions change
             directionsDisplay.addListener("directions_changed", () => {
@@ -197,7 +193,8 @@ function calcRoute() {
                 var hours = Math.floor((totalTime / 60) / 60);
                 var minutes = (totalTime / 60) % 60;
                 var routeSummary = document.querySelector('#route-summary');
-                // Pass the converted total time and distance to the output div
+                // Pass the converted total time and distance to the route summary div
+                // Statements to handle 0 hours, 1 hour and >1 hours and display with correct grammar
                 if (hours === 0) {
                     routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '.<br />Total time: ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 } else if (hours === 1) {
@@ -209,13 +206,25 @@ function calcRoute() {
                         '.<br />Total time: ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 }
             }
+            // Dispaly an error message for invalid routes
         } else {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
+            // Clear the map
+            directionsDisplay.setMap();
             // Clear the directions panel 
             directionsDisplay.setPanel();
         }
     });
+}
+
+function clearRoute() {
+    // Clear the map
+    directionsDisplay.setMap();
+    // Clear the directions panel
+    directionsDisplay.setPanel();
+    var routeSummary = document.querySelector('#route-summary');
+    routeSummary.innerHTML = null;
 }
 
 // Create searchBox1 object for the starting place
