@@ -135,7 +135,8 @@ const directionsDisplay = new google.maps.DirectionsRenderer({
     // Make the route markers draggable
     draggable: true
 });
-// Create a variable for the waypoints
+
+// Create an array for the waypoints
 const waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++);
 
@@ -152,7 +153,6 @@ function calcRoute() {
             });
         }
     }
-
     // Create a route request
     var request = {
         origin: document.getElementById('from').value,
@@ -163,7 +163,6 @@ function calcRoute() {
         // Ensure the route is calculated in the order specified
         optimizeWaypoints: false,
     }
-
     // Pass the request to the route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -177,7 +176,6 @@ function calcRoute() {
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
             });
-
             // Get the total route distance and duration
             function computeTotalDistAndTime(result) {
                 var totalDist = 0;
@@ -218,6 +216,7 @@ function calcRoute() {
     });
 }
 
+// A function to clear the map, summary, directions panel and inputs
 function clearRoute() {
     // Clear the map
     directionsDisplay.setMap();
@@ -227,9 +226,6 @@ function clearRoute() {
     routeSummary.innerHTML = null;
     input1.value = "";
     input2.value = "";
-    input3.value = "";
-    input4.value = "";
-    input5.value = "";
 }
 
 // Create searchBox1 object for the starting place
@@ -242,8 +238,8 @@ map.addListener('bounds_changed', () => {
     searchBox1.setBounds(map.getBounds());
 });
 
-// Create searchBox2 object for the waypoint 1
-var input2 = document.getElementById('waypoint1');
+// Create searchBox2 object for the destination
+var input2 = document.getElementById('to');
 var searchBox2 = new google.maps.places.SearchBox(input2);
 
 // Bias the SearchBox2 results towards current map's viewport
@@ -251,32 +247,38 @@ map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });
 
-// Create searchBox3 object for waypoint 2
-var input3 = document.getElementById('waypoint2');
-var searchBox3 = new google.maps.places.SearchBox(input3);
+// Functions to create and delete new waypoint search boxes
+$(document).ready(function () {
+    // Set the maximum number of waypoint inputs
+    var max_fields = 9;
+    var wrapper = $(".waypoint-input-fields");
+    var add_button = $(".add_form_field");
 
-// Bias the SearchBox3 results towards current map's viewport
-map.addListener('bounds_changed', () => {
-    searchBox3.setBounds(map.getBounds());
+    var x = 1;
+    $(add_button).click(function (e) {
+        e.preventDefault();
+        if (x < max_fields) {
+            x++;
+            //Add input box
+            $(wrapper).append('<div><input type="text" id="waypoint-inputs" class="form-control" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
+        } if ($(".waypoint").length < max_fields) {
+            createSearchBox(undefined, wrapper);
+        } else {
+            alert('Maximum number of waypoints allowed is 8')
+        }
+    });
+    // Delete input box
+    $(wrapper).on("click", ".delete", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+    })
 });
 
-// Create searchBox4 object for waypoint 3
-var input4 = document.getElementById('waypoint3');
-var searchBox4 = new google.maps.places.SearchBox(input4);
 
-// Bias the SearchBox4 results towards current map's viewport
-map.addListener('bounds_changed', () => {
-    searchBox4.setBounds(map.getBounds());
-});
 
-// Create searchBox5 object for the destination
-var input5 = document.getElementById('to');
-var searchBox5 = new google.maps.places.SearchBox(input5);
 
-// Bias the SearchBox5 results towards current map's viewport
-map.addListener('bounds_changed', () => {
-    searchBox5.setBounds(map.getBounds());
-});
+
 
 /*
 

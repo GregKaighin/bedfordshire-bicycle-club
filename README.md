@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s
 https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling
 https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
 https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
+https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
 
 Map styling:
 https://snazzymaps.com/style/60/blue-gray

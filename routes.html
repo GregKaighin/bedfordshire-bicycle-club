@@ -55,9 +55,14 @@
                 <div>
                     <label for="from" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Start (required)" class="form-control">
+                        <input type="text" id="from" placeholder="Start" class="form-control">
                     </div>
                 </div>
+                <div class="waypoint-input-fields">
+                    <button class="add_form_field"><i class="fas fa-plus"></i> Waypoint</button>
+
+                </div>
+                <!--
                 <div>
                     <label for="waypoint1" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
@@ -76,10 +81,11 @@
                         <input type=" text" id="waypoint3" placeholder="Waypoint 3 (optional)" name="waypoints[]">
                     </div>
                 </div>
+                -->
                 <div>
                     <label for="to" class="col-xs-2 control-label direction-input form-inline"></label>
                     <div class="col-xs-4">
-                        <input type="text" id="to" placeholder="End (required)" class="form-control">
+                        <input type="text" id="to" placeholder="End" class="form-control">
                     </div>
                 </div>
                 </form>
@@ -87,7 +93,7 @@
                     <button class="btn btn-info btn-sm" onclick="calcRoute();">Show Route <i
                             class="fas fa-map-signs"></i></button>
                     <button class="btn btn-danger btn-sm" onclick="clearRoute();">Clear Route <i
-                            class="fas fa-times"></i></button>
+                            class="far fa-times-circle"></i></button>
                 </div>
             </div>
         </div>
