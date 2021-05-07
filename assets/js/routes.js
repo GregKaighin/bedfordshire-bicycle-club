@@ -262,7 +262,6 @@ $(document).ready(function () {
             //Add input box
             $(wrapper).append('<div><input type="text" id="waypoint-inputs" class="form-control" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
         } if ($(".waypoint").length < max_fields) {
-            createSearchBox(undefined, wrapper);
         } else {
             alert('Maximum number of waypoints allowed is 8')
         }
