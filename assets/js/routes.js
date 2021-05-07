@@ -247,6 +247,19 @@ map.addListener('bounds_changed', () => {
     searchBox2.setBounds(map.getBounds());
 });
 
+// Create searchBox objects for from and to
+var input1 = document.getElementById('from');
+var searchBox1 = new google.maps.places.SearchBox(input1);
+map.addListener('bounds_changed', () => {
+    searchBox1.setBounds(map.getBounds());
+});
+
+var input2 = document.getElementById('to');
+var searchBox2 = new google.maps.places.SearchBox(input2);
+map.addListener('bounds_changed', () => {
+    searchBox2.setBounds(map.getBounds());
+});
+
 // Functions to create and delete new waypoint search boxes
 $(document).ready(function () {
     // Set the maximum number of waypoint inputs
@@ -259,9 +272,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) {
             x++;
-            //Add input box
+            //Add a new input box
             $(wrapper).append('<div><input type="text" id="waypoint-inputs" class="form-control" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
-        } if ($(".waypoint").length < max_fields) {
         } else {
             alert('Maximum number of waypoints allowed is 8')
         }
