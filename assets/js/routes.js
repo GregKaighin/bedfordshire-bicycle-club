@@ -113,7 +113,6 @@ bikeLayer.setMap(map);
 
 // Create map legend and icons
 const legend = document.getElementById("legend");
-
 for (const key in icons) {
     const type = icons[key];
     const name = type.name;
@@ -125,8 +124,10 @@ for (const key in icons) {
 // Push legend to map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
+
 // Create a DirectionsService object to use route method
 const directionsService = new google.maps.DirectionsService();
+
 
 // Create a DirectionsRenderer object to create route
 const directionsDisplay = new google.maps.DirectionsRenderer({
@@ -136,9 +137,11 @@ const directionsDisplay = new google.maps.DirectionsRenderer({
     draggable: true
 });
 
+
 // Create an array for waypoints
 const waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++);
+
 
 // Define calcRoute function
 function calcRoute() {
@@ -153,7 +156,7 @@ function calcRoute() {
             });
         }
     }
-    // Create a route request
+    // Create route request
     var request = {
         origin: document.getElementById('from').value,
         destination: document.getElementById('to').value,
@@ -176,7 +179,7 @@ function calcRoute() {
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
             });
-            // Get total route distance and duration
+            // Get total route distance and duration including waypoints
             function computeTotalDistAndTime(result) {
                 var totalDist = 0;
                 var totalTime = 0;
@@ -187,12 +190,12 @@ function calcRoute() {
                 }
                 // Convert total distance from meters to miles
                 totalDist = totalDist / (1000 / 0.62137);
-                // Convert total time from minute to hours and minutes
+                // Convert total time from minutes to hours and minutes
                 var hours = Math.floor((totalTime / 60) / 60);
                 var minutes = (totalTime / 60) % 60;
                 var routeSummary = document.querySelector('#route-summary');
                 // Pass converted total time and distance to route summary div
-                // Statements to handle 0 hours, 1 hour and >1 hours and display with correct grammar
+                // Statements to handle 0 hours, 1 hour and >1 hour and display with correct grammar
                 if (hours === 0) {
                     routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '.<br />Total time: ' + minutes.toFixed(0) + ' mins' + '.</div>';
                 } else if (hours === 1) {
@@ -216,20 +219,26 @@ function calcRoute() {
     });
 }
 
+
 // Clear map, summary, directions panel and inputs
 function clearRoute() {
     // Clear map
     directionsDisplay.setMap();
     // Clear directions panel
     directionsDisplay.setPanel();
+    // Clear summary
     var routeSummary = document.querySelector('#route-summary');
     routeSummary.innerHTML = null;
-    input1.value = "";
-    input2.value = "";
+    // Clear inputs
+    inputFrom.value = "";
+    inputTo.value = "";
+    /*
+    document.getElementById('waypoint-input-').remove();
+    */
 }
 
 
-// Create searchBox objects for from and to and bias results towards map bounds
+// Create inputs and searchBox objects for from and to and bias results towards map bounds
 var inputFrom = document.getElementById('from');
 var searchBoxFrom = new google.maps.places.SearchBox(inputFrom);
 map.addListener('bounds_changed', () => {
@@ -242,24 +251,30 @@ map.addListener('bounds_changed', () => {
 });
 
 
-// Create and delete new waypoint search boxes
+// Create and delete new waypoint fields and search boxes
 $(document).ready(function () {
     // Set maximum number of fields
-    var max_fields = 9;
+    var maxFields = 9;
     var wrapper = $(".waypoint-input-fields");
-    var add_button = $(".add_form_field");
+    var addButton = $(".add-form-field");
     var x = 1;
     var wpIndex = 1;
-    $(add_button).click(function (e) { // On add input button click
+    // On add input button click
+    $(addButton).click(function (e) {
         e.preventDefault();
-        if (x < max_fields) { // Maximum input boxes allowed
-            x++; // Increment boxes
-            // Add new input field
-            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="form-control" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
-            var inputWP = document.getElementById('waypoint-input-');
-            // Add search box to input
-            var searchBoxWP = new google.maps.places.SearchBox(inputWP);
-            searchBoxWP.setBounds(map.getBounds());
+        // Maximum input fields allowed
+        if (x < maxFields) {
+            // Increment fields
+            x++;
+            // Create input field
+            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
+            var inputWP = document.getElementsByClassName('waypoint-inputs');
+            // Dynamically initialize search box to input elements
+            for (var y = 0; y < inputWP.length; y++)
+                var searchBoxWP = new google.maps.places.SearchBox(inputWP[y]);
+            map.addListener('bounds_changed', () => {
+                searchBoxTo.setBounds(map.getBounds());
+            });
         } else {
             alert('The maximum number of waypoints allowed is 8!')
         }

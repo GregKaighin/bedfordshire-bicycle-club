@@ -8,6 +8,7 @@ https://developers.google.com/maps/documentation/javascript/examples/layer-bicyc
 https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
 https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
 https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
+https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
 
 Map styling:
 https://snazzymaps.com/style/60/blue-gray
