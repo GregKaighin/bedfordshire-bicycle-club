@@ -1,10 +1,9 @@
-// Create Bedfordshire variable
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
 };
 
-// Create variables for custom legend icons 
+// Custom legend icons 
 const icons = {
     bikeTrail: {
         name: "Bike trail",
@@ -94,7 +93,7 @@ const stylesArray = [{
         "lightness": 20
     }]
 }
-]
+];
 
 // Set map options
 const mapOtions = {
@@ -165,7 +164,7 @@ function calcRoute() {
         waypoints: waypts,
         // Calculate route in specified order
         optimizeWaypoints: false,
-    }
+    };
     // Pass request to route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
@@ -235,7 +234,7 @@ function clearRoute() {
     /*
     document.getElementById('waypoint-input-').remove();
     */
-}
+};
 
 
 // Create inputs and searchBox objects for from and to and bias results towards map bounds
@@ -251,6 +250,54 @@ map.addListener('bounds_changed', () => {
 });
 
 
+
+/*
+function createSearchBox(field, target) {
+    if (field == undefined) {
+        var holder = $("<div>").appendTo(target);
+        field = $("<input>", {
+            type: "text",
+            class: "form-control search-box waypoint-inputs",
+            name: "waypoints[]",
+            id: "waypoint-" + ($(".waypoint").length + 1),
+            placeholder: "Waypoint"
+        });
+        holder.append(field);
+        holder.append("<a href='#' class='delete'> <i class='fas fa-times'></i></a>");
+    } else {
+        field = $(field);
+    }
+    var searchBox = new google.maps.places.SearchBox(field.get(0));
+    map.addListener('bounds_changed', () => {
+        searchBox.setBounds(map.getBounds());
+    });
+
+}
+createSearchBox("#from");
+createSearchBox("#to");
+createSearchBox(".waypoint-inputs");
+
+// Set the maximum number of waypoint inputs
+var max_fields = 8;
+var wrapper = $(".waypoint-input-fields");
+var add_button = $(".add-form-field");
+
+add_button.click(function (e) {
+    e.preventDefault();
+    if ($(".waypoint").length < max_fields) {
+        createSearchBox(undefined, wrapper);
+    } else {
+        alert('Maximum number of waypoints allowed is 8')
+    }
+});
+
+// Delete input box
+$(wrapper).on("click", ".delete", function (e) {
+    e.preventDefault();
+    $(this).parent('div').remove();
+});
+*/
+
 // Create and delete new waypoint fields and search boxes
 $(document).ready(function () {
     // Set maximum number of fields
@@ -259,6 +306,9 @@ $(document).ready(function () {
     var addButton = $(".add-form-field");
     var x = 1;
     var wpIndex = 1;
+    var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(-33.8902, 151.1759),
+        new google.maps.LatLng(-33.8474, 151.2631));
     // On add input button click
     $(addButton).click(function (e) {
         e.preventDefault();
@@ -271,12 +321,9 @@ $(document).ready(function () {
             var inputWP = document.getElementsByClassName('waypoint-inputs');
             // Dynamically initialize search box to input elements
             for (var y = 0; y < inputWP.length; y++)
-                var searchBoxWP = new google.maps.places.SearchBox(inputWP[y]);
-            map.addListener('bounds_changed', () => {
-                searchBoxTo.setBounds(map.getBounds());
-            });
+                var searchBoxWP = new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
         } else {
-            alert('The maximum number of waypoints allowed is 8!')
+            alert('The maximum number of waypoints allowed is 8!');
         }
     });
     // Delete inputs
@@ -284,9 +331,8 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
-    })
+    });
 });
-
 
 
 

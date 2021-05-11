@@ -81,12 +81,12 @@ var stylesArray = [{
         "lightness": 20
     }]
 }
-]
+];
 
 function initMap() {
     // Initialize variables
     bounds = new google.maps.LatLngBounds();
-    infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow();
     currentInfoWindow = infoWindow;
     let bedfordshire = {
         lat: 52.02973,
@@ -144,7 +144,7 @@ function createMarkers(places) {
             };
             // Fetch the details of a place when the user clicks on a marker.
             service.getDetails(request, (placeResult, status) => {
-                showDetails(placeResult, marker, status)
+                showDetails(placeResult, marker, status);
             });
         });
         // Adjust the map bounds to include the location of this marker
