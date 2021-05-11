@@ -187,17 +187,7 @@ button.add_form_field {
     margin-bottom: 2px;
 }
 
-#waypoint1 {
-    font-size: 0.8em;
-    ;
-}
-
-#waypoint2 {
-    font-size: 0.8em;
-    ;
-}
-
-#waypoint3 {
+.waypoint-inputs {
     font-size: 0.8em;
     ;
 }
@@ -283,19 +273,20 @@ div.warnbox-content {
 }
 button.btn.btn-info.btn-sm {
     min-width: fit-content;
-    border: 1px solid black;
     margin-bottom: 4px;
 }
 button.btn.btn-danger.btn-sm {
     min-width: fit-content;
-    border: 1px solid black;
     margin-bottom: 4px;
 }
 
 button.btn.btn-info.btn-sm.preset-route-button {
     min-width: 204px;
-    border: 1px solid black;
     margin-bottom: 4px;
+}
+
+.btn-success {
+   margin-top: 4px;
 }
 
 /* Styling for place details */
