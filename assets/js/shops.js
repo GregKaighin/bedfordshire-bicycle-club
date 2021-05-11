@@ -142,7 +142,7 @@ function createMarkers(places) {
                 ]
 
             };
-            // Fetch the details of a place when the user clicks on a marker.
+            // Fetch place details when the user clicks on a marker.
             service.getDetails(request, (placeResult, status) => {
                 showDetails(placeResult, marker, status);
             });
@@ -150,8 +150,8 @@ function createMarkers(places) {
         // Adjust the map bounds to include the location of this marker
         bounds.extend(place.geometry.location);
     });
-    /* When all the markers have been placed, adjust the bounds of the map to
-     * show all the markers within the visible area. */
+    /* When all markers have been placed, adjust the bounds of the map to
+     * show all markers within the visible area. */
     map.fitBounds(bounds);
 }
 
@@ -159,12 +159,12 @@ function createMarkers(places) {
 function showDetails(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         let placeInfowindow = new google.maps.InfoWindow();
-        // Initialize the variables for the Info Window results
-        let rating = 'Rating not available';
+        // Initialize variables for the Info Window results
+        let rating = 'Not available';
         if (placeResult.rating) rating = placeResult.rating;
-        let formatted_address = 'Address not available';
+        let formatted_address = 'Not available';
         if (placeResult.formatted_address) formatted_address = placeResult.formatted_address;
-        let formatted_phone_number = 'Phone number not available';
+        let formatted_phone_number = 'Not available';
         if (placeResult.formatted_phone_number) formatted_phone_number = placeResult.formatted_phone_number;
         let website = 'Website not available';
         if (placeResult.website) website = placeResult.website;

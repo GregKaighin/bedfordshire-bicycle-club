@@ -24,11 +24,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="active nav-item">
+                <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"></i>
                         Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="active nav-item">
                     <a class="nav-link js-scroll-trigger" href="events.html"><i class="far fa-newspaper"></i> Events and
                         Gallery</a>
                 </li>
@@ -48,79 +48,101 @@
         </div>
     </nav>
 </header>
-<div class="container-fluid" id="content">
-    <!-- Jumbotron Hero -->
-    <div class="jumbotron jumbo-hero">
-    </div>
-</div>
 <hr class="page-break">
-<!-- Heading and text-->
-<h2 class="heading">About Us</h2>
-<p id="page-text">We are a group of local cycling enthusiasts who meet up every Sunday at 2pm for social bike
-    rides, barring bank holidays or seriously bad weather.<br><br>We have three groups, one each for easy, intermediate
-    and more challenging rides, check out the <a href="#meeting-info" class="page-links">meeting info</a>
-    below.<br><br>On this website you'll find <a href="events.html" class="page-links">news about club events</a>, a <a
-        href="events.html#gallery" class="page-links">photo gallery</a>, a<a href="routes.html" class="page-links">
-        route
-        planner</a>, some <a href=" routes.html#googleMap" class="page-links">recommended routes</a>, and a map with
-    locations of <a href="shops.html" class="page-links">local bike shops.</a><br><br>Feel free to come along to any of
-    our meet-ups. If you would like more info then please <a href="contact.html" class="page-links">send a message.</a>
-</p>
-</div>
-<hr class="page-break">
-<section>
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h2 class="heading" id="meeting-info">Cycling Meet-Ups:</h2>
-                <h3 class="heading" id="meeting-times">Sundays at 2pm</h3>
-                <p id="page-text">For regular updates and discussion about cycling meet-ups, locations and routes
-                    join our <a href="https://www.whatsapp.com/" class="page-links" target="_blank" rel="noopener"><i
-                            class="whatsapp-icon fab fa-whatsapp-square"></i> WhatsApp group </a>.<br><br></p>
+<h2 class="heading">Club Events</h2>
+<p id="page-text">Upcoming club events</p>
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 carousel-image" src="assets/img/carousel/charity-ride.jpg"
+                alt="Charity Bike Ride">
+            <div class="carousel-caption">
+                <h3 class="heading">Charity bike ride</h3>
+                <p id="page-text">August 29th, Bedford Park to Sandy</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-image" src="assets/img/carousel/bike-race.jpg"
+                alt="Tour of Britain Trip">
+            <div class="carousel-caption">
+                <h3 class="heading">Tour of Britain Trip</h3>
+                <p id="page-text">Watch the opening stage starting in Bodmin</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-image" src="assets/img/carousel/social.jpg" alt="Social Events">
+            <div class="carousel-caption">
+                <h3 class="heading">Social night out</h3>
+                <p id="page-text">Restaurant in town</p>
             </div>
         </div>
     </div>
-    <!-- Easy Riders Card -->
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card" id="easy-riders-card">
-                    <img src="assets/img/cards/bike-path.jpg" class="card-img-top" alt="bike-path">
-                    <div class="card-body">
-                        <h3 class="card-title">Easy Riders</h3>
-                        <hr class="page-break">
-                        <p class="card-text">A gentle ride of around 5 miles at a nice and easy pace.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Middle of the Road Card -->
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card" id="in-the-middle-card">
-                    <img src="assets/img/cards/road.jpg" class="card-img-top" alt="road">
-                    <div class="card-body">
-                        <h3 class="card-title">Middle of the Road</h3>
-                        <hr class="page-break">
-                        <p class="card-text">A ride of 5 to 10 miles at a moderate pace. Perfect for intermediate
-                            riders.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Pedal Pushers Card -->
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card" id="pedal-pushers-card">
-                    <img src="assets/img/cards/quick-cyclist.jpg" class="card-img-top" alt="quick-cyclist">
-                    <div class="card-body">
-                        <h3 class="card-title">Pedal Pushers</h3>
-                        <hr class="page-break">
-                        <p class="card-text">A longer ride of 10 to 20 miles to suit more advanced cyclists.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr class="page-break">
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<hr class="page-break">
 </section>
+<div style="text-align:center">
+    <h2 class="heading">Gallery</h2>
+    <p>See our cyclists in action.<br>Click on the images to enlarge:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row gallery-row" id="gallery">
+    <div class="column">
+        <img src="assets/img/gallery/park-life.jpg" alt="Park life" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bikes-open-path.jpg" alt="Trail ride" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bikes-sunny-path.jpg" alt="Country Park" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/bike-woods.jpg" alt="Woodland trail" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+</div>
+<div class="row gallery-row">
+    <div class="column">
+        <img src="assets/img/gallery/bike-at-home.jpg" alt="Home life" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/handlebars.jpg" alt="Rider's view" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/country-ride.jpg" alt="Country ride" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+    <div class="column">
+        <img src="assets/img/gallery/muddy-trail.jpg" alt="Muddy trail" style="width:100%"
+            onclick="enlargeGalleryImage(this);">
+    </div>
+</div>
+
+
+<div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+</div>
 <div class="container-fluid">
     <div class="row text-center">
         <div class="col-md-12">

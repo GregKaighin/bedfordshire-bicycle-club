@@ -252,7 +252,6 @@ $(document).ready(function () {
     var wrapper = $(".waypoint-input-fields");
     var addButton = $(".add-form-field");
     var x = 1;
-    var wpIndex = 1;
     // On add input button click
     $(addButton).click(function (e) {
         e.preventDefault();
@@ -261,11 +260,12 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
+            $(wrapper).append('<div><input type="text" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
             var inputWP = document.getElementsByClassName('waypoint-inputs');
-            // Dynamically initialize search box to input elements
+            // Bind search boxes to input elements
             for (var y = 0; y < inputWP.length; y++)
-                var searchBoxWP = new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
+                new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
+            // Warning for trying to exceed maximum number of waypoints
         } else {
             alert('The maximum number of waypoints allowed is 8!');
         }
@@ -274,9 +274,10 @@ $(document).ready(function () {
     $(wrapper).on("click", ".delete", function (e) {
         e.preventDefault();
         $(this).parent('div').remove();
+        // Subtract 1 from the waypoints counter
         x--;
     });
-    // Delete all inputs when clear route is clicked
+    // Delete all waypoint inputs when clear route button is clicked
     $(document).ready(function () {
         $('#clear-route').click(clearRoute);
     });
@@ -287,10 +288,8 @@ $(document).ready(function () {
     }
 });
 
-
-/*
-
 // Recommended routes
+//Functions for recommended routes
 function prioryMarinaSandy() {
     // Create a route request
     var request = {
@@ -305,18 +304,29 @@ function prioryMarinaSandy() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
-    // Pass request to route method
+    // Pass the request to the .route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get route distance and time and pass to #output div
-            const routeSummary = document.querySelector('#route-summary');
-            routeSummary.innerHTML = '<div class="alert-info">From: Priory Marina.<br/>To: Sandy.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br/>Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+            // Get the route distance and time and pass to the #output div
+            const output = document.querySelector('#route-summary');
+            output.innerHTML = '<div class="alert-info">From: Priory Marina.<br/>To: Sandy.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br/>Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
 
-            // Display route
+            // Display the route
             directionsDisplay.setDirections(result);
+        } else {
+            // Delete the route
+            directionsDisplay.setDirections({
+                routes: []
+            });
+            // Recenter the map on Bedfordshire
+            map.setCenter(bedfordshire);
+
+            // Show an error message if the route is not possible
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
         }
     });
+
 }
 
 function blueLagoonFlitwick() {
@@ -333,16 +343,26 @@ function blueLagoonFlitwick() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
-    // Pass request to .route method
+    // Pass the request to the .route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get route distance and time and pass to #output div
-            const routeSummary = document.querySelector('#route-summary');
-            routeSummary.innerHTML = '<div class="alert-info">From: Blue Lagoon.<br/>To: Flitwick.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+            // Get the route distance and time and pass to the #output div
+            const output = document.querySelector('#route-summary');
+            output.innerHTML = '<div class="alert-info">From: Blue Lagoon.<br/>To: Flitwick.<br/> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
 
-            // Display route
+            // Display the route
             directionsDisplay.setDirections(result);
+        } else {
+            // Delete the route
+            directionsDisplay.setDirections({
+                routes: []
+            });
+            // Recenter the map on Bedfordshire
+            map.setCenter(bedfordshire);
+
+            // Show an error message if the route is not possible
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
         }
     });
 }
@@ -361,18 +381,27 @@ function bedfordParkRenhold() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
-    // Pass request to .route method
+    // Pass the request to the .route method
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            // Get route distance and time and pass to #output div
-            const routeSummary = document.querySelector('#route-summary');
-            routeSummary.innerHTML = '<div class="alert-info">From: Bedford Park.<br />To: Renhold.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
+            // Get the route distance and time and pass to the #output div
+            const output = document.querySelector('#route-summary');
+            output.innerHTML = '<div class="alert-info">From: Bedford Park.<br />To: Renhold.<br /> Cycling distance <i class="fas fa-biking"></i> : ' + result.routes[0].legs[0].distance.text + '.<br />Duration <i class="fas fa-stopwatch"></i> : ' + result.routes[0].legs[0].duration.text + '.</div>';
 
-            // Display route
+            // Display the route
             directionsDisplay.setDirections(result);
+        } else {
+            // Delete the route
+            directionsDisplay.setDirections({
+                routes: []
+            });
+            // Recenter the map on Bedfordshire
+            map.setCenter(bedfordshire);
+
+            // Show an error message if the route is not possible
+            output.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
         }
     });
-}
 
-*/
+}

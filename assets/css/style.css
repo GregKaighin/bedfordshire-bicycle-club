@@ -287,7 +287,35 @@ button.btn.btn-info.btn-sm.preset-route-button {
 
 .btn-success {
    margin-top: 4px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: #0e1e251f 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+    border: 1px solid black;
 }
+
+.btn-info {
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: #0e1e251f 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+    border: 1px solid black;
+}
+
+.btn-danger {
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: #0e1e251f 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+    border: 1px solid black;
+}
+
 
 /* Styling for place details */
 .hero {
@@ -349,6 +377,19 @@ p.footer-text {
     text-align: center;
     text-transform: uppercase;
     font-size: 0.8em;
+}
+
+.carousel-image {
+    opacity: 0.33;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
 
 /* Forms */
