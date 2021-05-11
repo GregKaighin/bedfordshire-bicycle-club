@@ -231,11 +231,7 @@ function clearRoute() {
     // Clear inputs
     inputFrom.value = "";
     inputTo.value = "";
-    /*
-    document.getElementById('waypoint-input-').remove();
-    */
 };
-
 
 // Create inputs and searchBox objects for from and to and bias results towards map bounds
 var inputFrom = document.getElementById('from');
@@ -249,55 +245,6 @@ map.addListener('bounds_changed', () => {
     searchBoxTo.setBounds(map.getBounds());
 });
 
-
-
-/*
-function createSearchBox(field, target) {
-    if (field == undefined) {
-        var holder = $("<div>").appendTo(target);
-        field = $("<input>", {
-            type: "text",
-            class: "form-control search-box waypoint-inputs",
-            name: "waypoints[]",
-            id: "waypoint-" + ($(".waypoint").length + 1),
-            placeholder: "Waypoint"
-        });
-        holder.append(field);
-        holder.append("<a href='#' class='delete'> <i class='fas fa-times'></i></a>");
-    } else {
-        field = $(field);
-    }
-    var searchBox = new google.maps.places.SearchBox(field.get(0));
-    map.addListener('bounds_changed', () => {
-        searchBox.setBounds(map.getBounds());
-    });
-
-}
-createSearchBox("#from");
-createSearchBox("#to");
-createSearchBox(".waypoint-inputs");
-
-// Set the maximum number of waypoint inputs
-var max_fields = 8;
-var wrapper = $(".waypoint-input-fields");
-var add_button = $(".add-form-field");
-
-add_button.click(function (e) {
-    e.preventDefault();
-    if ($(".waypoint").length < max_fields) {
-        createSearchBox(undefined, wrapper);
-    } else {
-        alert('Maximum number of waypoints allowed is 8')
-    }
-});
-
-// Delete input box
-$(wrapper).on("click", ".delete", function (e) {
-    e.preventDefault();
-    $(this).parent('div').remove();
-});
-*/
-
 // Create and delete new waypoint fields and search boxes
 $(document).ready(function () {
     // Set maximum number of fields
@@ -306,9 +253,6 @@ $(document).ready(function () {
     var addButton = $(".add-form-field");
     var x = 1;
     var wpIndex = 1;
-    var defaultBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(-33.8902, 151.1759),
-        new google.maps.LatLng(-33.8474, 151.2631));
     // On add input button click
     $(addButton).click(function (e) {
         e.preventDefault();
@@ -317,7 +261,7 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times"></i></a></div>');
+            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
             var inputWP = document.getElementsByClassName('waypoint-inputs');
             // Dynamically initialize search box to input elements
             for (var y = 0; y < inputWP.length; y++)
@@ -332,10 +276,16 @@ $(document).ready(function () {
         $(this).parent('div').remove();
         x--;
     });
+    // Delete all inputs when clear route is clicked
+    $(document).ready(function () {
+        $('#clear-route').click(clearRoute);
+    });
+    function clearRoute() {
+        $('.waypoint-inputs').remove();
+        // Reset the waypoints counter
+        x = 1;
+    }
 });
-
-
-
 
 
 /*
