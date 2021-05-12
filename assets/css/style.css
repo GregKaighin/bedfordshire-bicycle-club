@@ -1,239 +1,255 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mali&display=swap");
 
 body {
-    color: #2f4f4f;
-    background-color: #eee8aa;
-    font-family: "Poppins", sans-serif;
-    padding-top: 128px;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  color: #2f4f4f;
+  background-color: #eee8aa;
+  font-family: "Poppins", sans-serif;
+  padding-top: 128px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Smooth scrolling for back to top button */
 html,
 body {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Style the navbar */
 .navbar {
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* Navbar custom background colour */
 .navbar-custom {
-    background-color: #2f4f4f;
+  background-color: #2f4f4f;
 }
 
 /* Navbar logo font */
 .logo {
-    font-family: 'Mali', cursive;
-    font-size: 110%;
+  font-family: "Mali", cursive;
+  font-size: 110%;
 }
 
 .logo-name {
-    font-family: 'Mali', cursive;
-    font-size: 100%;
+  font-family: "Mali", cursive;
+  font-size: 100%;
 }
 
 /* Override Bootstrap navbar-light default colours for the nav-links */
-.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .show>.nav-link {
-    color: lightyellow;
-    border-bottom: 1px solid lightyellow;
-    width: fit-content;
+.navbar-light .navbar-nav .show > .nav-link {
+  color: lightyellow;
+  border-bottom: 1px solid lightyellow;
+  width: fit-content;
 }
 
 .navbar-light .navbar-brand {
-    color: #eee8aa;
+  color: #eee8aa;
 }
 
 .navbar-light .navbar-brand:hover {
-    color: #eee8aa;
+  color: #eee8aa;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #eee8aa;
+  color: #eee8aa;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ffffe0;
+  color: #ffffe0;
 }
 
 /* Override Bootsrap navbar-light navbar-toggler default colours and hover underscore*/
 .navbar-light .navbar-toggler {
-    border-color: #000;
-    background: linear-gradient(to bottom right, rgba(255, 255, 250, 0.25), rgb(209, 209, 209));
+  border-color: #000;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 250, 0.25),
+    rgb(209, 209, 209)
+  );
 }
 
 .navbar-light .navbar-toggler:active {
-    background: #ffffe0;
+  background: #ffffe0;
 }
 
 /* Position and size the hero image */
 .jumbo-hero {
-    background-color: #eee8aa;
-    background: url("../img/hero/hero-bikes.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 180px;
-    margin-bottom: 0;
+  background-color: #eee8aa;
+  background: url("../img/hero/hero-bikes.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 180px;
+  margin-bottom: 0;
 }
 
 /* Style the headings */
 .heading {
-    font-family: 'Mali', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    color: brown;
-    font-size: 1.5em;
+  font-family: "Mali", cursive;
+  text-align: center;
+  text-transform: uppercase;
+  color: brown;
+  font-size: 1.5em;
 }
 
 .page-break {
-    border-top: 2px solid #2f4f4f;
-    width: 33%;
+  border-top: 2px solid #2f4f4f;
+  width: 33%;
 }
 
 #meeting-times {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 /* Style the 'about-us' Text */
 #page-text {
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    margin: auto;
-    max-width: 820px;
-    margin-top: 12px;
-    color: #2f4f4f;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: auto;
+  max-width: 820px;
+  margin-top: 12px;
+  color: #2f4f4f;
 }
 
 /* Colour the page-links in the 'about us' text to stand out */
 .page-links {
-    text-decoration: none;
-    color: black;
-
+  text-decoration: none;
+  color: black;
 }
 
 .page-links,
 a:hover {
-    color: black;
+  color: black;
 }
 
 /* Style the Bootstrap cards */
 .card {
-    background-color: #eee8aa;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    margin-bottom: 20px;
+  background-color: #eee8aa;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  margin-bottom: 20px;
 }
 
 .card-title {
-    font-family: 'Mali', cursive;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: brown;
+  font-family: "Mali", cursive;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: brown;
 }
 
 .card-text {
-    font-family: "Poppins", sans-serif;
-    font-size: 1em;
-    text-transform: none;
-    color: #2f4f4f;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  text-transform: none;
+  color: #2f4f4f;
 }
 
 /* Back to top button styling */
 #back-top-btn {
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 2em;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 2em;
 }
 
 #back-top-btn:hover {
-    color: #000;
+  color: #000;
 }
 
 /* back to top paragraph */
 .back-top-p {
-    text-transform: uppercase;
-    color: #2f4f4f;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
+  text-transform: uppercase;
+  color: #2f4f4f;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 
 /* Form placeholder text */
 
 .form-group {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 #from {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 #to {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 input#waypoint-inputs {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 button.add_form_field {
-    font-size: 0.8em;
-    margin-bottom: 2px;
+  font-size: 0.8em;
+  margin-bottom: 2px;
 }
 
 .waypoint-inputs {
-    font-size: 0.8em;
-    ;
+  font-size: 0.8em;
 }
 
 /* Size the map and apply box-shadow */
 #googleMap {
-    width: 85vw;
-    height: 48vh;
-    margin: 12px auto;
-    border: 1px solid black;
-    border-radius: 2% 2% 2% 2%;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 85vw;
+  height: 48vh;
+  margin: 12px auto;
+  border: 1px solid black;
+  border-radius: 2% 2% 2% 2%;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 /* Style the map legend */
 #legend {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    background-color: lightgray;
-    padding: 4px;
-    margin: 4px;
-    border: 1px solid black;
-    border-radius: 2% 2% 2% 2%;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  background-color: lightgray;
+  padding: 4px;
+  margin: 4px;
+  border: 1px solid black;
+  border-radius: 2% 2% 2% 2%;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 #legend img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 i.fas.fa-times {
-    color: darkred;
+  color: darkred;
 }
 
 /* Style the alert box containing the route details */
 .alert-info {
-    margin: auto;
-    max-width: fit-content;
-    text-align: left;
-    font-size: 0.8em;
-    color: black;
-    background-color: #efefef;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    font-family: 'Roboto', 'sans-serif';
+  margin: auto;
+  max-width: fit-content;
+  text-align: left;
+  font-size: 1em;
+  color: black;
+  background-color: lightyellow;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
@@ -242,59 +258,63 @@ i.fas.fa-times {
 }
 
 .alert-danger {
-    margin: auto;
-    max-width: fit-content;
-    text-align: center;
-    font-size: 0.8em;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-}
-
-#directions-panel {
-    background-color: lightyellow;
   margin: auto;
-  
-  min-width: fit-content ;
-  max-height: 33vh;
-  overflow: auto;
-}
-div.warnbox-content {
-    display:none;
-}
-.warnbox-c1 {
-    display:none;
-}
-
-.warnbox-c2 {
-    display: none;
-}
-button.btn.btn-info.btn-sm {
-    min-width: fit-content;
-    margin-bottom: 4px;
-}
-button.btn.btn-danger.btn-sm {
-    min-width: fit-content;
-    margin-bottom: 4px;
-}
-
-button.btn.btn-info.btn-sm.preset-route-button {
-    min-width: 204px;
-    margin-bottom: 4px;
-}
-
-.btn-success {
-   margin-top: 4px;
+  max-width: fit-content;
+  text-align: center;
+  font-size: 0.1em;
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0,
+  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+}
+
+#directions-panel {
+  background-color: lightyellow;
+  margin: auto;
+  max-width: 66vw;
+  max-height: 33vh;
+  overflow: auto;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+div.warnbox-content {
+  display: none;
+}
+
+.warnbox-c1 {
+  display: none;
+}
+
+.warnbox-c2 {
+  display: none;
+}
+
+button.btn.btn-info.btn-sm {
+  min-width: fit-content;
+  margin-bottom: 4px;
+}
+
+button.btn.btn-danger.btn-sm {
+  min-width: fit-content;
+  margin-bottom: 4px;
+}
+
+button.btn.btn-info.btn-sm.preset-route-button {
+  min-width: 204px;
+  margin-bottom: 4px;
+}
+
+.btn-success {
+  margin-top: 4px;
+  border: 1px solid black;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-    border: 1px solid black;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  
 }
 
 .btn-info {
@@ -302,9 +322,8 @@ button.btn.btn-info.btn-sm.preset-route-button {
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-    border: 1px solid black;
+  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  border: 1px solid black;
 }
 
 .btn-danger {
@@ -312,119 +331,120 @@ button.btn.btn-info.btn-sm.preset-route-button {
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-    border: 1px solid black;
+  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  border: 1px solid black;
 }
-
 
 /* Styling for place details */
 .hero {
-    width: 100%;
-    height: auto;
-    max-height: 166px;
-    display: block;
+  width: 100%;
+  height: auto;
+  max-height: 166px;
+  display: block;
 }
 
 .place,
 p {
-    font-family: 'open sans', arial, sans-serif;
-    padding-left: 18px;
-    padding-right: 18px;
-    text-transform: inherit;
+  font-family: "open sans", arial, sans-serif;
+  padding-left: 18px;
+  padding-right: 18px;
+  text-transform: inherit;
 }
 
 .details {
-    color: #2f4f4f;
+  color: #2f4f4f;
 }
 
 a {
-    text-decoration: none;
-    color: lightseagreen;
+  text-decoration: none;
+  color: lightseagreen;
 }
 
 /* Footer Social Links */
 
 .whatsapp-icon {
-    color: #25D366;
-    font-size: 1.2em;
+  color: #25d366;
+  font-size: 1.2em;
 }
 
 .facebook-icon {
-    color: #4267B2;
-    font-size: 1.2em;
+  color: #4267b2;
+  font-size: 1.2em;
 }
 
 .pinterest-icon {
-    color: #E60023;
-    font-size: 1.2em;
+  color: #e60023;
+  font-size: 1.2em;
 }
 
 .instagram-icon {
-    color: #8a3ab9;
-    font-size: 1.2em;
+  color: #8a3ab9;
+  font-size: 1.2em;
 }
 
 /* Footer text */
 h6.footer-heading {
-    font-family: 'Mali', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1em;
+  font-family: "Mali", cursive;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
 p.footer-text {
-    font-family: 'Mali', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 0.8em;
+  font-family: "Mali", cursive;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
 }
 
 .carousel-image {
-opacity: 0.33;
+  opacity: 0.33;
 }
 
 .carousel-caption {
   position: absolute;
   margin: auto;
   z-index: 20;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-heading {
-    font-family: 'Mali', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    color: darkred;
-    font-size: 1.5em;
+  font-family: "Mali", cursive;
+  text-align: center;
+  text-transform: uppercase;
+  color: darkred;
+  font-size: 1.5em;
 }
 
 .carousel-text {
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    margin: auto;
-    max-width: 820px;
-    margin-top: 12px;
-    color: black;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: auto;
+  max-width: 820px;
+  margin-top: 12px;
+  color: black;
 }
 
+.carousel-indicators li {
+  background-color: #2f4f4f;
+}
 /* Forms */
 .enquiries-heading {
-    font-size: 150%;
-    margin-top: 24px;
-    color: #000;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-size: 150%;
+  margin-top: 24px;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .form-control {
-    margin-bottom: 2px;
-    border-color: #000;
-    background-color: #efefef;
-    letter-spacing: 1px;
-    border-radius: 2% 2% 2% 2%;
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+  margin-bottom: 2px;
+  border-color: #000;
+  background-color: #efefef;
+  letter-spacing: 1px;
+  border-radius: 2% 2% 2% 2%;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
@@ -434,29 +454,29 @@ opacity: 0.33;
 
 /* Form Modal */
 .modal-content {
-    background-color: #daedf3;
-    border: solid 1px #000;
+  background-color: #daedf3;
+  border: solid 1px #000;
 }
 
 .modal-header {
-    border: none;
+  border: none;
 }
 
 .modal-footer {
-    border: none;
+  border: none;
 }
 
 .contact-heading {
-    margin-top: 25px;
-    margin-bottom: 20px;
-    color: #000;
-    letter-spacing: 2px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  color: #000;
+  letter-spacing: 2px;
 }
 
 .center-form {
-    padding-top: 10px;
-    margin: 0 auto;
-    max-width: 67%;
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 67%;
 }
 
 /* Gallery
@@ -468,16 +488,16 @@ opacity: 0.33;
 }
 
 .gallery-row {
-    margin: auto;
-    width: 88%
+  margin: auto;
+  width: 88%;
 }
 
 /* Style the images inside the grid */
 .column img {
-  opacity: 0.8; 
-  cursor: pointer; 
+  opacity: 0.8;
+  cursor: pointer;
   border-radius: 2% 2% 2% 2%;
-   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
@@ -527,7 +547,7 @@ opacity: 0.33;
 
 /* Media Query - Reduce the map width on larger screens */
 @media screen and (min-width: 768px) {
-    #googleMap {
-        max-width: 744px;
-    }
+  #googleMap {
+    max-width: 744px;
+  }
 }
