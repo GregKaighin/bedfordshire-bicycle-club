@@ -1,3 +1,13 @@
+/*
+Javascript Google Map Directions API & Places API Project - [2021] | Google Map Javascript Tutorial -
+https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s
+https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling
+https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
+https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
+https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
+https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
+*/
+
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
