@@ -33,11 +33,13 @@ body {
 .logo {
   font-family: "Mali", cursive;
   font-size: 110%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .logo-name {
   font-family: "Mali", cursive;
   font-size: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 /* Override Bootstrap navbar-light default colours for the nav-links */
@@ -97,6 +99,7 @@ body {
   text-transform: uppercase;
   color: brown;
   font-size: 1.5em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .page-break {
@@ -144,6 +147,7 @@ a:hover {
   text-transform: uppercase;
   font-size: 1.2em;
   color: brown;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .card-text {
@@ -402,26 +406,31 @@ p.footer-text {
   font-size: 0.8em;
 }
 
+img.d-block.w-100.carousel-image {
+    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+}
 .carousel-caption {
   position: absolute;
-  background-color: #eee8aa;
-  opacity: 0.67;
+  background-color: rgba(238, 232, 170, 0.8);
   margin: auto;
   z-index: 20;
+  border: 1px solid black;
   border-radius: 4px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.carousel-caption > p {
-    opacity: 1;
+  padding: 4px;
+  max-width: fit-content;
 }
 
 .carousel-heading {
   font-family: "Mali", cursive;
   text-align: center;
   text-transform: uppercase;
-  color: darkred;
+  color: brown;
   font-size: 1.5em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-text {
@@ -431,7 +440,7 @@ p.footer-text {
   max-width: fit-content;
   margin-top: 12px;
   opacity: 1;
-  color: black;
+  color: #2f4f4f;
 }
 
 .carousel-indicators li {
