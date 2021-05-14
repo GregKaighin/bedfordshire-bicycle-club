@@ -258,15 +258,21 @@ i.fas.fa-times {
 }
 
 .alert-danger {
+   font-family: 'Roboto', 'sans-serif';
   margin: auto;
   max-width: fit-content;
-  text-align: center;
-  font-size: 0.1em;
+  text-align: left;
+  font-size: 1em;
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px;
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
 #directions-panel {
@@ -396,15 +402,18 @@ p.footer-text {
   font-size: 0.8em;
 }
 
-.carousel-image {
-  opacity: 0.33;
-}
-
 .carousel-caption {
   position: absolute;
+  background-color: #eee8aa;
+  opacity: 0.67;
   margin: auto;
   z-index: 20;
+  border-radius: 4px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption > p {
+    opacity: 1;
 }
 
 .carousel-heading {
@@ -419,8 +428,9 @@ p.footer-text {
   font-family: "Poppins", sans-serif;
   text-align: center;
   margin: auto;
-  max-width: 820px;
+  max-width: fit-content;
   margin-top: 12px;
+  opacity: 1;
   color: black;
 }
 
@@ -519,6 +529,7 @@ p.footer-text {
 .container {
   position: relative;
   display: none;
+  max-width: 600px;
 }
 
 /* Expanding image text */
@@ -550,3 +561,5 @@ p.footer-text {
     max-width: 744px;
   }
 }
+
+

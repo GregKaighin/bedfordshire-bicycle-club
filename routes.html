@@ -27,10 +27,6 @@
                     <a class="nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"></i>
                         Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="news.html"><i class="far fa-newspaper"></i> Events and
-                        Gallery</a>
-                </li>
                 <li class="active nav-item">
                     <a class="nav-link js-scroll-trigger" href="routes.html"><i class="fas fa-map-signs"></i>
                         Routes</a>
@@ -56,17 +52,21 @@
             with the <a href="#googleMap" class="page-links">route planner</a> below.</p>
         <h2 class="heading">Recommended Routes:</h2>
         <div class="col-xs-offset-2 col-xs-10 text-center">
-            <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory Marina to
-                Sandy <i class="fas fa-map-signs"></i></button>
-            <button class="btn btn-info btn-sm preset-route-button" onclick="blueLagoonFlitwick();">Blue Lagoon to
-                Flitwick
-                <i class="fas fa-map-signs"></i></button>
-            <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to
-                Renhold
-                <i class="fas fa-map-signs"></i></button>
+            <a href="#preset-routes">
+                <button class="btn btn-info btn-sm preset-route-button" id="preset-routes"
+                    onclick="prioryMarinaSandy();">Priory Marina to
+                    Sandy <i class="fas fa-map-signs"></i></button></a>
+            <a href="#preset-routes">
+                <button class="btn btn-info btn-sm preset-route-button" id="blueLagoonFlitwick">Blue Lagoon to
+                    Flitwick
+                    <i class="fas fa-map-signs"></i></button></a>
+            <a href="#preset-routes">
+                <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to
+                    Renhold
+                    <i class="fas fa-map-signs"></i></button></a>
         </div>
         <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
-            <button class="btn btn-danger btn-sm" id="clear-route" onclick="clearRoute();">Clear Route <i
+            <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();">Clear Route <i
                     class="far fa-times-circle"></i></button>
         </div>
 
@@ -101,11 +101,14 @@
                     </div>
                 </div>
                 </form>
-                <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
-                    <button class="btn btn-info btn-sm" id="calc-route" onclick="calcRoute();">Show Route <i
-                            class="fas fa-map-signs"></i></button>
-                    <button class="btn btn-danger btn-sm" id="clear-route" onclick="clearRoute();">Clear Route <i
-                            class="far fa-times-circle"></i></button>
+                <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
+                    aria-label="Show and clear route buttons">
+                    <a href="#googleMap">
+                        <button class="btn btn-info" id="calc-route" onclick="calcRoute();">Show Route <i
+                                class="fas fa-map-signs"></i></button></a>
+                    <a href="#googleMap">
+                        <button class="btn btn-danger clear-route" onclick="clearRoute();">Clear Route <i
+                                class="far fa-times-circle"></i></button></a>
                 </div>
             </div>
         </div>
@@ -148,6 +151,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- Google maps API -->
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZA8vB1HcWG1pqWyUyBcyuRI2VDi_fU9U&callback&libraries=places">

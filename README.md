@@ -8,10 +8,11 @@
 ## Milestone Project 2
 ## Interactive Front-End
 ## February 2021
-https://gregkaighin.github.io/bedfordshire-bicycle-club/
+[Click here to view the website](https://gregkaighin.github.io/bedfordshire-bicycle-club/)
+
 
 ![Bedfordshire Bicycle Club Screenshots](assets/images/screenshots-plwgk.png)
-This website is made for a ficticious bicycle club. It features a bicycle route planner and bike store locator, both use Google Maps API. Additional features include a notice board for club events, a photo gallery, and an email contact form.
+This website is made for a ficticious local bicycle club. It features a bicycle route planner and bike store locator, both use Google Maps API. Additional features include a notice board for club events, a photo gallery, and an email contact form.
 
 ## Table of Contents
 1. [UX](#ux)
@@ -43,41 +44,41 @@ This website is made for a ficticious bicycle club. It features a bicycle route 
     - [Acknowledgements](#acknowledgements)
 8. [Contact](#contact)
 
-# UX
+The target audience is people who are members of the bicycle club, or who may be considering joining.
 
-The target audience is internet users who might be considering taking piano lessons for themselves or someone they know, and also current students.\
-The enquiries form is not yet functional. All other parts of the website are working as intended.
+This website has been designed to provide users with information about Bedfordshire Bicycle Club. It is targeted at casual cyclists in Bedfordshire, who may have an interest in joining a social cycling club. 
+The primary goal of the website is to attract people to join the club by presenting information about the club, including meeting times, social events and routes, and to promote public awareness of cycle lanes and bike shops in the county.
+The website features a contact form so that visitors can contact the site with any potential query.
 
-## Visitor Goals
-- Find a piano teacher.
-- Find out information about the business.
-- Download piano lesson resources.
-- Make an enquiry about piano lessons.
-- Listen to some piano music to evaluate GK's musical skill level. 
+## User-Experience (UX):
 
-## Business Goals
-- Advertise the business to potential customers and provide them with a means of getting in contact.
-- Raise awareness of the business among the general public, both online and locally.
-- Collect contact and other relevant information from prospective customers via a form.
+  * ### User Stories
+     
+    * #### First Time Visitor Goals
+      * As a First Time Visitor, I want to understand the purpose of the website and find out what Bedfordshire Bicycle Club has to offer.
+      * As a First Time Visitor, I want to navigate throughout the website easily to find content.
+      * As a First Time Visitor, I would like to be able to find out information about the club's cycling groups and social events, and how to get in contact.
 
-Piano Lessons with Greg Kaighin meets these needs because:
-- Relevant information is displayed clearly and is easily navigable.
-- The design of the site is based on user-stories and my experience as piano teacher.
+    * #### Returning Visitor Goals
+      * As a Returning Visitor, I would like to see some of the routes the club uses for their bike rides.
+      * As a Returning Visitor, I want to contact the administrators with any general queries or questions about Bedfordshire Bicycle Club.
+      * As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
+
+    * #### Frequent User Goals
+      * As a Frequent User, I would like to use the route planner to create routes for the club's bike rides.
+      * As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
 
 ## User Stories
 
-As a visitor to Piano Lessons with Greg Kaighin I expect/want/need:
+As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
 1. To be able to navigate the website easily and to quickly find the information I am looking for.
-2. To get relevant information about GK the piano teacher.
-3. To get information to help me decide if GK is the right piano teacher for me.
-4. For all information to be presented clearly and logically.
-5. To make contact easily if I decide I want to.
-6. To download sheet music for my piano lessons.
-7. To get information about music exams.
-8. To access the website on my phone, tablet and computer.
-9. To listen to some piano music.
-10. For the website to have a coherent look.
-11. For everything to work.
+2. To get information about Bedfordshire Bicycle Club.
+3. To get information about upcoming club  events.
+4. To be able to plan routes for club bike rides.
+5. To find information about local bike shops.
+6. To access the website on my phone, tablet and computer.
+7. For the website to have a coherent look.
+8. For everything to work.
 
 # Design Choices
 
@@ -126,14 +127,14 @@ The new version of the website is built with a mobile-first design, but it is al
 ## Languages
 - HTML5
 - CSS3
-- JavaScript (imported from [codepen.io/vanderzak/pen/BayjVep](https://codepen.io/vanderzak/pen/BayjVep) for the audio player.)
+- JavaScript
 ## Libraries
 - [Bootstrap](https://getbootstrap.com/) for it's prebuilt components and relatively straightforward sizing and layout capabilities.
 - [Font-Awesome](https://fontawesome.com/) for the navbar menu items.
 - [Google Fonts](https://fonts.google.com/) for the Roboto font, which is used throughout the website.
 - [js popper](https://popper.js.org/) for the navbar menu-toggle button and the show more/show less button in the 'about-me'.
 ## Tools
-- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images and encoding in .webp format.
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
 - [GitHub](https://github.com/) for storing the repository.
 - [realfavicongenerator](https://realfavicongenerator.net/) for generating the favicons.
