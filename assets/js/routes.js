@@ -166,8 +166,8 @@ function calcRoute() {
     }
     // Create route request
     var request = {
-        origin: document.getElementById('from').value,
-        destination: document.getElementById('to').value,
+        origin: document.getElementById('start').value,
+        destination: document.getElementById('end').value,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL,
         waypoints: waypts,
@@ -246,12 +246,12 @@ function clearRoute() {
 };
 
 // Create inputs and searchBox objects for from and to and bias results towards map bounds
-var inputFrom = document.getElementById('from');
+var inputFrom = document.getElementById('start');
 var searchBoxFrom = new google.maps.places.SearchBox(inputFrom);
 map.addListener('bounds_changed', () => {
     searchBoxFrom.setBounds(map.getBounds());
 });
-var inputTo = document.getElementById('to');
+var inputTo = document.getElementById('end');
 var searchBoxTo = new google.maps.places.SearchBox(inputTo);
 map.addListener('bounds_changed', () => {
     searchBoxTo.setBounds(map.getBounds());
@@ -302,91 +302,42 @@ $(document).ready(function () {
     }
 });
 
-var prioryMarinaToSandy = {
-    origin: {
-        lat: 52.131972,
-        lng: -0.434981
-    },
-    destination: {
-        lat: 52.1281,
-        lng: -0.2868
-    },
-    travelMode: google.maps.TravelMode.BICYCLING,
-    unitSystem: google.maps.UnitSystem.IMPERIAL
-}
-
-// Recommended routes
-//Functions for recommended routes
-function prioryMarinaSandy() {
-    // Create a route request
-
-    // Pass request to route method
-    directionsService.route(request, function (response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-            computeTotalDistAndTime(response);
-            // Display directions on map
-            directionsDisplay.setMap(map);
-            //Display directions panel
-            directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
-            directionsDisplay.addListener("directions_changed", () => {
-                computeTotalDistAndTime(directionsDisplay.getDirections());
+function presetRoutes() {
+    // Create waypoints variable array and loop and push to route request
+    var waypts = [];
+    var waypointElmts = document.getElementsByName('waypoints[]');
+    for (var i = 0; i < waypointElmts.length; i++) {
+        if (waypointElmts[i].value.length > 0) {
+            waypts.push({
+                location: waypointElmts[i].value,
+                stopover: true
             });
-        } else {
-            var routeSummary = document.querySelector('#route-summary');
-            routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
-            // Clear map
-            directionsDisplay.setMap();
-            // Clear directions panel 
-            directionsDisplay.setPanel();
         }
-    });
-}
-
-
-function blueLagoonFlitwick() {
-    // Create a route request
-    var request = {
+    }
+    var prioryMarinaSandy = {
         origin: {
-            lat: 51.9941,
-            lng: -0.2580
+            lat: 52.1472,
+            lng: -0.4649
         },
         destination: {
-            lat: 52.0046,
-            lng: -0.4979
+            lat: 52.1588,
+            lng: -0.3914
         },
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
-    // Pass request to route method
-    directionsService.route(request, function (response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-            computeTotalDistAndTime(response);
-            // Display directions on map
-            directionsDisplay.setMap(map);
-            //Display directions panel
-            directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
-            directionsDisplay.addListener("directions_changed", () => {
-                computeTotalDistAndTime(directionsDisplay.getDirections());
-            });
-        } else {
-            var routeSummary = document.querySelector('#route-summary');
-            routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
-            // Clear map
-            directionsDisplay.setMap();
-            // Clear directions panel 
-            directionsDisplay.setPanel();
-        }
-    });
-}
-
-
-function bedfordParkRenhold() {
-    // Create a route request
-    var request = {
+    };
+    var prioryMarinaSandy = {
+        origin: {
+            lat: 52.1472,
+            lng: -0.4649
+        },
+        destination: {
+            lat: 52.1588,
+            lng: -0.3914
+        },
+        travelMode: google.maps.TravelMode.BICYCLING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+    }; var prioryMarinaSandy = {
         origin: {
             lat: 52.1472,
             lng: -0.4649
@@ -398,6 +349,26 @@ function bedfordParkRenhold() {
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
+    // Create route request
+    var request = {
+        origin: document.getElementById('start').value,
+        destination: document.getElementById('end').value,
+        travelMode: google.maps.TravelMode.BICYCLING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        waypoints: waypts,
+        // Calculate route in specified order
+        optimizeWaypoints: false,
+    };
+    document.getElementByClassName('preset-route-buttons').addEventListener('click', function (e) {
+        var target = e.target;
+        if (target.id === 'prioryMarinaSandy') {
+            request = prioryMarinaSandy;
+        } else if (target.id === 'blueLagoonFlitwick') {
+            request = blueLagoonFlitwick;
+        } else {
+            request = bedfordParkRenhold;
+        }
+    }, false);
     // Pass request to route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {

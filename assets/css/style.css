@@ -99,7 +99,7 @@ body {
   text-transform: uppercase;
   color: brown;
   font-size: 1.5em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .page-break {
@@ -147,7 +147,7 @@ a:hover {
   text-transform: uppercase;
   font-size: 1.2em;
   color: brown;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .card-text {
@@ -415,9 +415,10 @@ img.d-block.w-100.carousel-image {
 }
 .carousel-caption {
   position: absolute;
-  background-color: rgba(238, 232, 170, 0.8);
+  background-color: rgba(238, 232, 170, 0.9);
   margin: auto;
   z-index: 20;
+  bottom: 36px;
   border: 1px solid black;
   border-radius: 4px;
   padding: 4px;
@@ -430,7 +431,7 @@ img.d-block.w-100.carousel-image {
   text-transform: uppercase;
   color: brown;
   font-size: 1.5em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-text {
@@ -443,9 +444,6 @@ img.d-block.w-100.carousel-image {
   color: #2f4f4f;
 }
 
-.carousel-indicators li {
-  background-color: #2f4f4f;
-}
 /* Forms */
 .enquiries-heading {
   font-size: 150%;
