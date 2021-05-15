@@ -406,13 +406,10 @@ p.footer-text {
   font-size: 0.8em;
 }
 
-img.d-block.w-100.carousel-image {
-    -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+.d-block.w-100.carousel-image {
+    opacity: 0.9;
 }
+
 .carousel-caption {
   position: absolute;
   background-color: rgba(238, 232, 170, 0.9);
@@ -420,6 +417,7 @@ img.d-block.w-100.carousel-image {
   z-index: 20;
   bottom: 36px;
   border: 1px solid black;
+  opacity: 0.8;
   border-radius: 4px;
   padding: 4px;
   max-width: fit-content;
@@ -567,6 +565,18 @@ img.d-block.w-100.carousel-image {
   #googleMap {
     max-width: 744px;
   }
+}
+
+@media screen and (max-width: 300px) {
+
+.carousel-heading {
+font-size: 0.8em;
+  
+}
+
+.carousel-text {
+  font-size: 0.6em;
+}
 }
 
 
