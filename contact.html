@@ -50,44 +50,45 @@
         <hr class="page-break">
         <h2 class="heading">Contact Us</h2>
         <p class="page-text">For more information and queries about Bedfordshire Bicycle Club, send a message.</p>
-        <!-- Contact form -->
-        <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
-            <div class="center-form">
-                <form onsubmit="return sendMail(this);">
-                    <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required />
-                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" required />
-                    <textarea rows="5" name="message" id="message" class="form-control" placeholder="Message"
-                        required></textarea>
-                    <div class="form-row text-center">
-                        <div class="col">
-                            <button type="submit" class="btn btn-info btn-sm" data-toggle="modal"
-                                data-target="#thank-you-modal">Send</button>
+        <!-- Enquiries form - This is a basic form to enable potential customers to get in contact. A modal pops up to say thank you once
+            the send button is pressed. -->
+        <section class="container-fluid">
+            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+                <div class="center-form">
+                    <form onsubmit="return sendMail(this);">
+                        <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required />
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" required />
+                        <textarea rows="5" name="message" id="message" class="form-control" placeholder="Message"
+                            required></textarea>
+                        <div class="form-row text-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-info">Send</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        <!-- Contact form modal -->
-        <div class="modal fade" id="thank-you-modal" tabindex="-1" role="dialog" aria-labelledby="thank-you-modal"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h6 class="modal-title">Thank you for your enquiry</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        We'll be in touch soon
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal" aria-label="ok">OK</button>
+            <div class="modal fade" id="thank-you-modal" tabindex="-1" role="dialog" aria-labelledby="thank-you-modal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Thank you for your enquiry</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            We'll get back to you soon
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" id="form-reset" data-dismiss="modal"
+                                aria-label="ok">OK</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
         <hr class="page-break">
         <footer>
@@ -128,7 +129,14 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
         <!-- emailJS -->
-        <script src="assets/js/emailJS.js"></script>
+        <script type="text/javascript" src="assets/js/emailjs.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("user_3T9SW0XfUmU7E5jNTsc16");
+            })();
+        </script>
 </body>
 
 </html>
