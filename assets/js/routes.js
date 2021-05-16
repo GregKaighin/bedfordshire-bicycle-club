@@ -148,7 +148,7 @@ const directionsDisplay = new google.maps.DirectionsRenderer({
 
 
 // Create an array for waypoints
-const waypoints = document.getElementsByName("waypoints[]");
+let waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++);
 
 
@@ -174,8 +174,6 @@ function calcRoute() {
         // Calculate route in specified order
         optimizeWaypoints: false,
     };
-
-
     // Pass request to route method
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
