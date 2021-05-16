@@ -11,13 +11,11 @@ body {
   padding: 0;
 }
 
-/* Smooth scrolling for back to top button */
+/* Smooth scrolling for back-to-top button and internal page links */
 html,
 body {
   scroll-behavior: smooth;
 }
-
-
 
 /* Navbar
 =============================================*/
@@ -86,7 +84,7 @@ body {
 }
 
 /* Hero image
-========================================== */
+=================================================== */
 .jumbo-hero {
   background-color: #eee8aa;
   background: url("../img/hero/hero-bikes.png");
@@ -108,7 +106,7 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
- /* Page breaks */
+/* Page breaks */
 .page-break {
   border-top: 2px solid #2f4f4f;
   width: 33%;
@@ -136,7 +134,7 @@ a:hover {
 }
 
 /* Cards 
-==================================== */
+=================================================== */
 .card {
   background-color: #eee8aa;
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
@@ -162,7 +160,7 @@ a:hover {
 }
 
 /* Carousel 
-======================================= */
+==================================================== */
 .carousel-caption {
   position: absolute;
   background-color: rgba(238, 232, 170, 0.9);
@@ -195,7 +193,7 @@ a:hover {
   color: #2f4f4f;
 }
 /* Gallery 
-==================================== */
+================================================= */
 
 .column {
   float: left;
@@ -263,7 +261,7 @@ a:hover {
 }
 
 /* Back-to-top button styling
-================================================ */
+================================================== */
 #back-top-btn {
   margin-top: 20px;
   cursor: pointer;
@@ -283,10 +281,8 @@ a:hover {
   font-size: 18px;
 }
 
-
-
 /* Map styling 
-========================================= */
+================================================= */
 /* Size the map and apply box-shadow */
 #googleMap {
   width: 85vw;
@@ -324,7 +320,7 @@ a:hover {
 }
 
 /* Route planner styling
-========================================= */
+====================================================== */
 /* Form inputs placeholder text */
 .form-group {
   margin-bottom: 0;
@@ -356,7 +352,7 @@ i.fas.fa-times {
 
 /* Alert box containing the route details */
 .alert-info {
-    font-family: 'Roboto', 'sans-serif';
+  font-family: "Roboto", "sans-serif";
   margin: auto;
   max-width: fit-content;
   text-align: left;
@@ -376,7 +372,7 @@ i.fas.fa-times {
 
 /* Route error message alert box */
 .alert-danger {
-   font-family: 'Roboto', 'sans-serif';
+  font-family: "Roboto", "sans-serif";
   margin: auto;
   max-width: fit-content;
   text-align: left;
@@ -439,7 +435,6 @@ button.btn.btn-info.btn-sm.preset-route-button {
   -moz-box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   box-shadow: #0e1e251f 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  
 }
 
 .btn-info {
@@ -460,9 +455,8 @@ button.btn.btn-info.btn-sm.preset-route-button {
   border: 1px solid #000000;
 }
 
-
 /* Store locator styling
-========================================= */
+========================================================== */
 /* Styling for place details */
 .hero {
   width: 100%;
@@ -489,7 +483,7 @@ a {
 }
 
 /* Footer social link icon colours
-========================================== */
+======================================================= */
 
 .whatsapp-icon {
   color: #25d366;
@@ -512,7 +506,7 @@ a {
 }
 
 /* Footer text 
-=========================================*/
+========================================================= */
 h6.footer-heading {
   font-family: "Mali", cursive;
   text-align: center;
@@ -528,7 +522,7 @@ p.footer-text {
 }
 
 /* Contact form styling
-======================================== */
+=================================================== */
 /* Forms */
 .enquiries-heading {
   font-size: 150%;
@@ -581,7 +575,7 @@ p.footer-text {
 }
 
 /* Media Queries
-=========================================*/
+=========================================================== */
 
 /* Reduce the map width on large screens */
 @media screen and (min-width: 768px) {
@@ -591,16 +585,11 @@ p.footer-text {
 }
 
 /*Reduce the size of the carousel caption on small screens */
-
 @media screen and (max-width: 300px) {
-
-.carousel-heading {
-font-size: 0.8em;
-  
+  .carousel-heading {
+    font-size: 0.8em;
+  }
+  .carousel-text {
+    font-size: 0.6em;
+  }
 }
-.carousel-text {
-  font-size: 0.6em;
-}
-}
-
-

@@ -45,7 +45,7 @@
     </nav>
 </header>
 <div class="container-fluid">
-    <!-- Jumbotron Hero -->
+    <!-- Hero image -->
     <div class="jumbotron jumbo-hero">
     </div>
 </div>
@@ -79,6 +79,7 @@
             </div>
         </div>
     </div>
+    <!-- Cards -->
     <!-- Easy Riders Card -->
     <div class="container-fluid">
         <div class="row text-center">
@@ -122,9 +123,11 @@
 <hr class="page-break">
 <h3 class="heading" id="events">Events</h3>
 <p class="page-text">Upcoming club events:<br><br></p>
+<!-- Carousel container -->
 <div class="container-fluid ">
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <!-- Carousel Indicators -->
             <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -132,6 +135,7 @@
                     <li data-target="#carouselIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
+                    <!-- Carousel item 1 -->
                     <div class="carousel-item active">
                         <img class="d-block w-100 carousel-image" src="assets/img/carousel/charity-ride.jpg"
                             alt="Charity Bike Ride">
@@ -140,7 +144,7 @@
                             <p class="carousel-text">Bedford Park to Sandy -<br>29/8/21</p>
                         </div>
                     </div>
-
+                    <!-- Carousel item 2 -->
                     <div class="carousel-item">
                         <img class="d-block w-100 carousel-image" src="assets/img/carousel/speed-cyclist.jpg"
                             alt="Tour of Britain Trip">
@@ -150,6 +154,7 @@
                             </p>
                         </div>
                     </div>
+                    <!-- Carousel item 3 -->
                     <div class="carousel-item">
                         <img class="d-block w-100 carousel-image" src="assets/img/carousel/social.jpg"
                             alt="Social Events">
@@ -161,6 +166,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Carousel controls -->
                 <a class="carousel-control-prev carousel-controls" href="#carouselIndicators" role="button"
                     data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -178,12 +184,13 @@
 
 <hr class="page-break">
 </section>
+<!-- Gallery -->
 <div style="text-align:center">
     <h2 class="heading" id="gallery">Gallery</h2>
     <p class="page-text">See our cyclists in action.<br>Click on the images to enlarge:</p>
 </div>
 
-<!-- The four columns -->
+<!-- Gallery row 1 -->
 <div class="row gallery-row">
     <div class="column">
         <a href="#expandedImg"><img src="assets/img/gallery/park-life.jpg" alt="Park life" style="width:100%"
@@ -202,6 +209,7 @@
                 onclick="enlargeGalleryImage(this);"></a>
     </div>
 </div>
+<!-- Gallery row 2 -->
 <div class="row gallery-row">
     <div class="column">
         <a href="#expandedImg"><img src="assets/img/gallery/bike-at-home.jpg" alt="Home life" style="width:100%"
@@ -220,8 +228,7 @@
                 onclick="enlargeGalleryImage(this);"></a>
     </div>
 </div>
-
-
+<!-- Gallery expanded image -->
 <div class="container">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
     <img id="expandedImg" style="width:100%">

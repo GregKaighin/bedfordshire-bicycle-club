@@ -217,14 +217,14 @@ function computeTotalDistAndTime(result) {
     // Pass converted total time and distance to route summary div
     // Statements to handle 0 hours, 1 hour and >1 hour and display with correct grammar
     if (hours === 0) {
-        routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '.<br />Total time: ' + minutes.toFixed(0) + ' mins' + '.</div>';
+        routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '<br />Total time: About ' + minutes.toFixed(0) + ' minutes' + '</div>';
     } else if (hours === 1) {
         routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' +
-            '.<br />Total time: ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' mins' + '.</div>';
+            '<br />Total time: About ' + hours.toFixed(0) + ' hour ' + minutes.toFixed(0) + ' minutes' + '</div>';
     }
     else {
         routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' +
-            '.<br />Total time: ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' mins' + '.</div>';
+            '<br />Total time: About ' + hours.toFixed(0) + ' hours ' + minutes.toFixed(0) + ' minutes' + '</div>';
     }
 }
 
@@ -342,17 +342,21 @@ function prioryMarinaSandy() {
     });
 }
 
-function blueLagoonFlitwick() {
+function southVillagesLoop() {
     // Create a route request
+    var wp1 = new google.maps.LatLng(51.99840, -0.47735);
+    var wp2 = new google.maps.LatLng(51.98286, -0.49563);
     var request = {
         origin: {
-            lat: 51.9941,
-            lng: -0.2580
+            lat: 52.00332,
+            lng: -0.49511
         },
         destination: {
-            lat: 52.0046,
-            lng: -0.4979
+            lat: 52.00332,
+            lng: -0.49511
         },
+        waypoints: [{ location: wp1, stopover: true }, { location: wp2, stopover: true }],
+        optimizeWaypoints: false,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
@@ -382,17 +386,25 @@ function blueLagoonFlitwick() {
     });
 }
 
-function bedfordParkRenhold() {
+function northBedfordLoop() {
     // Create a route request
+    var wp1 = new google.maps.LatLng(52.16544, -0.44906);
+    var wp2 = new google.maps.LatLng(52.17691, -0.42571);
+    var wp3 = new google.maps.LatLng(52.18438, -0.40065);
+    var wp4 = new google.maps.LatLng(52.15890, -0.39155);
+    var wp5 = new google.maps.LatLng(52.13475, -0.45009);
     var request = {
         origin: {
-            lat: 52.1472,
-            lng: -0.4649
+            lat: 52.14718,
+            lng: -0.46519
         },
         destination: {
-            lat: 52.1588,
-            lng: -0.3914
+            lat: 52.14671,
+            lng: -0.46459
         },
+        waypoints: [{ location: wp1, stopover: true }, { location: wp2, stopover: true },
+        { location: wp3, stopover: true }, { location: wp4, stopover: true }, { location: wp5, stopover: true }],
+        optimizeWaypoints: false,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }

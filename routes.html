@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <header>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light navbar-custom">
         <a class="navbar-brand js-scroll-trigger" href="index.html">
             <h1 class="logo">Bedfordshire</h1>
@@ -45,42 +46,48 @@
 </header>
 
 <body>
+    <!-- Route planner -->
     <div class="container-fluid">
         <hr class="page-break">
         <h1 class="heading">Plan a Ride</h1>
         <p class="page-text">See some of the routes we use in our groups</a> or create your own
             with the <a href="#googleMap" class="page-links">route planner</a> below.</p>
         <h2 class="heading">Selected Club Routes:</h2>
+        <!-- Preset route buttons -->
         <div class="col-xs-offset-2 col-xs-10 text-center">
             <a href="#preset-routes">
-                <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory Marina to
+                <button class="btn btn-info btn-sm preset-route-button" id="preset-routes"
+                    onclick="prioryMarinaSandy();">Priory Marina to
                     Sandy <i class="fas fa-map-signs"></i></button></a>
             <a href="#preset-routes">
-                <button class="btn btn-info btn-sm preset-route-button" onclick="blueLagoonFlitwick();">Blue Lagoon to
-                    Flitwick
+                <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();">South Villages
+                    Loop
                     <i class="fas fa-map-signs"></i></button></a>
             <a href="#preset-routes">
-                <button class="btn btn-info btn-sm preset-route-button" onclick="bedfordParkRenhold();">Bedford Park to
-                    Renhold
+                <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();">North Bedford Loop
                     <i class="fas fa-map-signs"></i></button></a>
         </div>
+        <!-- Clear route button -->
         <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
             <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();">Clear Route <i
                     class="far fa-times-circle"></i></button>
         </div>
-
+        <!-- Google map -->
         <div class="container-fluid">
             <div id="map-container">
                 <div id="googleMap"></div>
+                <!-- Map legend -->
                 <div id="legend">
                 </div>
+                <!-- Route summary panel -->
                 <div id="route-summary">
                 </div>
-
+                <!-- Directions panel -->
                 <div id="directions-panel">
                 </div>
             </div>
         </div>
+        <!-- Route planner user input form -->
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
             <div class="center-form">
                 <div>
@@ -100,6 +107,7 @@
                     </div>
                 </div>
                 </form>
+                <!-- Show route and clear route buttons -->
                 <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
                     aria-label="Show and clear route buttons">
                     <a href="#googleMap">
@@ -111,6 +119,7 @@
                 </div>
             </div>
         </div>
+        <!-- Back-to-top button -->
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-12">
@@ -141,6 +150,7 @@
                                 <i class="instagram-icon fab fa-instagram"></i></a>
                         </div>
                     </div>
+                    <!-- Copyright info -->
                     <div class="col-md-6">
                         <div>
                             <h6 class="footer-heading">Bedfordshire Bicycle Club</h6>
