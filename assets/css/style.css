@@ -18,7 +18,7 @@ body {
 }
 
 /* Navbar
-=============================================*/
+============================================= */
 .navbar {
   color: #fff;
   text-transform: uppercase;
@@ -206,7 +206,7 @@ a:hover {
   width: 88%;
 }
 
-/* Style the images inside the grid */
+/* Images inside the grid */
 .column img {
   opacity: 0.8;
   cursor: pointer;
@@ -250,7 +250,7 @@ a:hover {
   padding: 0 4px 0 4px;
 }
 
-/* Closable button inside the expanded image */
+/* Close button inside the expanded image */
 .closebtn {
   position: absolute;
   top: 10px;
@@ -268,12 +268,10 @@ a:hover {
   font-size: 2em;
 }
 
-/* Back-to-top button hover colour */
 #back-top-btn:hover {
   color: #000;
 }
 
-/* Back-to-top button text */
 .back-top-p {
   text-transform: uppercase;
   color: #2f4f4f;
@@ -283,7 +281,7 @@ a:hover {
 
 /* Map styling 
 ================================================= */
-/* Size the map and apply box-shadow */
+/* Size the map, center and apply box-shadow */
 #googleMap {
   width: 85vw;
   height: 48vh;
@@ -321,7 +319,7 @@ a:hover {
 
 /* Route planner styling
 ====================================================== */
-/* Form inputs placeholder text */
+/* Form inputs */
 .form-group {
   margin-bottom: 0;
 }
@@ -389,7 +387,7 @@ i.fas.fa-times {
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
-/* Directions panel styling */
+/* Directions panel */
 #directions-panel {
   background-color: #ffffe0;
   margin: auto;
@@ -397,18 +395,6 @@ i.fas.fa-times {
   max-height: 33vh;
   overflow: auto;
   border-radius: 2px;
-}
-
-div.warnbox-content {
-  display: none;
-}
-
-.warnbox-c1 {
-  display: none;
-}
-
-.warnbox-c2 {
-  display: none;
 }
 
 button.btn.btn-info.btn-sm {
@@ -426,7 +412,11 @@ button.btn.btn-info.btn-sm.preset-route-button {
   margin-bottom: 4px;
 }
 
-/* Route planner buttons stying */
+div.warnbox-content {
+    background-color: #ffffe0;
+}
+
+/* Route planner buttons */
 .btn-success {
   margin-top: 4px;
   border: 1px solid #000000;
@@ -455,13 +445,14 @@ button.btn.btn-info.btn-sm.preset-route-button {
   border: 1px solid #000000;
 }
 
-/* Store locator styling
+/* Store locator
 ========================================================== */
 /* Styling for place details */
 .hero {
   width: 100%;
   height: auto;
   max-height: 166px;
+  min-height: fit-content;
   display: block;
 }
 
@@ -482,7 +473,7 @@ a {
   color: lightseagreen;
 }
 
-/* Footer social link icon colours
+/* Footer social links
 ======================================================= */
 
 .whatsapp-icon {
@@ -521,7 +512,7 @@ p.footer-text {
   font-size: 0.8em;
 }
 
-/* Contact form styling
+/* Contact form
 =================================================== */
 /* Forms */
 .enquiries-heading {

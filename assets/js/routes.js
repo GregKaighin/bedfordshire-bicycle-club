@@ -3,7 +3,6 @@ Javascript Google Map Directions API & Places API Project - [2021] | Google Map 
 https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s
 https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling
 https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
-https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
 https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
 https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
 */
@@ -11,24 +10,6 @@ https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-ap
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
-};
-
-// Custom legend icons 
-const icons = {
-    bikeTrail: {
-        name: "Bike trail",
-        icon: "assets/img/icons/bike-trail.png",
-
-    },
-    bikeLane: {
-        name: "Bike lane",
-        icon: "assets/img/icons/bike-lane.png",
-
-    },
-    bikeFriendlyRoad: {
-        name: "Bike-friendly road",
-        icon: "assets/img/icons/bike-friendly-road.png",
-    },
 };
 
 // Custom styling for map
@@ -120,6 +101,24 @@ const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions)
 const bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
+// Custom map legend icons 
+const icons = {
+    bikeTrail: {
+        name: "Bike trail",
+        icon: "assets/img/icons/bike-trail.png",
+
+    },
+    bikeLane: {
+        name: "Bike lane",
+        icon: "assets/img/icons/bike-lane.png",
+
+    },
+    bikeFriendlyRoad: {
+        name: "Bike-friendly road",
+        icon: "assets/img/icons/bike-friendly-road.png",
+    },
+};
+
 // Create map legend and icons
 const legend = document.getElementById("legend");
 for (const key in icons) {
@@ -133,10 +132,8 @@ for (const key in icons) {
 // Push legend to map
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-
 // Create a DirectionsService object to use route method
 const directionsService = new google.maps.DirectionsService();
-
 
 // Create a DirectionsRenderer object to create route
 const directionsDisplay = new google.maps.DirectionsRenderer({
@@ -146,14 +143,12 @@ const directionsDisplay = new google.maps.DirectionsRenderer({
     draggable: true
 });
 
-
 // Create an array for waypoints
-let waypoints = document.getElementsByName("waypoints[]");
+var waypoints = document.getElementsByName("waypoints[]");
 for (var i = 0; i < waypoints.length; i++);
 
-
 function calcRoute() {
-    // Create waypoints variable array and loop and push to route request
+    // Create waypoints array and loop and push to route request
     var waypts = [];
     var waypointElmts = document.getElementsByName('waypoints[]');
     for (var i = 0; i < waypointElmts.length; i++) {
@@ -183,13 +178,12 @@ function calcRoute() {
             directionsDisplay.setMap(map);
             //Display directions panel
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
+            // Update route summary panel when directions are dragged
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
-
-
             });
         } else {
+            // Error massage for invalid routes
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Please enter a valid route!</div>';
             // Clear map
@@ -213,8 +207,8 @@ function computeTotalDistAndTime(result) {
     // Convert total time from minutes to hours and minutes
     var hours = Math.floor((totalTime / 60) / 60);
     var minutes = (totalTime / 60) % 60;
-    var routeSummary = document.querySelector('#route-summary');
     // Pass converted total time and distance to route summary div
+    var routeSummary = document.querySelector('#route-summary');
     // Statements to handle 0 hours, 1 hour and >1 hour and display with correct grammar
     if (hours === 0) {
         routeSummary.innerHTML = '<div class="alert-info">Route Summary <br /> Total distance: ' + (totalDist).toFixed(1) + ' miles' + '<br />Total time: About ' + minutes.toFixed(0) + ' minutes' + '</div>';
@@ -228,7 +222,6 @@ function computeTotalDistAndTime(result) {
     }
 }
 
-
 // Clear map, summary, directions panel and inputs
 function clearRoute() {
     // Clear map
@@ -241,9 +234,9 @@ function clearRoute() {
     // Clear inputs
     inputFrom.value = "";
     inputTo.value = "";
-};
+}
 
-// Create inputs and searchBox objects for from and to and bias results towards map bounds
+// Create inputs and search box objects for 'start' and 'end' and bias results towards map bounds
 var inputFrom = document.getElementById('start');
 var searchBoxFrom = new google.maps.places.SearchBox(inputFrom);
 map.addListener('bounds_changed', () => {
@@ -254,8 +247,6 @@ var searchBoxTo = new google.maps.places.SearchBox(inputTo);
 map.addListener('bounds_changed', () => {
     searchBoxTo.setBounds(map.getBounds());
 });
-
-
 
 // Create and delete new waypoint fields and search boxes
 $(document).ready(function () {
@@ -293,6 +284,7 @@ $(document).ready(function () {
     $(document).ready(function () {
         $('.clear-route').click(clearRoute);
     });
+    // Remove waypoint inputs
     function clearRoute() {
         $('.waypoint-inputs').remove();
         // Reset the waypoints counter
@@ -300,10 +292,8 @@ $(document).ready(function () {
     }
 });
 
-// Recommended routes
 //Functions for recommended routes
 function prioryMarinaSandy() {
-    // Create a route request
     var request = {
         origin: {
             lat: 52.131972,
@@ -315,17 +305,13 @@ function prioryMarinaSandy() {
         },
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
-    // Pass the request to the .route method
+    };
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
-            // Display directions on map
             directionsDisplay.setMap(map);
-            //Display directions panel
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
@@ -334,16 +320,14 @@ function prioryMarinaSandy() {
         } else {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
-            // Clear map
             directionsDisplay.setMap();
-            // Clear directions panel 
             directionsDisplay.setPanel();
         }
     });
 }
 
 function southVillagesLoop() {
-    // Create a route request
+    // Route waypoints
     var wp1 = new google.maps.LatLng(51.99840, -0.47735);
     var wp2 = new google.maps.LatLng(51.98286, -0.49563);
     var request = {
@@ -359,17 +343,13 @@ function southVillagesLoop() {
         optimizeWaypoints: false,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
-    // Pass the request to the .route method
+    };
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
-            // Display directions on map
             directionsDisplay.setMap(map);
-            //Display directions panel
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
@@ -378,16 +358,13 @@ function southVillagesLoop() {
         } else {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
-            // Clear map
             directionsDisplay.setMap();
-            // Clear directions panel 
             directionsDisplay.setPanel();
         }
     });
 }
 
 function northBedfordLoop() {
-    // Create a route request
     var wp1 = new google.maps.LatLng(52.16544, -0.44906);
     var wp2 = new google.maps.LatLng(52.17691, -0.42571);
     var wp3 = new google.maps.LatLng(52.18438, -0.40065);
@@ -407,17 +384,13 @@ function northBedfordLoop() {
         optimizeWaypoints: false,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
-    // Pass the request to the .route method
+    };
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             computeTotalDistAndTime(response);
-            // Display directions on map
             directionsDisplay.setMap(map);
-            //Display directions panel
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
-            // Updates route summary panel when directions change
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
@@ -426,9 +399,7 @@ function northBedfordLoop() {
         } else {
             var routeSummary = document.querySelector('#route-summary');
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
-            // Clear map
             directionsDisplay.setMap();
-            // Clear directions panel 
             directionsDisplay.setPanel();
         }
     });

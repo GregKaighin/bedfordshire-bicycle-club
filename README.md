@@ -122,13 +122,14 @@ These wireframes were created to outline the basic structure of the site. The cu
 ## Validation
 - HTML: [validator.w3.org](https://validator.w3.org/) - No errors or warnings to show.
 - CSS: - [jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator/) - No Errors Found.
+(http://jigsaw.w3.org/css-validator/validator$link)
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="http://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!" />
     </a>
-</p> 
+</p>
 
 ## Performance
 
