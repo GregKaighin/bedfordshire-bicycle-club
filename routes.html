@@ -64,22 +64,26 @@
         <!-- Form actions scroll the page to the route buttons, avoiding the incorrect use
     of anchor tags inside a button element, or additional javascript -->
         <form action="#preset-routes">
-            <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory
+            <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();"
+                aria-label="Show Priory Marina to Sandy route">Priory
                 Marina to Sandy <i class="fas fa-map-signs"></i></button>
         </form>
         <form action="#preset-routes">
-            <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();">South Villages
+            <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();"
+                aria-label=" Show south villages loop route">South Villages
                 Loop <i class="fas fa-map-signs"></i></button>
         </form>
         <form action="#preset-routes">
-            <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();">North Bedford Loop
+            <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();"
+                aria-label="Show north Bedford loop route">North Bedford Loop
                 <i class="fas fa-map-signs"></i></button>
         </form>
     </div>
     <!-- Clear route button -->
     <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
         <form action="#preset-routes">
-            <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();">Clear Route
+            <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();" aria-label="Clear route">Clear
+                Route
                 <i class="far fa-times-circle"></i></button>
         </form>
     </div>
@@ -121,12 +125,12 @@
             <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
                 aria-label="Show and clear route buttons"><a href="#googleMap"></a>
                 <form action="#googleMap">
-                    <button class="btn btn-info" id="calc-route" onclick="calcRoute();">Show Route <i
-                            class="fas fa-map-signs"></i></button>
+                    <button class="btn btn-info" id="calc-route" onclick="calcRoute();" aria-label="Show route">Show
+                        Route <i class="fas fa-map-signs"></i></button>
                 </form>
                 <form action="#googleMap">
-                    <button class="btn btn-danger clear-route" onclick="clearRoute();">Clear Route <i
-                            class="far fa-times-circle"></i></button>
+                    <button class="btn btn-danger clear-route" onclick="clearRoute();" aria-label="Clear route">Clear
+                        Route <i class="far fa-times-circle"></i></button>
                 </form>
             </div>
         </div>
