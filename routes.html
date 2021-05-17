@@ -51,116 +51,135 @@
     </nav>
 </header>
 <!-- Route planner -->
-<div class="container-fluid">
-    <hr class="page-break">
-    <h1 class="heading">Plan a Ride</h1>
-    <p class="page-text">See some of the routes we cycle in our groups or create your own
-        with the <a href="#googleMap" class="page-links">route planner</a> below.</p>
-    <h2 class="heading">Selected Club Routes:</h2>
-</div>
-<!-- Preset route buttons -->
-<div class="col-xs-offset-2 col-xs-10 text-center" id="preset-routes">
-    <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory
-        Marina to Sandy <i class="fas fa-map-signs"></i></button>
-    <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();">South Villages
-        Loop <i class="fas fa-map-signs"></i></button>
-    <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();">North Bedford Loop
-        <i class="fas fa-map-signs"></i></button>
-
-</div>
-
-<!-- Clear route button -->
-<div class="col-xs-offset-2 col-xs-10 text-center mt-2">
-    <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();">Clear Route
-        <i class="far fa-times-circle"></i></button>
-</div>
-<!-- Google map -->
-<div class="container-fluid">
-    <div id="map-container">
-        <div id="googleMap"></div>
-        <!-- Map legend -->
-        <div id="legend">
-        </div>
-        <!-- Route summary panel -->
-        <div id="route-summary">
-        </div>
-        <!-- Directions panel -->
-        <div id="directions-panel">
-        </div>
+<section>
+    <div class="container-fluid">
+        <hr class="page-break">
+        <h1 class="heading">Plan a Ride</h1>
+        <p class="page-text">See some of the routes we cycle in our groups or create your own
+            with the <a href="#googleMap" class="page-links">route planner</a> below.</p>
+        <h2 class="heading">Selected Club Routes:</h2>
     </div>
-</div>
-<!-- Route planner user input form -->
-<div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
-    <div class="center-form">
-        <div>
-            <label for="start" class="col-xs-2 control-label direction-input form-inline"></label>
-            <div class="col-xs-4">
-                <input type="text" id="start" placeholder="Start" class="form-control">
+    <!-- Preset route buttons -->
+    <div class="col-xs-offset-2 col-xs-10 text-center" id="preset-routes">
+        <!-- Form actions scroll the page to the route buttons, avoiding the incorrect use
+    of anchor tags inside a button element, or additional javascript -->
+        <form action="#preset-routes">
+            <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();">Priory
+                Marina to Sandy <i class="fas fa-map-signs"></i></button>
+        </form>
+        <form action="#preset-routes">
+            <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();">South Villages
+                Loop <i class="fas fa-map-signs"></i></button>
+        </form>
+        <form action="#preset-routes">
+            <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();">North Bedford Loop
+                <i class="fas fa-map-signs"></i></button>
+        </form>
+    </div>
+    <!-- Clear route button -->
+    <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
+        <form action="#preset-routes">
+            <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();">Clear Route
+                <i class="far fa-times-circle"></i></button>
+        </form>
+    </div>
+    <!-- Google map -->
+    <div class="container-fluid">
+        <div id="map-container">
+            <div id="googleMap"></div>
+            <!-- Map legend -->
+            <div id="legend">
+            </div>
+            <!-- Route summary panel -->
+            <div id="route-summary">
+            </div>
+            <!-- Directions panel -->
+            <div id="directions-panel">
             </div>
         </div>
-        <div class="waypoint-input-fields">
-            <button class="btn btn-success btn-sm add-form-field"><i class="fas fa-plus"></i>
-                Waypoint</button>
-        </div>
-        <div>
-            <label for="end" class="col-xs-2 control-label direction-input form-inline"></label>
-            <div class="col-xs-4">
-                <input type="text" id="end" placeholder="End" class="form-control">
+    </div>
+    <!-- Route planner user input form -->
+    <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
+        <div class="center-form">
+            <div>
+                <label for="start" class="col-xs-2 control-label direction-input form-inline"></label>
+                <div class="col-xs-4">
+                    <input type="text" id="start" placeholder="Start" class="form-control">
+                </div>
+            </div>
+            <div class="waypoint-input-fields">
+                <button class="btn btn-success btn-sm add-form-field"><i class="fas fa-plus"></i>
+                    Waypoint</button>
+            </div>
+            <div>
+                <label for="end" class="col-xs-2 control-label direction-input form-inline"></label>
+                <div class="col-xs-4">
+                    <input type="text" id="end" placeholder="End" class="form-control">
+                </div>
+            </div>
+            <!-- Show route and clear route buttons -->
+            <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
+                aria-label="Show and clear route buttons"><a href="#googleMap"></a>
+                <form action="#googleMap">
+                    <button class="btn btn-info" id="calc-route" onclick="calcRoute();">Show Route <i
+                            class="fas fa-map-signs"></i></button>
+                </form>
+                <form action="#googleMap">
+                    <button class="btn btn-danger clear-route" onclick="clearRoute();">Clear Route <i
+                            class="far fa-times-circle"></i></button>
+                </form>
             </div>
         </div>
-        <!-- Show route and clear route buttons -->
-        <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
-            aria-label="Show and clear route buttons"><a href="#googleMap"></a>
-            <button class="btn btn-info" id="calc-route" onclick="calcRoute();">Show Route <i
-                    class="fas fa-map-signs"></i></button>
-            <button class="btn btn-danger clear-route" onclick="clearRoute();">Clear Route <i
-                    class="far fa-times-circle"></i></button>
-        </div>
     </div>
-</div>
+</section>
 <!-- Back-to-top button -->
-<div class="container-fluid">
-    <div class="row text-center">
-        <div class="col-md-12">
-            <i id="back-top-btn" class="fas fa-arrow-up"></i>
-            <p class="back-top-p">Back to top</p>
-        </div>
-    </div>
-</div>
-<hr class="page-break">
-<footer>
-    <!-- Social-links -->
+<section>
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-md-6">
-                <h6 class="footer-heading">Socials Links</h6>
-                <div class="social-links">
-                    <a class="button btn-md" href="https://www.whatsapp.com/" target="_blank" rel="noopener"
-                        aria-label="Whatsapp link">
-                        <i class="whatsapp-icon fab fa-whatsapp-square"></i></a>
-                    <a class="button btn-md" href="https://www.facebook.com/" target="_blank" rel="noopener"
-                        aria-label="Facebook link">
-                        <i class="facebook-icon fab fa-facebook-square"></i></a>
-                    <a class="button btn-md" href="https://www.pinterest.co.uk/" target="_blank" rel="noopener"
-                        aria-label="Pinterest link">
-                        <i class="pinterest-icon fab fa-pinterest-square"></i></a>
-                    <a class="button btn-md" href="https://www.instagram.com/" target="_blank" rel="noopener"
-                        aria-label="Instagram link">
-                        <i class="instagram-icon fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Copyright info -->
-            <div class="col-md-6">
-                <div>
-                    <h6 class="footer-heading">Bedfordshire Bicycle Club</h6>
-                    <p class="footer-text">&#169;2021 Greg Kaighin</p>
-                </div>
+            <div class="col-md-12">
+                <i id="back-top-btn" class="fas fa-arrow-up"></i>
+                <p class="back-top-p">Back to top</p>
             </div>
         </div>
     </div>
+</section>
+<footer>
+    <hr class="page-break">
+    <!-- Social-links -->
+    <section>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h6 class="footer-heading">Socials Links</h6>
+                    <div class="social-links">
+                        <a class="button btn-md" href="https://www.whatsapp.com/" target="_blank" rel="noopener"
+                            aria-label="Whatsapp link">
+                            <i class="whatsapp-icon fab fa-whatsapp-square"></i></a>
+                        <a class="button btn-md" href="https://www.facebook.com/" target="_blank" rel="noopener"
+                            aria-label="Facebook link">
+                            <i class="facebook-icon fab fa-facebook-square"></i></a>
+                        <a class="button btn-md" href="https://www.pinterest.co.uk/" target="_blank" rel="noopener"
+                            aria-label="Pinterest link">
+                            <i class="pinterest-icon fab fa-pinterest-square"></i></a>
+                        <a class="button btn-md" href="https://www.instagram.com/" target="_blank" rel="noopener"
+                            aria-label="Instagram link">
+                            <i class="instagram-icon fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Copyright info -->
+    <section>
+        <div class="col-md-6">
+            <div>
+                <h6 class="footer-heading">Bedfordshire Bicycle Club</h6>
+                <p class="footer-text">&#169;2021 Greg Kaighin</p>
+            </div>
+        </div>
+    </section>
 </footer>
-
-<!-- Font Awesome -->
+<!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
 <!-- Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
@@ -177,7 +196,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <!-- Routes -->
 <script src="assets/js/routes.js"></script>
-<!-- Back-to-top-button -->
+<!-- Back-to-top button -->
 <script src="assets/js/back-to-top-button.js"></script>
 
 </body>

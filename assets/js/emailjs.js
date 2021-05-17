@@ -8,8 +8,10 @@ function sendMail(contactForm) {
         .then(
             function (response) {
                 console.log("SUCCESS", response);
-                $('#thank-you-modal').modal('show');  // Opens the modal on submission of all completed form fields
-                $('#form-reset')[0].reset(); // Resets form fields on submission
+                // Opens the modal on submission of all completed form fields
+                $('#thank-you-modal').modal('show');
+                // Resets form fields on submission
+                $('#form-reset')[0].reset();
             },
             function (error) {
                 console.log("FAILED", error);

@@ -50,15 +50,14 @@
         </div>
     </nav>
 </header>
-
-<body>
+<section>
     <div class="container-fluid">
         <hr class="page-break">
         <h2 class="heading">Contact Us</h2>
         <p class="page-text">For more information and queries about Bedfordshire Bicycle Club, send a message.</p>
         <!-- Enquiries form - This is a basic form to enable potential customers to get in contact. A modal pops up to say thank you once
             the send button is pressed. -->
-        <section class="container-fluid">
+        <div class="container-fluid">
             <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
                 <div class="center-form">
                     <form id="form-reset" onsubmit="return sendMail(this);">
@@ -75,74 +74,79 @@
                     </form>
                 </div>
             </div>
-            <div class="modal fade" id="thank-you-modal" tabindex="-1" role="dialog" aria-labelledby="thank-you-modal"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title">Thank you for your enquiry</h6>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            We'll get back to you soon
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-dismiss="modal" aria-label="ok">OK</button>
-                        </div>
+        </div>
+        <div class="modal fade" id="thank-you-modal" tabindex="-1" role="dialog" aria-labelledby="thank-you-modal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Thank you for your enquiry</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        We'll get back to you soon
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal" aria-label="ok">OK</button>
                     </div>
                 </div>
             </div>
-        </section>
-        <hr class="page-break">
-        <footer>
-            <!-- Social-links -->
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="col-md-6">
-                        <h6 class="footer-heading">Socials Links</h6>
-                        <div class="social-links">
-                            <a class="button btn-md" href="https://www.whatsapp.com/" target="_blank" rel="noopener"
-                                aria-label="Whatsapp link">
-                                <i class="whatsapp-icon fab fa-whatsapp-square"></i></a>
-                            <a class="button btn-md" href="https://www.facebook.com/" target="_blank" rel="noopener"
-                                aria-label="Facebook link">
-                                <i class="facebook-icon fab fa-facebook-square"></i></i></a>
-                            <a class="button btn-md" href="https://www.pinterest.co.uk/" target="_blank" rel="noopener"
-                                aria-label="Pinterest link">
-                                <i class="pinterest-icon fab fa-pinterest-square"></i></i></a>
-                            <a class="button btn-md" href="https://www.instagram.com/" target="_blank" rel="noopener"
-                                aria-label="Instagram link">
-                                <i class="instagram-icon fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <!-- Copyright info -->
-                    <div class="col-md-6">
-                        <div>
-                            <h6 class="footer-heading">Bedfordshire Bicycle Club</h6>
-                            <p class="footer-text">&#169;2021 Greg Kaighin</p>
-                        </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <hr class="page-break">
+    <!-- Social-links -->
+    <section>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h6 class="footer-heading">Socials Links</h6>
+                    <div class="social-links">
+                        <a class="button btn-md" href="https://www.whatsapp.com/" target="_blank" rel="noopener"
+                            aria-label="Whatsapp link">
+                            <i class="whatsapp-icon fab fa-whatsapp-square"></i></a>
+                        <a class="button btn-md" href="https://www.facebook.com/" target="_blank" rel="noopener"
+                            aria-label="Facebook link">
+                            <i class="facebook-icon fab fa-facebook-square"></i></a>
+                        <a class="button btn-md" href="https://www.pinterest.co.uk/" target="_blank" rel="noopener"
+                            aria-label="Pinterest link">
+                            <i class="pinterest-icon fab fa-pinterest-square"></i></a>
+                        <a class="button btn-md" href="https://www.instagram.com/" target="_blank" rel="noopener"
+                            aria-label="Instagram link">
+                            <i class="instagram-icon fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
-        <!-- Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-        <!-- emailJS -->
-        <script type="text/javascript" src="assets/js/emailjs.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-        </script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init("user_3T9SW0XfUmU7E5jNTsc16");
-            })();
-        </script>
+        </div>
+    </section>
+    <!-- Copyright info -->
+    <section>
+        <div class="col-md-6">
+            <div>
+                <h6 class="footer-heading">Bedfordshire Bicycle Club</h6>
+                <p class="footer-text">&#169;2021 Greg Kaighin</p>
+            </div>
+        </div>
+    </section>
+</footer>
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/bd2b28ab92.js"></script>
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<!-- emailJS -->
+<script src="assets/js/emailjs.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script>
+    (function () {
+        emailjs.init("user_3T9SW0XfUmU7E5jNTsc16");
+    })();
+</script>
 </body>
 
 </html>
-</body>
