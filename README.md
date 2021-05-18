@@ -89,17 +89,25 @@ As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
 
 ## Styling
 
-# Wireframes and Prototype Build
+# Wireframes
 
 These wireframes were created to outline the basic structure of the site. The current version is fairly close to these, the main changes are to the logo text, which has been changed to spread over two lines instead of one, to fit better onto small screen sizes, and to the social links, which have been moved to be above the cards in the footer, as I thought they might not be noticed right at the bottom of the page.
 
-[Bedfordshire Bicycle Club | Home]()
+* Home Page:
 
-[Bedfordshire Bicycle Club | Routes]()
+![home-page-wireframe](assets/img/wireframes/home.png)
 
-[Bedfordshire Bicycle Club | Shops]()
+* Routes Page:
 
-[Bedfordshire Bicycle Club | Contact]()
+![home-page-wireframe](assets/img/wireframes/routes.png)
+
+* Shops Page:
+
+![home-page-wireframe](assets/img/wireframes/shops.png)
+
+* Contact Page:
+
+![home-page-wireframe](assets/img/wireframes/contact.png)
 
 # Technologies Used:
 
@@ -147,11 +155,11 @@ These wireframes were created to outline the basic structure of the site. The cu
 ### Elements Unique To Each Page
 #### Home Page
 
-#### Music Page
+#### Routes Page
 
-#### Resources Page
+#### Shops Page
 
-#### Enquiries Page
+#### Contact Page
 
 
 ## Features for Future Releases
