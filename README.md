@@ -1,34 +1,36 @@
-# Bedfordshire Bicycle Club website
+# Bedfordshire Bicycle Club
 
-![Piano Lessons with Greg Kaighin Logo](assets/images/logo-plwgk.png)
+## Code Institute - Milestone Project 2
 
-## [Greg Kaighin](https://github.com/GregKaighin)
-## [Code Institute](https://codeinstitute.net/)
-## Full Stack Developer HND
-## Milestone Project 2
-## Interactive Front-End
-## February 2021
+![Website Mockup](assets/img/documentation/mockup.png)
+
 [Click here to view the website](https://gregkaighin.github.io/bedfordshire-bicycle-club/)
 
+This website is made for a ficticious local bicycle club.
+The primary goal is to provide information about the club to members and people interested in joining.  
 
-![Bedfordshire Bicycle Club Screenshots](assets/images/screenshots-plwgk.png)
-This website is made for a ficticious local bicycle club. It features a bicycle route planner and bike store locator, both use Google Maps API. Additional features include a notice board for club events, a photo gallery, and an email contact form.
+Features include a carousel with information about upcoming club events, and a photo gallery, which both use Bootstrap 4 components.  
+
+The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays routes used by the club, and also allows users to create their own cycling routes. It also features a store locator with map markers at locations of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
+
+There is also a contact form to allow people to get in contact with the site administrator.  
+
 
 ## Table of Contents
 1. [UX](#ux)
     -  [Visitor Goals](#visitor-goals)
-    -  [Business Goals](#business-goals)
+    -  [Club Goals](#business-goals)
     -  [User Stories](#user-stories)
     -  [Design Choices](#design-choices)
-    -  [Wireframes And Prototype Build](#wireframes-and-prototype-build)
+    -  [Wireframes](#wireframes)
 2. [Features](#features)
     - [Existing Features](#existing-features)
     - [Elements On Every Page](#elements-on-every-page)
     - [Elements Unique To Each Page](#elements-unique-to-each-page)
     - [Home Page](#home-page)
-    - [Music Page](#music-page)
-    - [Resources Page](#resources-page)
-    - [Enquiries Page](#enquiries-page)
+    - [Routes Page](#routes-page)
+    - [Shops Page](#shops-page)
+    - [Contact Page](#contact-page)
     - [Features For Future Releases](#features-for-future-releases)
 3. [Technologies Used](#technologies-used)
     - [Languages](#languages)
@@ -73,8 +75,8 @@ The website features a contact form so that visitors can contact the site with a
 As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
 1. To be able to navigate the website easily and to quickly find the information I am looking for.
 2. To get information about Bedfordshire Bicycle Club.
-3. To get information about upcoming club  events.
-4. To be able to plan routes for club bike rides.
+3. To get information about upcoming club events.
+4. To be able to view club cycling routes and to plan my own routes.
 5. To find information about local bike shops.
 6. To access the website on my phone, tablet and computer.
 7. For the website to have a coherent look.
@@ -116,10 +118,10 @@ These wireframes were created to outline the basic structure of the site. The cu
 - CSS3
 - JavaScript
 ## Libraries
-- [Bootstrap](https://getbootstrap.com/) for it's prebuilt components and relatively straightforward sizing and layout capabilities.
-- [Font-Awesome](https://fontawesome.com/) for the navbar menu items.
-- [Google Fonts](https://fonts.google.com/) for the Roboto font, which is used throughout the website.
-- [js popper](https://popper.js.org/) for the navbar menu-toggle button and the show more/show less button in the 'about-me'.
+- [Bootstrap](https://getbootstrap.com/) for the navbar, card, carousel, gallery and form components.
+- [Font-Awesome](https://fontawesome.com/) for the icons.
+- [Google Fonts](https://fonts.google.com/) for the 'Poppins' and 'Mali' fonts.
+- [js popper](https://popper.js.org/) for the navbar menu-toggle.
 ## Tools
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
