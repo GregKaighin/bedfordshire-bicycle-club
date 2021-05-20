@@ -9,7 +9,7 @@
 This website is for a ficticious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
-Features include a carousel with information about upcoming club events, and a photo gallery, using Bootstrap components.  
+Features include a carousel to show information about upcoming club events, and a photo gallery, using Bootstrap components.  
 
 The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays cycling routes used by the club, and also allows users to create their own. It also features a shop locator with map markers at locations of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
@@ -84,8 +84,6 @@ As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
 
 # Design Choices
 
-
-
 ## Colours
 ![colour-scheme](assets/img/documentation/colour-scheme.png)
 
@@ -105,16 +103,13 @@ All fonts are taken from [Google Fonts](https://fonts.google.com/specimen/Sansit
 
 ### Imagery
 
-The logo was created and edited in [Adobe Photoshop](https://www.flaticon.com/). The logo is a vector image of a bicycle.
+The logo was created and edited in [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html). It is a simple vector image of a bicycle.
 
-[Pixabay](https://pixabay.com/) was used to establish a full page image on the **Splash page** and a hero image on the **Home page** and **Contact page**. It was also used to input an image of a snowy landscape to the about section on the **Home page**.
+[Pixabay](https://pixabay.com/) was used to source all images on the **Home page**, including the hero image, bootstrap card images and gallery images.
 
-[Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/) was used to input images in the **Things to do page** to help put an image to each description of a location. 
-## Styling
+The hero image was created by making a collage of bicycle images in .png file format, which allows the images to retain transparency when displayed on the website. 
 
 # Wireframes
-
-These wireframes were created to outline the basic structure of the site. The current version is fairly close to these, the main changes are to the logo text, which has been changed to spread over two lines instead of one, to fit better onto small screen sizes, and to the social links, which have been moved to be above the cards in the footer, as I thought they might not be noticed right at the bottom of the page.
 
 * Home Page:
 
@@ -132,21 +127,82 @@ These wireframes were created to outline the basic structure of the site. The cu
 
 ![home-page-wireframe](assets/img/wireframes/contact.png)
 
-# Technologies Used:
+# Features
 
-## Languages
+#### Home Page
+
+On the home page the user sees the navbar and hero image, which immediately gives a clear idea of what the website is about.  
+
+This is followed by a short 'about-us' section telling users information about the club, and what they can find on the website.  This section includes internal links to other parts of the website to help users quickly navigate to where they want to go.  
+
+The next section is about cycling club meetups and gives information about the different cycling groups, and includes a link to the club's Whatsapp messaging group.
+
+Below this is a carousel slider showing details about upcoming club events.  
+
+The next feature is a photo gallery, which shows an expanded image when the small images are clicked.  
+
+At the bottom of the page there is a 'back-to-top' button, social media links, and copyright information.
+
+
+#### Routes Page
+
+The routes page shows a map with clickable buttons positioned above it to show routes used by the cycling club.  
+
+Below the map are input fields to allow the user to create their own routes including up to 8 waypoints.
+
+Routes are displayed on the map along with a panel below, showing a route summary and turn by turn directions, allowing the user to examine routes in detail.
+
+The routes and input fields can be cleared by clicking the 'clear route buttons'.
+
+The map, routing and directions are provided by Google Maps API. The input fields give results biased towards the boundary of the map. This uses the places feature of Google Maps API.  
+
+#### Shops Page
+
+The shops page shows a map showing the location of up to 20 bicycle shops in the Bedfordshire area.
+
+Information about each shop is shown to the user when they click on the marker, including the fields "rating, name, address, phone number, website". The website field is a clickable link allowing the user to visit shop websites.  
+
+The shops are located by using the 'nearby search' feature of Google Maps API.
+#### Contact Page
+
+The contact page shows a simple form allowing users to contact the site administrator with queries. The form makes use of the EmailJS service.  
+
+#### Features on every page
+
+All pages have a navbar at the top, and social links at the bottom.  
+
+# Issues overcome
+
+#### Issue 1
+
+I had a problem with the route planner, where the bicycle layer (green lines) would dissappear from the map on subsequent route requests.
+This was because the map displays the bicycle layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode.
+This was fixed by adding "bicycleLayer: suppress" to the directions renderer object (routes.js line 144).
+
+#### Issue 2
+
+I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
+This was fixed by appliying the getBounds() function directly to the created input fields (routes.js line 173).
+
+## Features for Future Releases
+
+# Technology Used:
+
+## Programming Languages
 - HTML5
 - CSS3
-- JavaScript
-## Libraries
-- [Bootstrap](https://getbootstrap.com/) for the navbar, card, carousel, gallery and form components.
-- [Font-Awesome](https://fontawesome.com/) for the icons.
-- [Google Fonts](https://fonts.google.com/) for the 'Poppins' and 'Mali' fonts.
-- [js popper](https://popper.js.org/) for the navbar menu-toggle.
-## Tools
+- JavaScript  
+
+## Frameworks, Libraries and Tools
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
-- [GitHub](https://github.com/) for storing the repository.
+- [Bootstrap](https://getbootstrap.com/) for the navbar, card, carousel, gallery and form components.
+- [Font-Awesome](https://fontawesome.com/) for the icons.
+- [Git](https://git-scm.com/) - for version control, and for the terminal to enter the code.
+- [GitHub](https://github.com/) - to store the repository pushed from Git.
+- [Google Fonts](https://fonts.google.com/) for the 'Poppins' and 'Mali' fonts.
+- [jQuery](https://jquery.com/) to simplify creation of some of the JavaScript funtions in the routes.js file.
+- [js popper](https://popper.js.org/) for the navbar menu toggle.
 - [realfavicongenerator](https://realfavicongenerator.net/) for generating the favicons.
 # Testing
 
@@ -166,32 +222,38 @@ These wireframes were created to outline the basic structure of the site. The cu
 
 [web.dev/measure/](https://web.dev/measure/)
 ![Piano Lessons with Greg Kaighin lighthouse-test](assets/images/lighthouse-test-plwgk.png)
-# Features
-
-## Existing Features
-### Elements On Every page
-#### Header
-
-#### Footer
-
-
-### Elements Unique To Each Page
-#### Home Page
-
-#### Routes Page
-
-#### Shops Page
-
-#### Contact Page
-
-
-## Features for Future Releases
-
 
 # Known Issues and Potential Solutions
 
 
-# Deployment
+## Deployment:
+
+### GitHub Pages
+
+This project was deployed to GitHub Pages by doing the following:
+
+1. Sign in to GitHub and locate the GitHub Repository.
+1. Select "Settings" from the menu above the Repository files.
+1. Scroll down to the "GitHub Pages" section.
+1. Under "Source" click the dropdown menu called "None" and select "Master Branch".
+1. After selecting "Master Branch", the page will automatically refresh.
+1. The website is now deployed. Return to the "GitHub Pages" section to retrieve the newly published link.
+
+### Forking the GitHub Repository
+
+1. Sign in to GitHub and locate the GitHub Repository.
+1. Go to the top right side of the screen and below the navigation bar is the "Fork" button.
+1. After clicking this, you will now have a copy of the original Repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Sign in to GitHub and locate the Repository.
+1. Above the Repository files, click on the "Code" button.
+1. You are then met with three options, HTTPS, SSH and GitHub CLI. Select one and copy the URL.
+1. Open Git Bash.
+1. Now change the current working directory to the location you'd like the cloned directory to be made.
+1. Type `Git Clone` and then paste the URL copied from step 3.
+1. Press Enter. Your local clone will now be created. 
 
 # Credits
 
