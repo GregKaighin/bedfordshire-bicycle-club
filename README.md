@@ -6,14 +6,14 @@
 
 [Click here to view the website](https://gregkaighin.github.io/bedfordshire-bicycle-club/)
 
-This website is made for a ficticious local bicycle club.
+This website is for a ficticious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
-Features include a carousel with information about upcoming club events, and a photo gallery, which both use Bootstrap 4 components.  
+Features include a carousel with information about upcoming club events, and a photo gallery, using Bootstrap components.  
 
-The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays routes used by the club, and also allows users to create their own cycling routes. It also features a store locator with map markers at locations of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
+The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays cycling routes used by the club, and also allows users to create their own. It also features a shop locator with map markers at locations of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
-There is also a contact form to allow people to get in contact with the site administrator.  
+There is also a contact form to allow people to get in contact with the site administrator, this uses the EmailJS service.
 
 
 ## Table of Contents
@@ -87,8 +87,29 @@ As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
 
 
 ## Colours
+![colour-scheme](assets/img/documentation/colour-scheme.png)
 
+The colour scheme used for this website was composed with [Adobe Color](https://color.adobe.com/create/color-wheel).
 
+* Light Yellow `#FFFFE0`
+* Cream `#EEE8AA`
+* Light Sea Green `#20B2AA`
+* Dark Slate Grey `#2F4F4F`
+* Brown `#A52A2A`
+
+### Typography
+
+The font for the club name and page headings is *Mali*, and for the paragraph text is *Poppins*. 
+The secondary font, used as fallback if there are any issues presenting the primary font, is *Roboto*.
+All fonts are taken from [Google Fonts](https://fonts.google.com/specimen/Sansita+Swashed?query=sansita+s#standard-styles).
+
+### Imagery
+
+The logo was created and edited in [Adobe Photoshop](https://www.flaticon.com/). The logo is a vector image of a bicycle.
+
+[Pixabay](https://pixabay.com/) was used to establish a full page image on the **Splash page** and a hero image on the **Home page** and **Contact page**. It was also used to input an image of a snowy landscape to the about section on the **Home page**.
+
+[Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/) was used to input images in the **Things to do page** to help put an image to each description of a location. 
 ## Styling
 
 # Wireframes

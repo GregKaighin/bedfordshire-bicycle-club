@@ -7,6 +7,7 @@ https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-t
 https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
 */
 
+// Lattitude and longitude for centering the map
 const bedfordshire = {
     lat: 52.02973,
     lng: -0.45303
@@ -96,8 +97,9 @@ const mapOtions = {
     zoomControl: true
 };
 
-// Create map with bicycle layer enabled
+// Create map object and apply it to html element with the map options
 const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
+// Create bicycle layer object and apply to map
 const bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
 
@@ -137,7 +139,8 @@ const directionsService = new google.maps.DirectionsService();
 
 // Create a DirectionsRenderer object to create route
 const directionsDisplay = new google.maps.DirectionsRenderer({
-    // Ensure Bicycling Layer is not removed on subsequent route requests
+    /* Ensure Bicycling Layer is not removed on subsequent route requests,
+       this is needed because the bicycle layer is displayed when the map is initially drawn */
     suppressBicyclingLayer: true,
     // Make route markers draggable
     draggable: true
@@ -263,13 +266,13 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
+            $(wrapper).append('<div><input type="text" placeholder="Waypoint" class="col-xs-2 control-label direction-input mx-auto mb-2" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
             var inputWP = document.getElementsByClassName('waypoint-inputs');
             // Bind search boxes to input elements
             for (var y = 0; y < inputWP.length; y++)
                 new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
-            // Warning for trying to exceed maximum number of waypoints
         } else {
+            // Warning for trying to exceed maximum number of waypoints
             alert('The maximum number of waypoints allowed is 8!');
         }
     });
@@ -292,7 +295,7 @@ $(document).ready(function () {
     }
 });
 
-//Functions for recommended routes
+//Functions for club routes
 function prioryMarinaSandy() {
     var request = {
         origin: {

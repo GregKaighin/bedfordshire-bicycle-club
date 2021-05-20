@@ -62,22 +62,22 @@
     </div>
     <!-- Preset route buttons -->
     <div class="col-xs-offset-2 col-xs-10 text-center">
-        <form action="#preset-routes">
-            <button class="btn btn-info btn-sm preset-route-button" onclick="prioryMarinaSandy();"
-                aria-label="Priory Marina to Sandy route">Priory Marina to Sandy <i
-                    class="fas fa-map-signs"></i></button>
-            <button class="btn btn-info btn-sm preset-route-button" onclick="southVillagesLoop();"
-                aria-label="South villages loop route">South Villages Loop <i class="fas fa-map-signs"></i></button>
-            <button class="btn btn-info btn-sm preset-route-button" onclick="northBedfordLoop();"
-                aria-label="North Bedford loop route">North Bedford Loop <i class="fas fa-map-signs"></i></button>
-        </form>
+
+        <button class="btn btn-info btn-sm preset-route-button"
+            onclick="prioryMarinaSandy();window.location.href='#preset-routes'"
+            aria-label="Priory Marina to Sandy route">Priory Marina to Sandy <i class="fas fa-map-signs"></i></button>
+        <button class="btn btn-info btn-sm preset-route-button"
+            onclick="southVillagesLoop();window.location.href='#preset-routes'"
+            aria-label="South villages loop route">South Villages Loop <i class="fas fa-map-signs"></i></button>
+        <button class="btn btn-info btn-sm preset-route-button"
+            onclick="northBedfordLoop();window.location.href='#preset-routes'"
+            aria-label="North Bedford loop route">North Bedford Loop <i class="fas fa-map-signs"></i></button>
     </div>
     <!-- Clear route button -->
     <div class="col-xs-offset-2 col-xs-10 text-center mt-2">
-        <form action="#preset-routes">
-            <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();" aria-label="Clear route">Clear
-                Route <i class="far fa-times-circle"></i></button>
-        </form>
+        <button class="btn btn-danger btn-sm clear-route" onclick="clearRoute();window.location.href='#preset-routes'"
+            aria-label="Clear route">Clear
+            Route <i class="far fa-times-circle"></i></button>
     </div>
     <!-- Google map -->
     <div class="container-fluid">
@@ -97,33 +97,27 @@
     <!-- Route planner user input form -->
     <div class="col-lg-6 col-md-8 col-sm-10 mx-auto text-center">
         <div class="center-form">
-            <div>
+            <div class="col-xs-4">
                 <label for="start" class="col-xs-2 control-label direction-input form-inline"></label>
-                <div class="col-xs-4">
-                    <input type="text" id="start" placeholder="Start" class="form-control">
-                </div>
+                <input type="text" id="start" placeholder="Start" class="form-control">
             </div>
+            <button class="btn btn-success btn-sm add-form-field"><i class="fas fa-plus"></i>
+                Waypoint</button>
             <div class="waypoint-input-fields">
-                <button class="btn btn-success btn-sm add-form-field"><i class="fas fa-plus"></i>
-                    Waypoint</button>
             </div>
-            <div>
+            <div class="col-xs-4">
                 <label for="end" class="col-xs-2 control-label direction-input form-inline"></label>
-                <div class="col-xs-4">
-                    <input type="text" id="end" placeholder="End" class="form-control">
-                </div>
+                <input type="text" id="end" placeholder="End" class="form-control">
             </div>
             <!-- Show route and clear route buttons -->
             <div class="btn-group col-xs-offset-2 col-xs-10 text-center mt-2" role="group"
                 aria-label="Show and clear route buttons"><a href="#googleMap"></a>
-                <form action="#googleMap">
-                    <button class="btn btn-info" id="calc-route" onclick="calcRoute();" aria-label="Show route">Show
-                        Route <i class="fas fa-map-signs"></i></button>
-                </form>
-                <form action="#googleMap">
-                    <button class="btn btn-danger clear-route" onclick="clearRoute();" aria-label="Clear route">Clear
-                        Route <i class="far fa-times-circle"></i></button>
-                </form>
+                <button class="btn btn-info" id="calc-route" onclick="calcRoute();window.location.href='#googleMap'"
+                    aria-label="Show route">Show
+                    Route <i class="fas fa-map-signs"></i></button>
+                <button class="btn btn-danger clear-route" onclick="clearRoute();window.location.href='#googleMap'"
+                    aria-label="Clear route">Clear
+                    Route <i class="far fa-times-circle"></i></button>
             </div>
         </div>
     </div>
