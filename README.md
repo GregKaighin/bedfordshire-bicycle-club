@@ -6,20 +6,18 @@
 
 [Click here to view the website](https://gregkaighin.github.io/bedfordshire-bicycle-club/)
 
-This website is for a ficticious local bicycle club.
+This website is for a fictitious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
 Features include a carousel to show information about upcoming club events, and a photo gallery, using Bootstrap components.  
 
-The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays cycling routes used by the club, and also allows users to create their own. It also features a shop locator with map markers at locations of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
+The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a shop locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
 There is also a contact form to allow people to get in contact with the site administrator, this uses the EmailJS service.
-
 
 ## Table of Contents
 1. [UX](#ux)
     -  [Visitor Goals](#visitor-goals)
-    -  [Club Goals](#business-goals)
     -  [User Stories](#user-stories)
     -  [Design Choices](#design-choices)
     -  [Wireframes](#wireframes)
@@ -46,11 +44,12 @@ There is also a contact form to allow people to get in contact with the site adm
     - [Acknowledgements](#acknowledgements)
 8. [Contact](#contact)
 
-The target audience is people who are members of the bicycle club, or who may be considering joining.
+The website has been designed to provide users with information about Bedfordshire Bicycle Club.  
+It is targeted at club members and casual cyclists in Bedfordshire who may have an interest in joining a social cycling club.  
 
-This website has been designed to provide users with information about Bedfordshire Bicycle Club. It is targeted at casual cyclists in Bedfordshire, who may have an interest in joining a social cycling club. 
-The primary goal of the website is to attract people to join the club by presenting information about the club, including meeting times, social events and routes, and to promote public awareness of cycle lanes and bike shops in the county.
-The website features a contact form so that visitors can contact the site with any potential query.
+The primary goal of the website is to provide club members with information including meeting times, social events and routes.  
+
+Secondary goals are to attract new members to join the club and to promote public awareness of cycle lanes and bike shops in the county.
 
 ## User-Experience (UX):
 
@@ -143,26 +142,28 @@ The next feature is a photo gallery, which shows an expanded image when the smal
 
 At the bottom of the page there is a 'back-to-top' button, social media links, and copyright information.
 
-
 #### Routes Page
 
 The routes page shows a map with clickable buttons positioned above it to show routes used by the cycling club.  
 
 Below the map are input fields to allow the user to create their own routes including up to 8 waypoints.
 
-Routes are displayed on the map along with a panel below, showing a route summary and turn by turn directions, allowing the user to examine routes in detail.
+Routes are displayed on the map along with a panel below, which gives a route summary and turn-by-turn directions, allowing the user to examine routes in more detail.
 
-The routes and input fields can be cleared by clicking the 'clear route buttons'.
+The markers and route are dragabble, allowing the user to modify the suggested route. The directions panel and route summary are updated when this this occurs.
+
+The routes, input fields and waypoints can be cleared by clicking the 'clear route' buttons.
 
 The map, routing and directions are provided by Google Maps API. The input fields give results biased towards the boundary of the map. This uses the places feature of Google Maps API.  
 
 #### Shops Page
 
-The shops page shows a map showing the location of up to 20 bicycle shops in the Bedfordshire area.
-
-Information about each shop is shown to the user when they click on the marker, including the fields "rating, name, address, phone number, website". The website field is a clickable link allowing the user to visit shop websites.  
+The shops page shows a map giving the location of up to 20 bicycle shops in Bedfordshire.
 
 The shops are located by using the 'nearby search' feature of Google Maps API.
+
+Information about each shop is shown to the user when they click on the marker, including the fields "rating, name, address, phone number, website". The website field is a clickable link allowing the user to navigate to shop websites.  
+
 #### Contact Page
 
 The contact page shows a simple form allowing users to contact the site administrator with queries. The form makes use of the EmailJS service.  
@@ -176,7 +177,7 @@ All pages have a navbar at the top, and social links at the bottom.
 #### Issue 1
 
 I had a problem with the route planner, where the bicycle layer (green lines) would dissappear from the map on subsequent route requests.
-This was because the map displays the bicycle layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode.
+This was because the map displays the bicycle layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode, causing a conflict.
 This was fixed by adding "bicycleLayer: suppress" to the directions renderer object (routes.js line 144).
 
 #### Issue 2
@@ -186,7 +187,7 @@ This was fixed by appliying the getBounds() function directly to the created inp
 
 ## Features for Future Releases
 
-# Technology Used:
+# Technology Used
 
 ## Programming Languages
 - HTML5
@@ -203,13 +204,18 @@ This was fixed by appliying the getBounds() function directly to the created inp
 - [Google Fonts](https://fonts.google.com/) for the 'Poppins' and 'Mali' fonts.
 - [jQuery](https://jquery.com/) to simplify creation of some of the JavaScript funtions in the routes.js file.
 - [js popper](https://popper.js.org/) for the navbar menu toggle.
-- [realfavicongenerator](https://realfavicongenerator.net/) for generating the favicons.
+- [realfavicongenerator](https://realfavicongenerator.net/) for generating the favicons.  
+
 # Testing
 
 ## Validation
-- HTML: [validator.w3.org](https://validator.w3.org/) - No errors or warnings to show.
-- CSS: - [jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator/) - No Errors Found.
-(http://jigsaw.w3.org/css-validator/validator$link)
+* [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) was used to validate the code in each HTML file.
+The four pages have been tested and they have all passed with no errors. The image shown below is of the webpage URL showing no errors.  
+
+![HTML-Validation](assets/img/documentation/validator.w3.org-bedfordshire-bicycle-club.png)
+* [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code in the *style.css* file.  
+
+![CSS-Validation](assets/img/documentation/jigsaw.w3.org-css-validator-bedfordshire-bicycle-club.png)
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
@@ -221,10 +227,9 @@ This was fixed by appliying the getBounds() function directly to the created inp
 ## Performance
 
 [web.dev/measure/](https://web.dev/measure/)
-![Piano Lessons with Greg Kaighin lighthouse-test](assets/images/lighthouse-test-plwgk.png)
+![Bedfordshire Bicycle Club lighthouse-test](assets/img/documentation/web-dev-measure-bedfordshire-bicycle-club.png)
 
 # Known Issues and Potential Solutions
-
 
 ## Deployment:
 
@@ -259,10 +264,7 @@ This project was deployed to GitHub Pages by doing the following:
 
 ## Images
 
-## Original Content
-
 ## Acknowledgements
-
 
 # Contact
 Greg Kaighin
@@ -287,6 +289,7 @@ images - pixabay, wiki commons
 
 Image Gallery:
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
+
 
 
 
