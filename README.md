@@ -6,41 +6,34 @@
 
 [Click here to view the website](https://gregkaighin.github.io/bedfordshire-bicycle-club/)
 
-This website is for a fictitious local bicycle club.
+This website is for a ficticious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
 Features include a carousel to show information about upcoming club events, and a photo gallery, using Bootstrap components.  
 
-The website makes use of Google Maps API and JavaScript to provide users with a route planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a shop locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
+The website makes use of Google Maps API and JavaScript to provide users with a Route Planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a shop locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
 There is also a contact form to allow people to get in contact with the site administrator, this uses the EmailJS service.
 
 ## Table of Contents
 1. [UX](#ux)
-    -  [Visitor Goals](#visitor-goals)
     -  [User Stories](#user-stories)
     -  [Design Choices](#design-choices)
     -  [Wireframes](#wireframes)
 2. [Features](#features)
-    - [Existing Features](#existing-features)
-    - [Elements On Every Page](#elements-on-every-page)
-    - [Elements Unique To Each Page](#elements-unique-to-each-page)
     - [Home Page](#home-page)
     - [Routes Page](#routes-page)
     - [Shops Page](#shops-page)
-    - [Contact Page](#contact-page)
-    - [Features For Future Releases](#features-for-future-releases)
-3. [Technologies Used](#technologies-used)
-    - [Languages](#languages)
-    - [Libraries](#libraries)
-    - [Tools](#tools)
+    - [**Contact page**](#contact-page)
+    - [Features on Every Page](#features-on-every-page)
+3. [Technology Used](#technology-used)
+    - [Programming Languages](#programming-languages)
+    - [Frameworks, Libraries and Tools](#frameworks,-libraries-and-tools)
 4. [Testing](#testing)
     - [Validation](#validation)
     - [Performance](#performance)
 5. [Deployment](#deployment)
 6. [Credits](#credits)
-    - [Images](#images)
-    - [Original Content](#original-content)
     - [Acknowledgements](#acknowledgements)
 8. [Contact](#contact)
 
@@ -66,7 +59,7 @@ Secondary goals are to attract new members to join the club and to promote publi
       * As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
 
     * #### Frequent User Goals
-      * As a Frequent User, I would like to use the route planner to create routes for the club's bike rides.
+      * As a Frequent User, I would like to use the Route Planner to create routes for the club's bike rides.
       * As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
 
 ## User Stories
@@ -122,7 +115,7 @@ The hero image was created by making a collage of bicycle images in .png file fo
 
 ![home-page-wireframe](assets/img/wireframes/shops.png)
 
-* Contact Page:
+* **Contact page**:
 
 ![home-page-wireframe](assets/img/wireframes/contact.png)
 
@@ -130,7 +123,7 @@ The hero image was created by making a collage of bicycle images in .png file fo
 
 #### Home Page
 
-On the home page the user sees the navbar and hero image, which immediately gives a clear idea of what the website is about.  
+On the home page the user sees the Navbar and hero image, which immediately gives a clear idea of what the website is about.  
 
 This is followed by a short 'about-us' section telling users information about the club, and what they can find on the website.  This section includes internal links to other parts of the website to help users quickly navigate to where they want to go.  
 
@@ -164,26 +157,26 @@ The shops are located by using the 'nearby search' feature of Google Maps API.
 
 Information about each shop is shown to the user when they click on the marker, including the fields "rating, name, address, phone number, website". The website field is a clickable link allowing the user to navigate to shop websites.  
 
-#### Contact Page
+#### **Contact page**
 
-The contact page shows a simple form allowing users to contact the site administrator with queries. The form makes use of the EmailJS service.  
+The **Contact page** shows a simple form allowing users to contact the site administrator with queries. The form makes use of the EmailJS service.  
 
 #### Features on every page
 
-All pages have a navbar at the top, and social links at the bottom.  
+All pages have a Navbar at the top, and social links at the bottom.  
 
 # Issues overcome
 
 #### Issue 1
 
-I had a problem with the route planner, where the bicycle layer (green lines) would dissappear from the map on subsequent route requests.
-This was because the map displays the bicycle layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode, causing a conflict.
+I had a problem with the Route Planner, where the Bicycle Layer (green lines) would disappear from the map on subsequent route requests.
+This was because the map displays the Bicycle Layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode, causing a conflict.
 This was fixed by adding "bicycleLayer: suppress" to the directions renderer object (routes.js line 144).
 
 #### Issue 2
 
-I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
-This was fixed by appliying the getBounds() function directly to the created input fields (routes.js line 173).
+Also on the route plannaer, I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
+This was fixed by applying the getBounds() function directly to the created input fields (routes.js line 173).
 
 ## Features for Future Releases
 
@@ -197,23 +190,155 @@ This was fixed by appliying the getBounds() function directly to the created inp
 ## Frameworks, Libraries and Tools
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
-- [Bootstrap](https://getbootstrap.com/) for the navbar, card, carousel, gallery and form components.
+- [Bootstrap](https://getbootstrap.com/) for the Navbar, card, carousel, gallery and form components.
 - [Font-Awesome](https://fontawesome.com/) for the icons.
 - [Git](https://git-scm.com/) - for version control, and for the terminal to enter the code.
 - [GitHub](https://github.com/) - to store the repository pushed from Git.
 - [Google Fonts](https://fonts.google.com/) for the 'Poppins' and 'Mali' fonts.
 - [jQuery](https://jquery.com/) to simplify creation of some of the JavaScript funtions in the routes.js file.
-- [js popper](https://popper.js.org/) for the navbar menu toggle.
+- [js popper](https://popper.js.org/) for the Navbar menu toggle.
 - [realfavicongenerator](https://realfavicongenerator.net/) for generating the favicons.  
 
 # Testing
+
+### Testing of User Stories in UX section:
+     
+  #### First Time Visitor Goals
+    
+* As a First Time Visitor, I want to understand the purpose of the website and find out what Bedfordshire Bicycle Club has to offer.
+
+    - On the **Home page** the user is met with the Navbar, Hero image and 'About-us' section, enabling them to quickly see what the site is about.
+
+* As a First Time Visitor, I want to navigate throughout the website easily to find content.
+
+    - The Navbar and the Links in the 'About-us' section enable the user to quickly navigate to the content they want to view.
+
+* As a First Time Visitor, I would like to be able to find out information about the club's cycling groups and social events, and how to get in contact.
+
+    - Information about the club cycling groups is displayed immediately below the 'About-us' section, along with a link to the club Whatsapp group. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
+
+
+  #### Returning Visitor Goals
+
+* As a Returning Visitor, I would like to see some of the routes the club uses for their bike rides.
+
+    - On the **Routes page**, buttons to show club routes are displayed above the map, allowing the user to examine these routes easily.
+
+* As a Returning Visitor, I want to contact the administrators with any general queries or questions about Bedfordshire Bicycle Club.
+
+    - Users can access the **Contact page** via the Navbar, or use the Whatsapp link displayed on the **Home page** and in Social Links in the footer on each page.
+
+* As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
+
+    - The **Shops page** is accessible through the Navbar, upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
+
+  #### Frequent User Goals
+
+* As a Frequent User, I would like to use the Route Planner to create routes for the club's bike rides.
+
+    - The user can return to the **Routes page** to use the Route Planner to create their own routes.
+
+* As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
+
+    - The user can access social media accounts displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
+
+### Further Testing
+
+#### The website has been tested on the following browsers:
+
+* Firefox
+* Google Chrome
+* Internet Explorer
+* Microsoft Edge
+* Safari
+
+#### The website has been tested on the following devices:
+
+* Dell XPS 8940
+* iPhone X
+* iPhone 7
+* iPad
+* Lenovo Yoga Tab 3
+* Moto G4
+* Moto G6
+* Samsung Galaxy S20
+
+
+#### Testing process:
+
+The below table show the results of these tests:
+
+##### Table Key:
+
+&check; - *Works*, &cross; - *Doesn't Work*.
+
+
+| Item tested           | Dell XPS 8940 | iPhone X | iPhone 7 | iPad | Lenovo Yoga Pad 3 | Moto G4 | Moto G6  |
+| ----------- | ------------- | -------- | -------- | ---- | --------------- | ----------- | --------------------- |
+| Navbar links                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Smooth scroll behaviour     | &check;  | &cross; | &cross; | &cross; | &check; | &check; | &check; |
+| Carousel                    | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Gallery                     | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Social links                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Back to top button          | &check;  | &check; | &cross; | &check; | &check; | &check; | &check; |
+| Hover behaviour             | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Map load                    | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Map buttons                 | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Info Windows and links      | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Show route                  | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Map markers                 | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Contact form                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Contact form submit button  | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Contact form modal          | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+
+
+* The Navbar links and logo, work as intended.
+* The `scroll-behaviour: smooth;` doesn't work on the Apple devices as shown above.
+* The Carousel displayed correctly on all devices tested. On the iPhone7, it displayed but without the Control buttons. It did still display each item in turn automatically.
+* The Gallery worked as expected on all devices tested.
+* The Social links work correctly on all devices, successfully opening up a new browser tab. Pressing the Back button returns the user without issue.
+* The Back to top button worked properly on every page, on every device except the iPhone 7, where it did not work at all.
+* The Hover behaviour for the Nav Links and Back-to-Top button worked as expected on all devices tested.
+* The Show Route, Clear Route and Route buttons on the Routes page worked correctly on all devices tested.
+* The Waypoint button on the routes page works as expected on all devices, allowing the user to create a maximum of 8 input fields. An alert always appeared when attempting to create more than 8 waypoint input fields.
+* The Map does not load on any device if the internet connection is very slow, even if the rest of the page loads without issue. This can usually be corrected by pressing the refresh button. 
+* The Map markers, Routes, Route Summary, and Directions Panel displayed correctly on each device tested.
+* The Shops page Info Windows opened up properly when the map markers were clicked. The links to shop websites in the Info Window worked as expected, opening the shop websites in a new browser tab.
+* The Contact form works as expected on all devices, including the the 'Required' popup for attempting to submit an incomplete form.
+* The Contact form successfully submitted the message to EmailJS each time it was tested.
+* The Contact form successfully displayed the 'Thanky-you' modal after form submission. The modal can be closed by clicking the 'Ok' or 'x' buttons.
+
+
+### Fixed bugs
+
+* In the validation process, the Show Route, Clear Route and Preset Route buttons on the **Routes page** gave an error saying the 'button' element
+ couldn't be embedded in an 'a' element. The soultion was to remove the 'a' element and use JavaScript instead to produce the desired scrolling behaviour.
+
+  * Another error found in the HTML was that the `<script>` tags were outside of the `<body>` tags. I was able to easily add them just above the closing `</body>` and the error was resolved.
+
+
+![button-bug](assets/testing/button-bug.png)
+
+I used a media query to make the map buttons font-size smaller and push the buttons closer together on small device screens.
+I also used a media query to target the map and make its height smaller on small device screens. This made it much easier for the user to interact between.
+
+* I changed the map button layout on medium sized screens as having two buttons to each side didn't look as good as laying the four buttons in a row.
+
+* Another problem I kept having with the form, was the modal would appear at any point I submitted the contact form. 
+I was testing the form to make sure the required message was appearing and the modal was appearing if only the first name field was filled in. 
+I added a Bootstrap modal to HTML and added jQuery `$('#mymodal').modal('show')` in order for it to pop up when the form was submitted successfully.
+
+### Known Bugs
+
+As mentioned before, the `scroll-behaviour: smooth;` didn't work on the apple devices that I tested the website on.
+
 
 ## Validation
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) was used to validate the code in each HTML file.
 The four pages have been tested and they have all passed with no errors. The image shown below is of the webpage URL showing no errors.  
 
 ![HTML-Validation](assets/img/documentation/validator.w3.org-bedfordshire-bicycle-club.png)
-* [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code in the *style.css* file.  
+* [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code in the *style.css* file.  
 
 ![CSS-Validation](assets/img/documentation/jigsaw.w3.org-css-validator-bedfordshire-bicycle-club.png)
 <p>
@@ -224,9 +349,12 @@ The four pages have been tested and they have all passed with no errors. The ima
     </a>
 </p>
 
+* [JShint](https://jshint.com/) was used to validate the JS in each of the JavaScript files.
+
 ## Performance
 
-[web.dev/measure/](https://web.dev/measure/)
+[web.dev/measure/](https://web.dev/measure/) was used to test the performance of the website. Results are shown on the screenshot below.  
+
 ![Bedfordshire Bicycle Club lighthouse-test](assets/img/documentation/web-dev-measure-bedfordshire-bicycle-club.png)
 
 # Known Issues and Potential Solutions
