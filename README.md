@@ -270,7 +270,7 @@ There was a problem with the contact form not clearing the fields after a succes
 * Samsung Galaxy S20
 
 
-#### Testing process:  
+#### Testing process
 
 The website features have been tested on devices owned by myself and family members.
 The below table show the results of these tests:
@@ -308,7 +308,7 @@ The below table show the results of these tests:
 * The Hover behaviour for the Nav Links and Back-to-Top button worked as expected on all devices tested.
 * The Show Route, Clear Route and Preset Route buttons on the **Routes page** worked correctly on all devices tested.
 * The Add Waypoint button on the **Routes page** works as expected on all devices, allowing the user to create a maximum of 8 input fields. An alert always appeared when attempting to create more than 8 waypoint input fields.
-* The Map does not load on any device if the internet connection is very slow, even if the rest of the page loads without issue. This can usually be corrected by pressing the refresh button. 
+* The Map did not load on any device if the internet connection is very slow, even if the rest of the page loads without issue. This can usually be corrected by pressing the refresh button. 
 * The Map markers, Routes, Route Summary, and Directions Panel displayed correctly on each device tested.
 * The **Shops page** Info Windows opened up properly when the map markers were clicked. The links to shop websites worked as expected, opening the shop websites in a new browser tab, whilst also keeping the original tab open.
 * The Contact form on the **Contact page** works as expected on all devices, including the the 'Required' popup for attempting to submit an incomplete form.
@@ -320,16 +320,17 @@ The below table show the results of these tests:
 
 * In the HTML validation process, the Show Route, Clear Route and Preset Route buttons on the **Routes page** gave an error saying the 'button' element
  couldn't be embedded in an 'a' element. The solution was to remove the 'a' element and use `window.location.href = "#preset-routes"` instead to produce the desired scrolling.
-* A media query was used to target the Map on large screens to reduce the width. This prevents the map from appearing stretched out and encomapassing too wide a geographical area.
+* A media query was used to target the Map on large screens to reduce its width. This prevents the map from appearing too stretched out and encomapassing too wide a geographical area.
 * A media query was used to reduce the Carousel Caption size on small screens less than 300px to allow all the information to be displayed without clipping.
 * Another media query to make the Hero image smaller on very small screens, to avoid clipping off the edges of the bicycle image. This only applied on the Galaxy Fold device.
 * I changed the Show Route/Clear Route button layout as they appeared inconsistent across screen sizes. Applying the Bootstrap button group class ensured they always appeared next to each other.
 
-
 ### Known Bugs
 
-* The `scroll-behaviour: smooth;` doesn't work on Apple devices
-* During the testing process, I noticed that the Waypoint input fields were not centered correctly on the Moto G6 phone, even though they were displaying correctly in Dev Tools on Google Chrome. See the screenshot below:
+* The `scroll-behaviour: smooth;` doesn't work on Apple devices.
+* The Carousel controls do not appear as expected on the Apple devices tested.
+* The Map Legend on the **Routes page** does not render properly until after the map has fully loaded, which doesn't look nice.
+* During the testing process, I noticed that the Waypoint Input Fields were not centered correctly on the Moto G6 phone. They appear to display as expected on all other devices tested. See the screenshot below:
 
 ![Waypoint Fields Not centered](assets/img/documentation/waypoints-motog6.png) 
 
@@ -388,38 +389,45 @@ This project was deployed to GitHub Pages by doing the following:
 
 # Credits
 
-## Images
-
-All images used in the website were sourced from [Pixabay](https://pixabay.com/)
-
 ## Acknowledgements
 
 Thanks to [Code Institute](https://codeinstitute.net/) for providing the course and materials used to help create this website.  
 
 Additional tutorials, help and resources used are listed below:  
 
-https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s  
+### Code
+
+* [Bootstrap 4](https://getbootstrap.com/docs/4.0/components/carousel/) was used to choose to source the code for the Carousel.
+* [Code Institute](https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/course/) was used to help create the Contact Form on the **Contact Page**.
+* [CSS Tricks](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/) helped with amking the Back-to-Top button used on the **Home page** and **Routes page**. 
+* [Google Maps Platform](https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling) helped with understanding how the bicycle layer works in Google Maps API.
+* [Google Maps Platform](https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0) was used to help create the Shop locator on the **Shops page**.
+* [Snazzy-Maps](https://snazzymaps.com/style/60/blue-gray) was used to style the Google Maps API.
+* [Stack Overflow](https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form) was used to learn how to dynamically create input fields for the Route planner.
+* [Stack Overflow](https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input) was used to help understand how to make dynamically created input fields work to return places automatically.
+* [Stack Overflow](https://stackoverflow.com/questions/4323848/how-to-handle-button-click-events-in-jquery) was used to help with targeting the Google Maps buttons.
+* [W3Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery) was used to create the image Gallery.
+
+### Images
+
+All images used in this website were sourced from [Pixabay](https://pixabay.com/)
  
-https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling  
+ 
 
-https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections  
+   
 
-https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix  
 
-https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form  
 
-https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input  
 
-https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0
 
-https://snazzymaps.com/style/60/blue-gray
 
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
 
-https://getbootstrap.com/docs/4.0/components/carousel/
 
-# Contact
-Greg Kaighin
+
+# Contact  
+
+Greg Kaighin  
+
 gregkaighin@hotmail.com
 
 
