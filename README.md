@@ -9,7 +9,7 @@
 This website is for a ficticious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
-Features include a carousel to show information about upcoming club events, and a photo gallery, using Bootstrap components.  
+Features include a carousel showing information about upcoming club events, and a photo gallery, using Bootstrap components.  
 
 The website makes use of Google Maps API and JavaScript to provide users with a Route Planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a shop locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
@@ -24,7 +24,7 @@ There is also a contact form to allow people to get in contact with the site adm
     - [Home Page](#home-page)
     - [Routes Page](#routes-page)
     - [Shops Page](#shops-page)
-    - [**Contact page**](#contact-page)
+    - [Contact page](#contact-page)
     - [Features on Every Page](#features-on-every-page)
 3. [Technology Used](#technology-used)
     - [Programming Languages](#programming-languages)
@@ -176,18 +176,24 @@ This was fixed by adding "bicycleLayer: suppress" to the directions renderer obj
 #### Issue 2
 
 Also on the route plannaer, I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
-This was fixed by applying the getBounds() function directly to the created input fields (routes.js line 173).
+This was fixed by changing the way the getBounds() is applied to the dynamically created waypoint input fields (routes.js line 173).
+
+#### Issue 3
+
+There was a problem with the contact form not clearing the fields after a successful form submission. This was fixed by adding `$('#form-reset')[0].reset();` to the emailjs.js file.
 
 ## Features for Future Releases
 
 # Technology Used
 
-## Programming Languages
+## Programming Languages  
+
 - HTML5
 - CSS3
 - JavaScript  
 
-## Frameworks, Libraries and Tools
+## Frameworks, Libraries and Tools 
+
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
 - [Bootstrap](https://getbootstrap.com/) for the Navbar, card, carousel, gallery and form components.
@@ -207,40 +213,40 @@ This was fixed by applying the getBounds() function directly to the created inpu
     
 * As a First Time Visitor, I want to understand the purpose of the website and find out what Bedfordshire Bicycle Club has to offer.
 
-    - On the **Home page** the user is met with the Navbar, Hero image and 'About-us' section, enabling them to quickly see what the site is about.
+    1. On the **Home page** the user is met with the Navbar, Hero image and 'About-us' section, enabling them to quickly see what the site is about.
 
 * As a First Time Visitor, I want to navigate throughout the website easily to find content.
 
-    - The Navbar and the Links in the 'About-us' section enable the user to quickly navigate to the content they want to view.
+    1. The Navbar and the Links in the 'About-us' section enable the user to quickly navigate to the content they want to view.
 
 * As a First Time Visitor, I would like to be able to find out information about the club's cycling groups and social events, and how to get in contact.
 
-    - Information about the club cycling groups is displayed immediately below the 'About-us' section, along with a link to the club Whatsapp group. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
+    1. Information about the club cycling groups is displayed immediately below the 'About-us' section, along with a link to the club Whatsapp group. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
 
 
   #### Returning Visitor Goals
 
 * As a Returning Visitor, I would like to see some of the routes the club uses for their bike rides.
 
-    - On the **Routes page**, buttons to show club routes are displayed above the map, allowing the user to examine these routes easily.
+    1. On the **Routes page**, buttons to show club routes are displayed above the map, allowing the user to examine these routes easily.
 
 * As a Returning Visitor, I want to contact the administrators with any general queries or questions about Bedfordshire Bicycle Club.
 
-    - Users can access the **Contact page** via the Navbar, or use the Whatsapp link displayed on the **Home page** and in Social Links in the footer on each page.
+    1. Users can access the **Contact page** via the Navbar, or use the Whatsapp link displayed on the **Home page** and in Social Links in the footer on each page.
 
 * As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
 
-    - The **Shops page** is accessible through the Navbar, upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
+    1. The **Shops page** is accessible through the Navbar, upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
 
   #### Frequent User Goals
 
-* As a Frequent User, I would like to use the Route Planner to create routes for the club's bike rides.
+* As a Frequent User, I would like to use the Route Planner to create routes for the club bike rides and for myself.
 
-    - The user can return to the **Routes page** to use the Route Planner to create their own routes.
+    1. The user can return to the **Routes page** via the Navbar to access the Route Planner to create their own routes.
 
 * As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
 
-    - The user can access social media accounts displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
+    1. The user can access social media accounts displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
 
 ### Further Testing
 
@@ -264,8 +270,9 @@ This was fixed by applying the getBounds() function directly to the created inpu
 * Samsung Galaxy S20
 
 
-#### Testing process:
+#### Testing process:  
 
+The website features have been tested on devices owned by myself and family members.
 The below table show the results of these tests:
 
 ##### Table Key:
@@ -273,7 +280,7 @@ The below table show the results of these tests:
 &check; - *Works*, &cross; - *Doesn't Work*.
 
 
-| Item tested           | Dell XPS 8940 | iPhone X | iPhone 7 | iPad | Lenovo Yoga Pad 3 | Moto G4 | Moto G6  |
+| Item tested           | Dell XPS 8940 | iPhone X | iPhone 7 | iPad 5 | Lenovo Yoga Pad Tab 3 10.1 | Moto G4 | Moto G6  |
 | ----------- | ------------- | -------- | -------- | ---- | --------------- | ----------- | --------------------- |
 | Navbar links                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
 | Smooth scroll behaviour     | &check;  | &cross; | &cross; | &cross; | &check; | &check; | &check; |
@@ -292,46 +299,39 @@ The below table show the results of these tests:
 | Contact form modal          | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
 
 
-* The Navbar links and logo, work as intended.
+* The Navbar links and Logo work as intended.
 * The `scroll-behaviour: smooth;` doesn't work on the Apple devices as shown above.
-* The Carousel displayed correctly on all devices tested. On the iPhone7, it displayed but without the Control buttons. It did still display each item in turn automatically.
+* The Carousel displayed correctly on all devices tested. On Apple devices, it displayed but without the Control buttons. It did still display each item in turn automatically.
 * The Gallery worked as expected on all devices tested.
-* The Social links work correctly on all devices, successfully opening up a new browser tab. Pressing the Back button returns the user without issue.
-* The Back to top button worked properly on every page, on every device except the iPhone 7, where it did not work at all.
+* The Social links work correctly on all devices, successfully opening up a new browser tab, and keeping the original browser tab open. Pressing the Back button returns the user without issue.
+* The Back-to-Top button worked properly on each page, on all devices except the iPhone 7, where it didn't work at all.
 * The Hover behaviour for the Nav Links and Back-to-Top button worked as expected on all devices tested.
-* The Show Route, Clear Route and Route buttons on the Routes page worked correctly on all devices tested.
-* The Waypoint button on the routes page works as expected on all devices, allowing the user to create a maximum of 8 input fields. An alert always appeared when attempting to create more than 8 waypoint input fields.
+* The Show Route, Clear Route and Preset Route buttons on the **Routes page** worked correctly on all devices tested.
+* The Add Waypoint button on the **Routes page** works as expected on all devices, allowing the user to create a maximum of 8 input fields. An alert always appeared when attempting to create more than 8 waypoint input fields.
 * The Map does not load on any device if the internet connection is very slow, even if the rest of the page loads without issue. This can usually be corrected by pressing the refresh button. 
 * The Map markers, Routes, Route Summary, and Directions Panel displayed correctly on each device tested.
-* The Shops page Info Windows opened up properly when the map markers were clicked. The links to shop websites in the Info Window worked as expected, opening the shop websites in a new browser tab.
-* The Contact form works as expected on all devices, including the the 'Required' popup for attempting to submit an incomplete form.
+* The **Shops page** Info Windows opened up properly when the map markers were clicked. The links to shop websites worked as expected, opening the shop websites in a new browser tab, whilst also keeping the original tab open.
+* The Contact form on the **Contact page** works as expected on all devices, including the the 'Required' popup for attempting to submit an incomplete form.
 * The Contact form successfully submitted the message to EmailJS each time it was tested.
-* The Contact form successfully displayed the 'Thanky-you' modal after form submission. The modal can be closed by clicking the 'Ok' or 'x' buttons.
+* The Contact form successfully displayed the 'Thank-you' modal after form submission. The modal can be closed by clicking the 'Ok' or 'x' buttons, and the form fields correctly reset to being blank.
 
 
 ### Fixed bugs
 
-* In the validation process, the Show Route, Clear Route and Preset Route buttons on the **Routes page** gave an error saying the 'button' element
- couldn't be embedded in an 'a' element. The soultion was to remove the 'a' element and use JavaScript instead to produce the desired scrolling behaviour.
+* In the HTML validation process, the Show Route, Clear Route and Preset Route buttons on the **Routes page** gave an error saying the 'button' element
+ couldn't be embedded in an 'a' element. The solution was to remove the 'a' element and use `window.location.href = "#preset-routes"` instead to produce the desired scrolling.
+* A media query was used to target the Map on large screens to reduce the width. This prevents the map from appearing stretched out and encomapassing too wide a geographical area.
+* A media query was used to reduce the Carousel Caption size on small screens less than 300px to allow all the information to be displayed without clipping.
+* Another media query to make the Hero image smaller on very small screens, to avoid clipping off the edges of the bicycle image. This only applied on the Galaxy Fold device.
+* I changed the Show Route/Clear Route button layout as they appeared inconsistent across screen sizes. Applying the Bootstrap button group class ensured they always appeared next to each other.
 
-  * Another error found in the HTML was that the `<script>` tags were outside of the `<body>` tags. I was able to easily add them just above the closing `</body>` and the error was resolved.
-
-
-![button-bug](assets/testing/button-bug.png)
-
-I used a media query to make the map buttons font-size smaller and push the buttons closer together on small device screens.
-I also used a media query to target the map and make its height smaller on small device screens. This made it much easier for the user to interact between.
-
-* I changed the map button layout on medium sized screens as having two buttons to each side didn't look as good as laying the four buttons in a row.
-
-* Another problem I kept having with the form, was the modal would appear at any point I submitted the contact form. 
-I was testing the form to make sure the required message was appearing and the modal was appearing if only the first name field was filled in. 
-I added a Bootstrap modal to HTML and added jQuery `$('#mymodal').modal('show')` in order for it to pop up when the form was submitted successfully.
 
 ### Known Bugs
 
-As mentioned before, the `scroll-behaviour: smooth;` didn't work on the apple devices that I tested the website on.
+* The `scroll-behaviour: smooth;` doesn't work on Apple devices
+* During the testing process, I noticed that the Waypoint input fields were not centered correctly on the Moto G6 phone, even though they were displaying correctly in Dev Tools on Google Chrome. See the screenshot below:
 
+![Waypoint Fields Not centered](assets/img/documentation/waypoints-motog6.png) 
 
 ## Validation
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) was used to validate the code in each HTML file.
@@ -356,8 +356,6 @@ The four pages have been tested and they have all passed with no errors. The ima
 [web.dev/measure/](https://web.dev/measure/) was used to test the performance of the website. Results are shown on the screenshot below.  
 
 ![Bedfordshire Bicycle Club lighthouse-test](assets/img/documentation/web-dev-measure-bedfordshire-bicycle-club.png)
-
-# Known Issues and Potential Solutions
 
 ## Deployment:
 
@@ -392,31 +390,39 @@ This project was deployed to GitHub Pages by doing the following:
 
 ## Images
 
+All images used in the website were sourced from [Pixabay](https://pixabay.com/)
+
 ## Acknowledgements
+
+Thanks to [Code Institute](https://codeinstitute.net/) for providing the course and materials used to help create this website.  
+
+Additional tutorials, help and resources used are listed below:  
+
+https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s  
+ 
+https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling  
+
+https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections  
+
+https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix  
+
+https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form  
+
+https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input  
+
+https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0
+
+https://snazzymaps.com/style/60/blue-gray
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
+
+https://getbootstrap.com/docs/4.0/components/carousel/
 
 # Contact
 Greg Kaighin
 gregkaighin@hotmail.com
 
-Store Locator:
-https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0
 
-Route Planner:
-Javascript Google Map Directions API & Places API Project - [2021] | Google Map Javascript Tutorial -
-https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s
-https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling
-https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
-https://stackoverflow.com/questions/51576925/how-to-calculate-total-distance-and-time-getdistancematrix
-https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
-https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
-
-Map styling:
-https://snazzymaps.com/style/60/blue-gray
-
-images - pixabay, wiki commons
-
-Image Gallery:
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_img_gallery
 
 
 

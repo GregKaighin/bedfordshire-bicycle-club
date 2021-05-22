@@ -98,7 +98,7 @@ const mapOtions = {
 };
 
 // Create map object and apply it to html element with the map options
-const map = new google.maps.Map(document.getElementById('googleMap'), mapOtions);
+const map = new google.maps.Map(document.getElementById("googleMap"), mapOtions);
 // Create bicycle layer object and apply to map
 const bikeLayer = new google.maps.BicyclingLayer();
 bikeLayer.setMap(map);
@@ -153,7 +153,7 @@ for (var i = 0; i < waypoints.length; i++);
 function calcRoute() {
     // Create waypoints array and loop and push to route request
     var waypts = [];
-    var waypointElmts = document.getElementsByName('waypoints[]');
+    var waypointElmts = document.getElementsByName("waypoints[]");
     for (var i = 0; i < waypointElmts.length; i++) {
         if (waypointElmts[i].value.length > 0) {
             waypts.push({
@@ -164,8 +164,8 @@ function calcRoute() {
     }
     // Create route request
     var request = {
-        origin: document.getElementById('start').value,
-        destination: document.getElementById('end').value,
+        origin: document.getElementById("start").value,
+        destination: document.getElementById("end").value,
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL,
         waypoints: waypts,
@@ -232,7 +232,7 @@ function clearRoute() {
     // Clear directions panel
     directionsDisplay.setPanel();
     // Clear summary
-    var routeSummary = document.querySelector('#route-summary');
+    var routeSummary = document.querySelector("#route-summary");
     routeSummary.innerHTML = null;
     // Clear inputs
     inputFrom.value = "";
@@ -240,17 +240,16 @@ function clearRoute() {
 }
 
 // Create inputs and search box objects for 'start' and 'end' and bias results towards map bounds
-var inputFrom = document.getElementById('start');
+var inputFrom = document.getElementById("start");
 var searchBoxFrom = new google.maps.places.SearchBox(inputFrom);
-map.addListener('bounds_changed', () => {
+map.addListener("bounds_changed", () => {
     searchBoxFrom.setBounds(map.getBounds());
 });
-var inputTo = document.getElementById('end');
+var inputTo = document.getElementById("end");
 var searchBoxTo = new google.maps.places.SearchBox(inputTo);
-map.addListener('bounds_changed', () => {
+map.addListener("bounds_changed", () => {
     searchBoxTo.setBounds(map.getBounds());
 });
-
 // Create and delete new waypoint fields and search boxes
 $(document).ready(function () {
     // Set maximum number of fields
@@ -258,6 +257,7 @@ $(document).ready(function () {
     var wrapper = $(".waypoint-input-fields");
     var addButton = $(".add-form-field");
     var x = 1;
+    var wpIndex = 1;
     // On add input button click
     $(addButton).click(function (e) {
         e.preventDefault();
@@ -266,30 +266,27 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" placeholder="Waypoint" class="col-xs-2 control-label direction-input mx-auto mb-2" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
-            var inputWP = document.getElementsByClassName('waypoint-inputs');
-            // Bind search boxes to input elements
+            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
+            var inputWP = document.getElementsByClassName("waypoint-inputs");
+            // Dynamically initialize search box to input elements
             for (var y = 0; y < inputWP.length; y++)
-                new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
+                var searchBoxWP = new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
         } else {
-            // Warning for trying to exceed maximum number of waypoints
-            alert('The maximum number of waypoints allowed is 8!');
+            alert("The maximum number of waypoints allowed is 8!");
         }
     });
     // Delete inputs
     $(wrapper).on("click", ".delete", function (e) {
         e.preventDefault();
-        $(this).parent('div').remove();
-        // Subtract 1 from the waypoints counter
+        $(this).parent("div").remove();
         x--;
     });
-    // Delete all waypoint inputs when clear route button is clicked
+    // Delete all inputs when clear route is clicked
     $(document).ready(function () {
-        $('.clear-route').click(clearRoute);
+        $("#clear-route").click(clearRoute);
     });
-    // Remove waypoint inputs
     function clearRoute() {
-        $('.waypoint-inputs').remove();
+        $(".waypoint-inputs").remove();
         // Reset the waypoints counter
         x = 1;
     }
@@ -297,6 +294,7 @@ $(document).ready(function () {
 
 //Functions for club routes
 function prioryMarinaSandy() {
+    window.location.href = "#preset-routes";
     var request = {
         origin: {
             lat: 52.131972,
@@ -308,7 +306,7 @@ function prioryMarinaSandy() {
         },
         travelMode: google.maps.TravelMode.BICYCLING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    };
+    };;
     directionsService.route(request, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
@@ -319,9 +317,10 @@ function prioryMarinaSandy() {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
 
+
             });
         } else {
-            var routeSummary = document.querySelector('#route-summary');
+            var routeSummary = document.querySelector("#route-summary");
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
             directionsDisplay.setMap();
             directionsDisplay.setPanel();
@@ -330,6 +329,7 @@ function prioryMarinaSandy() {
 }
 
 function southVillagesLoop() {
+    window.location.href = "#preset-routes";
     // Route waypoints
     var wp1 = new google.maps.LatLng(51.99840, -0.47735);
     var wp2 = new google.maps.LatLng(51.98286, -0.49563);
@@ -357,9 +357,10 @@ function southVillagesLoop() {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
 
+
             });
         } else {
-            var routeSummary = document.querySelector('#route-summary');
+            var routeSummary = document.querySelector("#route-summary");
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
             directionsDisplay.setMap();
             directionsDisplay.setPanel();
@@ -368,6 +369,7 @@ function southVillagesLoop() {
 }
 
 function northBedfordLoop() {
+    window.location.href = "#preset-routes";
     var wp1 = new google.maps.LatLng(52.16544, -0.44906);
     var wp2 = new google.maps.LatLng(52.17691, -0.42571);
     var wp3 = new google.maps.LatLng(52.18438, -0.40065);
@@ -398,9 +400,10 @@ function northBedfordLoop() {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
 
 
+
             });
         } else {
-            var routeSummary = document.querySelector('#route-summary');
+            var routeSummary = document.querySelector("#route-summary");
             routeSummary.innerHTML = '<div class="alert-danger"><i class="fas fa-exclamation-triangle"></i> Route unavailable!</div>';
             directionsDisplay.setMap();
             directionsDisplay.setPanel();
