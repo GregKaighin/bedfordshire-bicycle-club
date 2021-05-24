@@ -9,11 +9,11 @@
 This website is for a ficticious local bicycle club.
 The primary goal is to provide information about the club to members and people interested in joining.  
 
-Features include a carousel showing information about upcoming club events, and a photo gallery, using Bootstrap components.  
+Features include a Carousel showing information about upcoming club events, and a Photo Gallery, using Bootstrap 4 components.  
 
-The website makes use of Google Maps API and JavaScript to provide users with a Route Planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a shop locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
+The website makes use of Google Maps API and JavaScript to provide users with a Route Planner which displays cycling routes used by the club, and also allows users to create their own routes. It also features a Shop Locator with map markers at the positions of bicycle shops in Bedfordshire. Information about each shop is shown when the user clicks the markers.  
 
-There is also a contact form to allow people to get in contact with the site administrator, this uses the EmailJS service.
+There is a Contact Form to allow people to get in contact with the site administrator, this uses the EmailJS service.
 
 ## Table of Contents
 1. [UX](#ux)
@@ -28,21 +28,16 @@ There is also a contact form to allow people to get in contact with the site adm
     - [Features on Every Page](#features-on-every-page)
 3. [Technology Used](#technology-used)
     - [Programming Languages](#programming-languages)
-    - [Frameworks, Libraries and Tools](#frameworks,-libraries-and-tools)
+    - [Frameworks, Libraries and Tools](#frameworks-libraries-and-tools )
 4. [Testing](#testing)
     - [Validation](#validation)
     - [Performance](#performance)
-5. [Deployment](#deployment)
-6. [Credits](#credits)
+    - [Features for Future Releases](#features-for-future-releases)
+5. [Google Maps API](#google-maps-api)    
+6. [Deployment](#deployment)
+7. [Credits](#credits)
     - [Acknowledgements](#acknowledgements)
 8. [Contact](#contact)
-
-The website has been designed to provide users with information about Bedfordshire Bicycle Club.  
-It is targeted at club members and casual cyclists in Bedfordshire who may have an interest in joining a social cycling club.  
-
-The primary goal of the website is to provide club members with information including meeting times, social events and routes.  
-
-Secondary goals are to attract new members to join the club and to promote public awareness of cycle lanes and bike shops in the county.
 
 ## User-Experience (UX):
 
@@ -61,18 +56,6 @@ Secondary goals are to attract new members to join the club and to promote publi
     * #### Frequent User Goals
       * As a Frequent User, I would like to use the Route Planner to create routes for the club's bike rides.
       * As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
-
-## User Stories
-
-As a visitor to Bedfordshire Bicycle Club website I expect/want/need:
-1. To be able to navigate the website easily and to quickly find the information I am looking for.
-2. To get information about Bedfordshire Bicycle Club.
-3. To get information about upcoming club events.
-4. To be able to view club cycling routes and to plan my own routes.
-5. To find information about local bike shops.
-6. To access the website on my phone, tablet and computer.
-7. For the website to have a coherent look.
-8. For everything to work.
 
 # Design Choices
 
@@ -123,23 +106,23 @@ The hero image was created by making a collage of bicycle images in .png file fo
 
 #### Home Page
 
-On the home page the user sees the Navbar and hero image, which immediately gives a clear idea of what the website is about.  
+On the home page the user sees the Navbar and Hero image, which immediately gives the user a clear idea of what the website is about and its contents.  
 
-This is followed by a short 'about-us' section telling users information about the club, and what they can find on the website.  This section includes internal links to other parts of the website to help users quickly navigate to where they want to go.  
+This is followed by a short 'about-us' section giving users information about the club, and exactly what they can find on the website.  This section includes internal links to other parts of the website enabling users to quickly navigate to where they want to go.  
 
 The next section is about cycling club meetups and gives information about the different cycling groups, and includes a link to the club's Whatsapp messaging group.
 
-Below this is a carousel slider showing details about upcoming club events.  
+Below this is a Carousel slider showing details about upcoming club events.  
 
-The next feature is a photo gallery, which shows an expanded image when the small images are clicked.  
+The next feature is a Photo Gallery, which shows an expanded image when the small images are clicked.  
 
-At the bottom of the page there is a 'back-to-top' button, social media links, and copyright information.
+At the bottom of the page there is a 'Back-to-Top' button, social media links, and copyright information.
 
 #### Routes Page
 
 The routes page shows a map with clickable buttons positioned above it to show routes used by the cycling club.  
 
-Below the map are input fields to allow the user to create their own routes including up to 8 waypoints.
+Below the map are input fields to allow the user to create their own routes with up to 8 waypoints.
 
 Routes are displayed on the map along with a panel below, which gives a route summary and turn-by-turn directions, allowing the user to examine routes in more detail.
 
@@ -165,24 +148,23 @@ The **Contact page** shows a simple form allowing users to contact the site admi
 
 All pages have a Navbar at the top, and social links at the bottom.  
 
+
 # Issues overcome
 
 #### Issue 1
 
 I had a problem with the Route Planner, where the Bicycle Layer (green lines) would disappear from the map on subsequent route requests.
 This was because the map displays the Bicycle Layer when the map is drawn initially, and again when a route request is made using bicycle as the travel mode, causing a conflict.
-This was fixed by adding "bicycleLayer: suppress" to the directions renderer object (routes.js line 144).
+This was fixed by adding "bicycleLayer: suppress" to the directions renderer object.
 
 #### Issue 2
 
 Also on the route plannaer, I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
-This was fixed by changing the way the getBounds() is applied to the dynamically created waypoint input fields (routes.js line 173).
+This was fixed by changing the way the getBounds() is applied to the dynamically created waypoint input fields.
 
 #### Issue 3
 
 There was a problem with the contact form not clearing the fields after a successful form submission. This was fixed by adding `$('#form-reset')[0].reset();` to the emailjs.js file.
-
-## Features for Future Releases
 
 # Technology Used
 
@@ -192,9 +174,9 @@ There was a problem with the contact form not clearing the fields after a succes
 - CSS3
 - JavaScript  
 
-## Frameworks, Libraries and Tools 
+## Frameworks Libraries and Tools 
 
-- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images.
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) for editing the images and optimising the file sizes.
 - [Balsamiq Wireframes](https://balsamiq.com/) for creating the wireframes.
 - [Bootstrap](https://getbootstrap.com/) for the Navbar, card, carousel, gallery and form components.
 - [Font-Awesome](https://fontawesome.com/) for the icons.
@@ -283,11 +265,11 @@ The below table show the results of these tests:
 | Item tested           | Dell XPS 8940 | iPhone X | iPhone 7 | iPad 5 | Lenovo Yoga Pad Tab 3 10.1 | Moto G4 | Moto G6  |
 | ----------- | ------------- | -------- | -------- | ---- | --------------- | ----------- | --------------------- |
 | Navbar links                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
-| Smooth scroll behaviour     | &check;  | &cross; | &cross; | &cross; | &check; | &check; | &check; |
-| Carousel                    | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
+| Smooth scroll behaviour     | &check;  | &check; | &cross; | &cross; | &check; | &check; | &check; |
+| Carousel                    | &check;  | &check; | &cross; | &cross; | &check; | &check; | &check; |
 | Gallery                     | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
 | Social links                | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
-| Back to top button          | &check;  | &check; | &cross; | &check; | &check; | &check; | &check; |
+| Back to top button          | &check;  | &check; | &cross; | &cross; | &check; | &check; | &check; |
 | Hover behaviour             | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
 | Map load                    | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
 | Map buttons                 | &check;  | &check; | &check; | &check; | &check; | &check; | &check; |
@@ -320,9 +302,9 @@ The below table show the results of these tests:
 
 * In the HTML validation process, the Show Route, Clear Route and Preset Route buttons on the **Routes page** gave an error saying the 'button' element
  couldn't be embedded in an 'a' element. The solution was to remove the 'a' element and use `window.location.href = "#preset-routes"` instead to produce the desired scrolling.
-* A media query was used to target the Map on large screens to reduce its width. This prevents the map from appearing too stretched out and encomapassing too wide a geographical area.
+* A media query was used to target the Map on large screens to reduce its width. This prevents the map from encomapassing too wide a geographical area.
 * A media query was used to reduce the Carousel Caption size on small screens less than 300px to allow all the information to be displayed without clipping.
-* Another media query to make the Hero image smaller on very small screens, to avoid clipping off the edges of the bicycle image. This only applied on the Galaxy Fold device.
+* Another media query was used to make the Hero image smaller on very small screens, to avoid clipping off the edges of the bicycle image. This only applies on the Galaxy Fold device.
 * I changed the Show Route/Clear Route button layout as they appeared inconsistent across screen sizes. Applying the Bootstrap button group class ensured they always appeared next to each other.
 
 ### Known Bugs
@@ -333,6 +315,10 @@ The below table show the results of these tests:
 * During the testing process, I noticed that the Waypoint Input Fields were not centered correctly on the Moto G6 phone. They appear to display as expected on all other devices tested. See the screenshot below:
 
 ![Waypoint Fields Not centered](assets/img/documentation/waypoints-motog6.png) 
+
+#### Features for Future Releases
+
+* Make the 'Start', 'End' and 'Waypoint' input fields of the Route Planner be updated when the markers or route directions are dragged.
 
 ## Validation
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) was used to validate the code in each HTML file.
@@ -357,6 +343,12 @@ The four pages have been tested and they have all passed with no errors. The ima
 [web.dev/measure/](https://web.dev/measure/) was used to test the performance of the website. Results are shown on the screenshot below.  
 
 ![Bedfordshire Bicycle Club lighthouse-test](assets/img/documentation/web-dev-measure-bedfordshire-bicycle-club.png)
+
+## Google Maps API
+
+This website makes use of Google Maps API for the Route Planner and Store locator.
+The procedure I followed to set this up is found here:
+[Google Maps Platform](https://developers.google.com/maps/gmp-get-started)
 
 ## Deployment:
 
@@ -410,7 +402,14 @@ Additional tutorials, help and resources used are listed below:
 
 ### Images
 
-All images used in this website were sourced from [Pixabay](https://pixabay.com/)
+All images used in this website were sourced from [Pixabay](https://pixabay.com/).
+
+* [Pixabay](https://pixabay.com/vectors/bicycle-bike-vintage-wheels-161524/) Photo by OpenClipart-Vectors
+* [Pixabay](https://pixabay.com/photos/cycling-leisure-recovery-forest-2520007/) Photo by Antranias
+* [Pixabay](https://pixabay.com/photos/bicycle-bike-biking-sport-cycle-384566/) Photo by Skitterbay
+* [Pixabay](https://pixabay.com/photos/leisure-vacations-sport-cycling-1379439/) Photo by Antranias
+* [Pixabay](https://pixabay.com/photos/park-life-park-people-walking-life-2251981/) Photo by Stanvpeterson
+* [Pixabay](https://pixabay.com/photos/mountain-biking-cycling-1210066/) Photo by Free-Photos
  
  
 

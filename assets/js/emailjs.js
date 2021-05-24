@@ -1,3 +1,6 @@
+/* This code is adapted from
+https://www.emailjs.com/docs/tutorial/creating-contact-form/
+*/
 function sendMail(contactForm) {
     emailjs.send("default_service", "gkpianolessons", {
         "from_name": contactForm.name.value,

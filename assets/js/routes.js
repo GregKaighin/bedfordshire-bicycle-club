@@ -1,10 +1,11 @@
 /*
+This code was created with the help of the tutorial found here:
 Javascript Google Map Directions API & Places API Project - [2021] | Google Map Javascript Tutorial -
 https://www.youtube.com/watch?v=BkGtNBrOhKU&t=1837s
-https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling
-https://developers.google.com/maps/documentation/javascript/directions#DraggableDirections
-https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
-https://stackoverflow.com/questions/42776319/bind-google-address-autocomplete-api-on-dynamically-create-input
+
+Additional features not found in the tutorial include waypoints, custom map styling,
+custom map legend, changing the travel mode to bicycling, the bicycle layer, displaying preset routes,
+and converting distance and time values.
 */
 
 // Lattitude and longitude for centering the map
@@ -266,12 +267,13 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"> <i class="fas fa-times waypoint-inputs"></i></a></div>');
+            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"><i class="fas fa-times waypoint-inputs"></i></a></div>');
             var inputWP = document.getElementsByClassName("waypoint-inputs");
             // Dynamically initialize search box to input elements
             for (var y = 0; y < inputWP.length; y++)
                 var searchBoxWP = new google.maps.places.SearchBox(inputWP[y], { bounds: map.getBounds() });
         } else {
+            // Warning for trying to exceed maximum number of waypoints
             alert("The maximum number of waypoints allowed is 8!");
         }
     });
@@ -292,8 +294,9 @@ $(document).ready(function () {
     }
 });
 
-//Functions for club routes
+//Functions for preset club routes
 function prioryMarinaSandy() {
+    // Scroll the window to place the preset route buttons at top of screen //
     window.location.href = "#preset-routes";
     var request = {
         origin: {
@@ -315,9 +318,6 @@ function prioryMarinaSandy() {
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
-
-
-
             });
         } else {
             var routeSummary = document.querySelector("#route-summary");
@@ -355,9 +355,6 @@ function southVillagesLoop() {
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
-
-
-
             });
         } else {
             var routeSummary = document.querySelector("#route-summary");
@@ -398,9 +395,6 @@ function northBedfordLoop() {
             directionsDisplay.setPanel(document.getElementById("directions-panel"));
             directionsDisplay.addListener("directions_changed", () => {
                 computeTotalDistAndTime(directionsDisplay.getDirections());
-
-
-
             });
         } else {
             var routeSummary = document.querySelector("#route-summary");

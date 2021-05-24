@@ -1,3 +1,9 @@
+/* This code was created with the help of the tutorial found here:
+https://developers.google.com/codelabs/maps-platform/google-maps-nearby-search-js#0
+The changes I have made include using a fixed location for the map instead of 
+geolocation of the user's device, custom styling of the map, and the fields 
+returned by the nearby search that are displayed in the Info Windows. */
+
 let bedfordshire;
 let map;
 let bounds;
@@ -13,8 +19,7 @@ var stylesArray = [{
     },
     {
         "color": "#b5cbe4"
-    }
-    ]
+    }]
 },
 {
     "featureType": "landscape",
@@ -57,8 +62,7 @@ var stylesArray = [{
     },
     {
         "lightness": 10
-    }
-    ]
+    }]
 },
 {
     "featureType": "road"
@@ -71,10 +75,8 @@ var stylesArray = [{
     },
     {
         "lightness": 20
-    }
-    ]
+    }]
 },
-{},
 {
     "featureType": "road",
     "stylers": [{
