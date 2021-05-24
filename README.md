@@ -26,20 +26,24 @@ There is a Contact Form to allow people to get in contact with the site administ
     - [Shops Page](#shops-page)
     - [Contact page](#contact-page)
     - [Features on Every Page](#features-on-every-page)
+    - [Issues Overcome](#issues-overcome)
 3. [Technology Used](#technology-used)
     - [Programming Languages](#programming-languages)
-    - [Frameworks, Libraries and Tools](#frameworks-libraries-and-tools )
+    - [Frameworks, Libraries and Tools](#frameworks-libraries-and-tools)
 4. [Testing](#testing)
+    - [Testing of User Stories](#testing-of-user-stories)
     - [Validation](#validation)
     - [Performance](#performance)
-    - [Features for Future Releases](#features-for-future-releases)
-5. [Google Maps API](#google-maps-api)    
-6. [Deployment](#deployment)
-7. [Credits](#credits)
+5. [Features for Future Releases](#features-for-future-releases)
+6. [Google Maps API](#google-maps-api)    
+7. [Deployment](#deployment)
+8. [Credits](#credits)
     - [Acknowledgements](#acknowledgements)
-8. [Contact](#contact)
+    - [Code](#code)
+    - [Images](#images)
+9. [Contact](#contact)
 
-## User-Experience (UX):
+## UX
 
   * ### User Stories
      
@@ -151,6 +155,8 @@ All pages have a Navbar at the top, and social links at the bottom.
 
 # Issues overcome
 
+Most of the difficulties I had when creating this website were to do with the Route planner. The most challenging ones are listed below:
+
 #### Issue 1
 
 I had a problem with the Route Planner, where the Bicycle Layer (green lines) would disappear from the map on subsequent route requests.
@@ -159,7 +165,7 @@ This was fixed by adding "bicycleLayer: suppress" to the directions renderer obj
 
 #### Issue 2
 
-Also on the route plannaer, I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
+Also on the route planner, I had an issue with the waypoint input fields not returning results biased towards the boundary of the map.
 This was fixed by changing the way the getBounds() is applied to the dynamically created waypoint input fields.
 
 #### Issue 3
@@ -189,22 +195,19 @@ There was a problem with the contact form not clearing the fields after a succes
 
 # Testing
 
-### Testing of User Stories in UX section:
+### Testing of User Stories
      
   #### First Time Visitor Goals
     
 * As a First Time Visitor, I want to understand the purpose of the website and find out what Bedfordshire Bicycle Club has to offer.
-
     1. On the **Home page** the user is met with the Navbar, Hero image and 'About-us' section, enabling them to quickly see what the site is about.
     1. The imagery used on the home page helps to convey the subject matter of the website.
 
 * As a First Time Visitor, I want to navigate throughout the website easily to find content.
-
     1. The Navbar links enable the user to quickly navigate to the page they want to view.
     1. Additional links in the 'About-us' section provide links to specific content on pages throughout the website, allowing users to find content with ease.
 
 * As a First Time Visitor, I would like to be able to find out information about the club's cycling groups and social events, and how to get in contact.
-
     1. Information about the club cycling groups is displayed immediately below the 'About-us' section on the **Home page** , along with a link to the club Whatsapp group.
     1. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
 
@@ -212,25 +215,21 @@ There was a problem with the contact form not clearing the fields after a succes
   #### Returning Visitor Goals
 
 * As a Returning Visitor, I would like to see some of the routes the club uses for their bike rides.
-
     1. On the **Routes page**, accessible via the Navbar, buttons to display club routes are shown above the map, allowing the user to examine these routes easily.
 
 * As a Returning Visitor, I want to contact the administrators with any general queries or questions about Bedfordshire Bicycle Club.
-
     1. Users can access the **Contact page** via the Navbar, or use the Whatsapp link displayed on the **Home page** and in Social Links in the footer on each page.
 
 * As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
-
     1. The **Shops page** is accessible through the Navbar or 'About-us' section. Upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
 
   #### Frequent User Goals
 
 * As a Frequent User, I would like to use the Route Planner to create routes for the club bike rides and for myself.
-
-    1. The user can return to the **Routes page** via the Navbar to access the Route Planner to create their own routes.
-
+    1. The user can access to the **Routes page** via the Navbar to access the Route Planner to create their own routes.
+    1. The user can easily create routes using the 'Start' and 'End' input fields, and add waypoints to create more detailed routes, such as cycling loops.
+    1. Routes and input fields can be cleared by pressing the 'Clear route button', allowing a new route to be created.
 * As a Frequent User, I would like to view the different social media accounts to view, check updates or interact with other people involved with the club.
-
     1. The user can access social media accounts via links displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
 
 ### Further Testing
@@ -319,9 +318,7 @@ The below table show the results of these tests:
 
 ![Waypoint Fields Not centered](assets/img/documentation/waypoints-motog6.png) 
 
-#### Features for Future Releases
 
-* Make the 'Start', 'End' and 'Waypoint' input fields of the Route Planner be updated when the markers or route directions are dragged.
 
 ## Validation
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_uri) was used to validate the code in each HTML file.
@@ -347,13 +344,18 @@ The four pages have been tested and they have all passed with no errors. The ima
 
 ![Bedfordshire Bicycle Club lighthouse-test](assets/img/documentation/web-dev-measure-bedfordshire-bicycle-club.png)
 
+
+## Features for Future Releases
+
+* Make the 'Start', 'End' and 'Waypoint' input fields of the Route Planner be updated when the markers or route directions are dragged.
+
 ## Google Maps API
 
 This website makes use of Google Maps API for the Route Planner and Store locator.
 The procedure I followed to set this up is found here:
 [Google Maps Platform](https://developers.google.com/maps/gmp-get-started)
 
-## Deployment:
+## Deployment
 
 ### GitHub Pages
 
