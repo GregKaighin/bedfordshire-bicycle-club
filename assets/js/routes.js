@@ -258,7 +258,6 @@ $(document).ready(function () {
     var wrapper = $(".waypoint-input-fields");
     var addButton = $(".add-form-field");
     var x = 1;
-    var wpIndex = 1;
     // On add input button click
     $(addButton).click(function (e) {
         e.preventDefault();
@@ -267,7 +266,7 @@ $(document).ready(function () {
             // Increment fields
             x++;
             // Create input field
-            $(wrapper).append('<div><input type="text" id="waypoint-input-' + wpIndex++ + '" placeholder="Waypoint" class="waypoint-inputs" name="waypoints[]"/><a href="#" class="delete"><i class="fas fa-times waypoint-inputs"></i></a></div>');
+            $(wrapper).append('<div><input type="text" placeholder="Waypoint" class="waypoint-inputs mb-2" name="waypoints[]"/><a href="#" class="delete"><i class="fas fa-times waypoint-inputs"></i></a></div>');
             var inputWP = document.getElementsByClassName("waypoint-inputs");
             // Dynamically initialize search box to input elements
             for (var y = 0; y < inputWP.length; y++)

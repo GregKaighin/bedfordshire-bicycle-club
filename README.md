@@ -196,21 +196,24 @@ There was a problem with the contact form not clearing the fields after a succes
 * As a First Time Visitor, I want to understand the purpose of the website and find out what Bedfordshire Bicycle Club has to offer.
 
     1. On the **Home page** the user is met with the Navbar, Hero image and 'About-us' section, enabling them to quickly see what the site is about.
+    1. The imagery used on the home page helps to convey the subject matter of the website.
 
 * As a First Time Visitor, I want to navigate throughout the website easily to find content.
 
-    1. The Navbar and the Links in the 'About-us' section enable the user to quickly navigate to the content they want to view.
+    1. The Navbar links enable the user to quickly navigate to the page they want to view.
+    1. Additional links in the 'About-us' section provide links to specific content on pages throughout the website, allowing users to find content with ease.
 
 * As a First Time Visitor, I would like to be able to find out information about the club's cycling groups and social events, and how to get in contact.
 
-    1. Information about the club cycling groups is displayed immediately below the 'About-us' section, along with a link to the club Whatsapp group. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
+    1. Information about the club cycling groups is displayed immediately below the 'About-us' section on the **Home page** , along with a link to the club Whatsapp group.
+    1. Below this is a Carousel showing information about upcoming club events. There is also a link to the **Contact page** in the Navbar.
 
 
   #### Returning Visitor Goals
 
 * As a Returning Visitor, I would like to see some of the routes the club uses for their bike rides.
 
-    1. On the **Routes page**, buttons to show club routes are displayed above the map, allowing the user to examine these routes easily.
+    1. On the **Routes page**, accessible via the Navbar, buttons to display club routes are shown above the map, allowing the user to examine these routes easily.
 
 * As a Returning Visitor, I want to contact the administrators with any general queries or questions about Bedfordshire Bicycle Club.
 
@@ -218,7 +221,7 @@ There was a problem with the contact form not clearing the fields after a succes
 
 * As a Returning Visitor, I would like to use the bike store locator to find out about bike shops in Bedfordshire.
 
-    1. The **Shops page** is accessible through the Navbar, upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
+    1. The **Shops page** is accessible through the Navbar or 'About-us' section. Upon loading the page, the Map shows markers at locations of bike shops. Clicking on these markers brings up details about each shop.
 
   #### Frequent User Goals
 
@@ -226,9 +229,9 @@ There was a problem with the contact form not clearing the fields after a succes
 
     1. The user can return to the **Routes page** via the Navbar to access the Route Planner to create their own routes.
 
-* As a Frequent User, I would like to view the different social media accounts to either view, look for updates or potentially interact with other people involved with the club.
+* As a Frequent User, I would like to view the different social media accounts to view, check updates or interact with other people involved with the club.
 
-    1. The user can access social media accounts displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
+    1. The user can access social media accounts via links displayed in the footer. Links take the user to a new page to view the social media accounts whilst retaining this website on the previous tab.
 
 ### Further Testing
 
