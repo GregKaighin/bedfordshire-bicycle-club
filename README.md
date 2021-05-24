@@ -84,9 +84,9 @@ All fonts are taken from [Google Fonts](https://fonts.google.com/specimen/Sansit
 
 The logo was created and edited in [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html). It is a simple vector image of a bicycle.
 
-[Pixabay](https://pixabay.com/) was used to source all images on the **Home page**, including the hero image, bootstrap card images and gallery images.
+[Pixabay](https://pixabay.com/) was used to source all images on the **Home page**, including the Hero image, Bootstrap Card images and Carousel and Gallery images.
 
-The hero image was created by making a collage of bicycle images in .png file format, which allows the images to retain transparency when displayed on the website. 
+The Hero image was created by making a collage of bicycle images in .png file format, which allows the images to retain transparency when displayed on the website. 
 
 # Wireframes
 
@@ -110,38 +110,26 @@ The hero image was created by making a collage of bicycle images in .png file fo
 
 #### Home Page
 
-On the home page the user sees the Navbar and Hero image, which immediately gives the user a clear idea of what the website is about and its contents.  
-
-This is followed by a short 'about-us' section giving users information about the club, and exactly what they can find on the website.  This section includes internal links to other parts of the website enabling users to quickly navigate to where they want to go.  
-
+On the **Home page** the user sees the Navbar and Hero image, which immediately gives the user a clear idea of what the website is about and its contents.  
+This is followed by a short 'About-us' section giving users information about the club, and an overview of exactly what content they can find on the website.  This section includes internal links to other parts of the website enabling users to quickly navigate to where they want to go.  
 The next section is about cycling club meetups and gives information about the different cycling groups, and includes a link to the club's Whatsapp messaging group.
-
 Below this is a Carousel slider showing details about upcoming club events.  
-
 The next feature is a Photo Gallery, which shows an expanded image when the small images are clicked.  
-
 At the bottom of the page there is a 'Back-to-Top' button, social media links, and copyright information.
 
 #### Routes Page
 
-The routes page shows a map with clickable buttons positioned above it to show routes used by the cycling club.  
-
+The **Routes page** shows a map with clickable buttons positioned above it to show routes used by the cycling club.  
 Below the map are input fields to allow the user to create their own routes with up to 8 waypoints.
-
 Routes are displayed on the map along with a panel below, which gives a route summary and turn-by-turn directions, allowing the user to examine routes in more detail.
-
 The markers and route are dragabble, allowing the user to modify the suggested route. The directions panel and route summary are updated when this this occurs.
-
 The routes, input fields and waypoints can be cleared by clicking the 'clear route' buttons.
-
 The map, routing and directions are provided by Google Maps API. The input fields give results biased towards the boundary of the map. This uses the places feature of Google Maps API.  
 
 #### Shops Page
 
-The shops page shows a map giving the location of up to 20 bicycle shops in Bedfordshire.
-
+The **Shops page** shows a map giving the location of up to 20 bicycle shops in Bedfordshire.
 The shops are located by using the 'nearby search' feature of Google Maps API.
-
 Information about each shop is shown to the user when they click on the marker, including the fields "rating, name, address, phone number, website". The website field is a clickable link allowing the user to navigate to shop websites.  
 
 #### **Contact page**
